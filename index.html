@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vizus: Optisyen ve Göz Hekimi Araçları</title>
+<meta name="description" content="Optisyenler ve göz doktorları için meslek araçları: cam gösterimi, ölçü ve hesap, klinik araçlar, testler.">
+<meta name="theme-color" content="#004aad">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="ikon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="ikon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+:root{--m1:#004aad;--m2:#2f86ff;--sari:#ffd400;--ink:#14233b;--soluk:#5b6b85;--zemin:#f3f6fb;--kart:#fff;--cizgi:#dfe6f1;--g:linear-gradient(135deg,var(--m1),var(--m2))}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--zemin);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--sari);outline-offset:2px}
+h1,h2,h3,p{margin:0}
+.gizli{display:none!important}
+
+/* karşılama */
+#karsilama{min-height:100%;background:var(--g);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:calc(28px + env(safe-area-inset-top)) 22px calc(28px + env(safe-area-inset-bottom))}
+#karsilama .ic{max-width:560px;margin:auto;width:100%}
+#karsilama .kare{width:14px;height:14px;background:var(--sari);border-radius:3px;margin-bottom:18px}
+#karsilama h1{font-size:clamp(30px,7vw,44px);line-height:1.08;letter-spacing:-.02em;font-weight:800}
+#karsilama h1 b{color:var(--sari)}
+#karsilama p{margin-top:12px;opacity:.9;font-size:17px}
+.sec{display:grid;gap:12px;margin-top:28px}
+.sec button{background:#fff;color:var(--ink);border-radius:18px;padding:18px 18px;text-align:left;display:flex;gap:14px;align-items:center;box-shadow:0 10px 30px rgba(0,20,60,.25)}
+.sec button strong{display:block;font-size:19px}
+.sec button span{color:var(--soluk);font-size:14px}
+.sec .ok{margin-left:auto;color:var(--m1);font-size:22px;font-weight:700}
+.mono{flex:none;width:48px;height:48px;border-radius:14px;background:var(--g);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;letter-spacing:.02em}
+.mono.dr{background:linear-gradient(135deg,#0b2a5c,#004aad)}
+.mono.t{background:#e8effb;color:var(--m1)}
+#karsilama small{display:block;margin-top:20px;opacity:.75;font-size:13px}
+
+/* kabuk */
+#kabuk{min-height:100%;padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+header.ust{background:var(--g);color:#fff;padding:calc(14px + env(safe-area-inset-top)) 16px 54px}
+.ust .satir{max-width:1100px;margin:auto;display:flex;align-items:center;gap:10px}
+.ust .mod{font-size:13px;font-weight:700;background:rgba(255,255,255,.18);border-radius:999px;padding:6px 12px;color:#fff}
+.ust h1{font-size:22px;font-weight:800;letter-spacing:-.01em;flex:1}
+.ara{max-width:1100px;margin:-28px auto 0;padding:0 16px;position:relative}
+.ara input{width:100%;height:56px;border-radius:16px;border:1px solid var(--cizgi);background:#fff;padding:0 16px 0 46px;font:inherit;font-size:17px;color:var(--ink);box-shadow:0 8px 24px rgba(0,40,110,.12)}
+.ara svg{position:absolute;left:32px;top:18px;width:20px;height:20px;stroke:var(--soluk)}
+main{max-width:1100px;margin:auto;padding:8px 16px 24px}
+.bas{display:flex;align-items:baseline;gap:8px;margin:26px 2px 12px}
+.bas h2{font-size:18px;font-weight:800}
+.bas span{color:var(--soluk);font-size:13px}
+.izgara{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.arac{background:var(--kart);border:1px solid var(--cizgi);border-radius:16px;padding:12px;display:flex;gap:12px;align-items:center;text-align:left;width:100%;min-height:72px;transition:transform .12s,box-shadow .12s}
+.arac:hover{box-shadow:0 6px 18px rgba(0,40,110,.1);transform:translateY(-1px)}
+.arac .yazi{flex:1;min-width:0}
+.arac strong{display:block;font-size:15.5px;line-height:1.25}
+.arac small{display:block;color:var(--soluk);font-size:13px;line-height:1.3;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rozet{font-size:10.5px;font-weight:800;letter-spacing:.06em;border-radius:6px;padding:3px 6px;flex:none}
+.rozet.pro{background:var(--sari);color:#2b2400}
+.rozet.site{background:#e8effb;color:var(--m1)}
+.one{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(150px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.one::-webkit-scrollbar{display:none}
+.one button{background:var(--g);color:#fff;border-radius:18px;padding:14px;text-align:left;min-height:118px;display:flex;flex-direction:column;justify-content:space-between}
+.one button strong{font-size:16px;line-height:1.2}
+.one button span{font-size:12px;opacity:.85;font-weight:700;letter-spacing:.05em}
+.bos{color:var(--soluk);padding:28px 8px;text-align:center}
+.kutu{background:#fff;border:1px solid var(--cizgi);border-radius:16px;padding:16px;margin-top:12px}
+.kutu h3{font-size:16px;margin-bottom:6px}
+.kutu p{color:var(--soluk);font-size:14.5px}
+.kutu .dug{margin-top:12px;display:inline-block;background:var(--g);color:#fff;font-weight:700;border-radius:12px;padding:11px 16px}
+.kutu .dug.ikincil{background:#e8effb;color:var(--m1)}
+
+nav.alt{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--cizgi);display:flex;justify-content:center;padding-bottom:env(safe-area-inset-bottom);z-index:5}
+nav.alt button{flex:1;max-width:160px;height:62px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:12px;font-weight:700;color:var(--soluk)}
+nav.alt svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+nav.alt button[aria-current=page]{color:var(--m1)}
+
+/* araç görünümü */
+#gorunum{position:fixed;inset:0;background:#fff;z-index:10;display:flex;flex-direction:column}
+#gorunum .cubuk{background:var(--g);color:#fff;display:flex;align-items:center;gap:4px;padding:calc(6px + env(safe-area-inset-top)) 6px 6px}
+#gorunum .cubuk strong{flex:1;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 4px}
+#gorunum .cubuk button{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff}
+#gorunum .cubuk button:hover{background:rgba(255,255,255,.16)}
+#gorunum svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+#gorunum .dolu svg{fill:var(--sari);stroke:var(--sari)}
+#gorunum iframe{flex:1;border:0;width:100%}
+#gorunum.tam .cubuk{display:none}
+#cik{position:fixed;right:12px;top:calc(12px + env(safe-area-inset-top));z-index:11;background:rgba(10,25,55,.7);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<section id="karsilama" class="gizli">
+  <div class="ic">
+    <div class="kare"></div><p style="margin:0 0 10px;font-weight:800;letter-spacing:.14em;font-size:14px;opacity:1">VIZUS</p>
+    <h1>Mesleğinizin araçları, <b>tek uygulamada.</b></h1>
+    <p>Size uygun ana ekranı hazırlayalım. Bunu sonra Profil'den değiştirebilirsiniz.</p>
+    <div class="sec">
+      <button data-kim="opt"><span class="mono">OP</span><span><strong>Optisyenim</strong><span>Mağazada gösterim, ölçü, atölye, eğitim</span></span><span class="ok">›</span></button>
+      <button data-kim="dr"><span class="mono dr">DR</span><span><strong>Göz doktoruyum</strong><span>Muayene, şaşılık, katarakt ve retina, kodlama</span></span><span class="ok">›</span></button>
+    </div>
+    <small>Optisyen ve Göz Hekimi Araçları · Optisyen Çağatay Gülümser tarafından</small>
+  </div>
+</section>
+
+<div id="kabuk" class="gizli">
+  <header class="ust"><div class="satir"><h1 id="baslik">Vizus</h1><button class="mod" id="modDug"></button></div></header>
+  <div class="ara"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Araç ara: prizma, eşel, PD…" autocomplete="off" aria-label="Araç ara"></div>
+  <main id="icerik"></main>
+  <nav class="alt" aria-label="Ana gezinme">
+    <button data-s="ana"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Ana ekran</button>
+    <button data-s="tum"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Tümü</button>
+    <button data-s="fav"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>Favoriler</button>
+    <button data-s="pro"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>Profil</button>
+  </nav>
+</div>
+
+<div id="gorunum" class="gizli" role="dialog" aria-modal="true">
+  <div class="cubuk">
+    <button id="geri" aria-label="Geri"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <strong id="gAd"></strong>
+    <button id="gFav" aria-label="Favorilere ekle"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></button>
+    <button id="gTam" aria-label="Tam ekran"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+  </div>
+  <iframe id="cerceve" title="Araç" allow="camera; microphone; fullscreen; accelerometer; gyroscope"></iframe>
+  <button id="cik" class="gizli">Tam ekrandan çık</button>
+</div>
+
+<script src="katalog.js"></script>
+<script>
+(function(){
+'use strict';
+var K=window.KATALOG,T=K.araclar,$=function(i){return document.getElementById(i)};
+function oku(k,d){try{var v=localStorage.getItem('oa-'+k);return v==null?d:JSON.parse(v)}catch(e){return d}}
+function yaz(k,v){try{localStorage.setItem('oa-'+k,JSON.stringify(v))}catch(e){}}
+var kim=oku('kim',null),fav=oku('fav',[]),son=oku('son',[]),sekme='ana',acik=null;
+var ONE={opt:['studyo','simulator','pdolcer','tarayici','formuller'],dr:['esel','iol','sasilik','alan','icd']};
+var SIRA={opt:['magaza','olcu','egitim','mevzuat','test'],dr:['muayene','sasilik','cerrahi','kayit','test','olcu','egitim','mevzuat']};
+function bul(id){for(var i=0;i<T.length;i++)if(T[i].id===id)return T[i]}
+function uygun(t){return kim==='dr'?t.kim!=='opt':t.kim!=='dr'}
+function sade(s){return s.toLocaleLowerCase('tr').replace(/ı/g,'i').replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s').replace(/ö/g,'o').replace(/ç/g,'c').replace(/â/g,'a')}
+function kisalt(a){var w=a.replace(/[()]/g,'').split(/\s+/).filter(function(x){return x.length>2||/^[A-ZÇĞİÖŞÜ0-9]+$/.test(x)});return ((w[0]||a)[0]+((w[1]||w[0]||a)[w[1]?0:1]||'')).toLocaleUpperCase('tr')}
+function grupAd(g){for(var i=0;i<K.gruplar.length;i++)if(K.gruplar[i][0]===g)return K.gruplar[i][1]}
+function kart(t){return '<button class="arac" data-a="'+t.id+'"><span class="mono'+(t.kim==='dr'?' dr':t.grup==='test'?' t':'')+'">'+kisalt(t.ad)+'</span><span class="yazi"><strong>'+t.ad+'</strong>'+(t.kisa?'<small>'+t.kisa+'</small>':'')+'</span>'+(t.pro?'<span class="rozet pro">PRO</span>':'')+'</button>'}
+function bolum(ad,liste,not){return liste.length?'<div class="bas"><h2>'+ad+'</h2><span>'+(not||liste.length+' araç')+'</span></div><div class="izgara">'+liste.map(kart).join('')+'</div>':''}
+
+function ciz(){
+  var q=sade($('q').value.trim()),h='',i;
+  $('modDug').textContent=kim==='dr'?'Göz doktoru':'Optisyen';
+  [].forEach.call(document.querySelectorAll('nav.alt button'),function(b){if(b.getAttribute('data-s')===sekme)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+  if(q){
+    var r=T.filter(function(t){return sade(t.ad+' '+t.kisa+' '+grupAd(t.grup)).indexOf(q)>-1});
+    h=r.length?bolum('Sonuçlar',r,r.length+' sonuç'):'<p class="bos">“'+$('q').value.replace(/</g,'&lt;')+'” için araç bulunamadı.</p>';
+  }else if(sekme==='ana'){
+    h+='<div class="bas"><h2>Öne çıkanlar</h2></div><div class="one">'+ONE[kim].map(bul).map(function(t){return '<button data-a="'+t.id+'"><span>'+grupAd(t.grup).toLocaleUpperCase('tr')+'</span><strong>'+t.ad+'</strong></button>'}).join('')+'</div>';
+    var s=son.map(bul).filter(Boolean).slice(0,4);h+=bolum('Son kullanılanlar',s,' ');
+    SIRA[kim].forEach(function(g){h+=bolum(grupAd(g),T.filter(function(t){return t.grup===g&&uygun(t)}))});
+  }else if(sekme==='tum'){
+    K.gruplar.forEach(function(g){h+=bolum(g[1],T.filter(function(t){return t.grup===g[0]}))});
+  }else if(sekme==='fav'){
+    var f=fav.map(bul).filter(Boolean);
+    h=f.length?bolum('Favoriler',f):'<p class="bos">Henüz favori yok. Bir aracı açıp üstteki yıldıza dokunun.</p>';
+  }else{
+    var yerel=T.filter(function(t){return t.tur==='yerel'}).length;
+    h='<div class="kutu"><h3>Meslek</h3><p>Ana ekran şu an <b>'+(kim==='dr'?'göz doktoru':'optisyen')+'</b> düzeninde. Tüm araçlara “Tümü” sekmesinden her zaman ulaşırsınız.</p><button class="dug ikincil" id="degis">'+(kim==='dr'?'Optisyen':'Göz doktoru')+' düzenine geç</button></div>'+
+      '<div class="kutu"><h3>PRO üyelik</h3><p>Sarı PRO rozetli araçlar abonelik kapsamına alınacak. Üyelik sistemi henüz açılmadı; şimdilik tüm araçlar açık.</p></div>'+
+      '<div class="kutu"><h3>Ana ekrana ekle</h3><p>Tarayıcı menüsünden “Ana ekrana ekle”yi seçin; uygulama tam ekran açılır.</p><button class="dug gizli" id="kur">Uygulamayı kur</button></div>'+
+      '<div class="kutu"><h3>Hakkında</h3><p>'+T.length+' araç · '+yerel+' tanesi uygulamanın içinde çalışır, kalanı şimdilik siteden açılır. Bu uygulama meslek mensupları ve eğitim içindir; tıbbi cihaz değildir. Tanı ve tedavi kararı göz hekiminin klinik muayenesine dayanır.</p></div>';
+  }
+  $('icerik').innerHTML=h;
+  if(kurOlay&&$('kur'))$('kur').classList.remove('gizli');
+}
+function ac(id){
+  var t=bul(id);if(!t)return;acik=t;
+  son=[id].concat(son.filter(function(x){return x!==id})).slice(0,8);yaz('son',son);
+  $('gAd').textContent=t.ad;$('gFav').className=fav.indexOf(id)>-1?'dolu':'';
+  $('cerceve').src=t.tur==='yerel'?'arac.html?a='+id:t.url;
+  $('gorunum').classList.remove('gizli');history.pushState({a:id},'','#'+id);$('geri').focus();
+}
+function kapat(){acik=null;$('gorunum').classList.add('gizli');$('gorunum').classList.remove('tam');$('cik').classList.add('gizli');$('cerceve').src='about:blank';ciz()}
+function basla(){$('karsilama').classList.toggle('gizli',!!kim);$('kabuk').classList.toggle('gizli',!kim);if(kim)ciz()}
+
+document.addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;
+  if(b.dataset.kim){kim=b.dataset.kim;yaz('kim',kim);sekme='ana';basla();window.scrollTo(0,0)}
+  else if(b.dataset.a)ac(b.dataset.a);
+  else if(b.dataset.s){sekme=b.dataset.s;$('q').value='';ciz();window.scrollTo(0,0)}
+  else if(b.id==='modDug'){sekme='pro';$('q').value='';ciz()}
+  else if(b.id==='degis'){kim=kim==='dr'?'opt':'dr';yaz('kim',kim);sekme='ana';ciz()}
+  else if(b.id==='geri')history.back();
+  else if(b.id==='gFav'){var i=fav.indexOf(acik.id);if(i>-1)fav.splice(i,1);else fav.unshift(acik.id);yaz('fav',fav);b.className=i>-1?'':'dolu'}
+  else if(b.id==='gTam'){$('gorunum').classList.add('tam');$('cik').classList.remove('gizli');var el=document.documentElement;if(el.requestFullscreen)el.requestFullscreen().catch(function(){})}
+  else if(b.id==='cik'){$('gorunum').classList.remove('tam');b.classList.add('gizli');if(document.fullscreenElement)document.exitFullscreen()}
+  else if(b.id==='kur'&&kurOlay){kurOlay.prompt();kurOlay=null;b.classList.add('gizli')}
+});
+$('q').addEventListener('input',ciz);
+window.addEventListener('popstate',function(){if(acik)kapat()});
+document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement){$('gorunum').classList.remove('tam');$('cik').classList.add('gizli')}});
+var kurOlay=null;window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();kurOlay=e;if($('kur'))$('kur').classList.remove('gizli')});
+if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js');
+basla();
+if(kim&&location.hash.length>1&&bul(location.hash.slice(1))){var h0=location.hash.slice(1);history.replaceState(null,'',location.pathname);ac(h0)}
+})();
+</script>
+</body>
+</html>

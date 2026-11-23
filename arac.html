@@ -1,0 +1,16 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Araç</title>
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#sar{padding:14px 14px calc(24px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#yok{padding:40px 20px;text-align:center;color:#5b6b85}</style>
+<script src="katalog.js"></script></head><body><div id="sar"></div>
+<script>
+(function(){
+  var id=new URLSearchParams(location.search).get('a'),t=KATALOG.araclar.filter(function(x){return x.id===id&&x.tur==='yerel'})[0],sar=document.getElementById('sar');
+  if(!t){sar.innerHTML='<p id="yok">Araç bulunamadı.</p>';return}
+  document.title=t.ad;
+  function css(h){var l=document.createElement('link');l.rel='stylesheet';l.href=h;document.head.appendChild(l)}
+  function js(h,cb){var s=document.createElement('script');s.src=h;s.onload=cb;s.onerror=function(){sar.innerHTML='<p id="yok">Araç yüklenemedi. Bağlantınızı kontrol edip yeniden deneyin.</p>'};document.body.appendChild(s)}
+  css(t.id==='studyo'?'cam-gosterim/cgs.css':'araclar/arac.css');
+  if(t.id==='tarayici'||t.id==='studyo'){css('araclar/arac.css')}
+  var d=document.createElement('div');d.id=t.kok;if(t.id!=='studyo')d.className='cgt';sar.appendChild(d);
+  if(t.dosya.indexOf('klinik/')>-1)js('araclar/klinik/ortak.js',function(){js(t.dosya)});else js(t.dosya);
+})();
+</script></body></html>
