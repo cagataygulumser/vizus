@@ -87,6 +87,19 @@ nav.alt button[aria-current=page]{color:var(--m1)}
 #gorunum iframe{flex:1;border:0;width:100%}
 #gorunum.tam .cubuk{display:none}
 #cik{position:fixed;right:12px;top:calc(12px + env(safe-area-inset-top));z-index:11;background:rgba(10,25,55,.7);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700}
+.gm{flex:none;display:flex;align-items:center;gap:7px;background:#fff;color:var(--ink);border-radius:10px;padding:4px 9px;font-size:13px;font-weight:700;max-width:42vw;overflow:hidden;white-space:nowrap}
+.gm img{height:26px;max-width:110px;object-fit:contain;display:block}
+.gm span{overflow:hidden;text-overflow:ellipsis}
+#fMarka{position:fixed;left:12px;top:calc(12px + env(safe-area-inset-top));z-index:11;box-shadow:0 6px 18px rgba(0,20,60,.25);padding:6px 11px}
+#fMarka img{height:32px;max-width:150px}
+.alan{display:block;font-size:13px;font-weight:700;color:var(--soluk);margin-top:12px}
+.alan input{display:block;width:100%;height:48px;margin-top:6px;border:1px solid var(--cizgi);border-radius:12px;padding:0 12px;font:inherit;font-size:16px;color:var(--ink);background:#fff}
+.msatir{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}
+.msatir .dug{margin-top:0;cursor:pointer}
+.msatir .onz{height:48px;min-width:48px;max-width:160px;border:1px dashed var(--cizgi);border-radius:12px;display:flex;align-items:center;justify-content:center;padding:4px 8px;color:var(--soluk);font-size:12px}
+.msatir .onz img{max-height:38px;max-width:140px;object-fit:contain}
+.gorunmez{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+.kutu h3 .rozet{vertical-align:2px;margin-left:6px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -121,10 +134,12 @@ nav.alt button[aria-current=page]{color:var(--m1)}
   <div class="cubuk">
     <button id="geri" aria-label="Geri"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
     <strong id="gAd"></strong>
+    <span id="gMarka" class="gm gizli"></span>
     <button id="gFav" aria-label="Favorilere ekle"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></button>
     <button id="gTam" aria-label="Tam ekran"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
   </div>
   <iframe id="cerceve" title="Araç" allow="camera; microphone; fullscreen; accelerometer; gyroscope"></iframe>
+  <span id="fMarka" class="gm gizli"></span>
   <button id="cik" class="gizli">Tam ekrandan çık</button>
 </div>
 
@@ -135,7 +150,9 @@ nav.alt button[aria-current=page]{color:var(--m1)}
 var K=window.KATALOG,T=K.araclar,$=function(i){return document.getElementById(i)};
 function oku(k,d){try{var v=localStorage.getItem('oa-'+k);return v==null?d:JSON.parse(v)}catch(e){return d}}
 function yaz(k,v){try{localStorage.setItem('oa-'+k,JSON.stringify(v))}catch(e){}}
-var kim=oku('kim',null),fav=oku('fav',[]),son=oku('son',[]),sekme='ana',acik=null;
+var kim=oku('kim',null),fav=oku('fav',[]),son=oku('son',[]),marka=oku('marka',{ad:'',logo:''}),sekme='ana',acik=null;
+function kacis(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+function markaCiz(){var var_=!!(marka.ad||marka.logo),h=(marka.logo?'<img alt="" src="'+marka.logo+'">':'')+(marka.ad&&!marka.logo?'<span>'+kacis(marka.ad)+'</span>':''),tam=$('gorunum').classList.contains('tam');$('gMarka').innerHTML=h;$('fMarka').innerHTML=h;$('gMarka').classList.toggle('gizli',!var_);$('fMarka').classList.toggle('gizli',!var_||!tam)}
 var ONE={opt:['studyo','simulator','pdolcer','tarayici','formuller'],dr:['esel','iol','sasilik','alan','icd']};
 var SIRA={opt:['magaza','olcu','egitim','mevzuat','test'],dr:['muayene','sasilik','cerrahi','kayit','test','olcu','egitim','mevzuat']};
 function bul(id){for(var i=0;i<T.length;i++)if(T[i].id===id)return T[i]}
@@ -165,6 +182,7 @@ function ciz(){
   }else{
     var yerel=T.filter(function(t){return t.tur==='yerel'}).length;
     h='<div class="kutu"><h3>Meslek</h3><p>Ana ekran şu an <b>'+(kim==='dr'?'göz doktoru':'optisyen')+'</b> düzeninde. Tüm araçlara “Tümü” sekmesinden her zaman ulaşırsınız.</p><button class="dug ikincil" id="degis">'+(kim==='dr'?'Optisyen':'Göz doktoru')+' düzenine geç</button></div>'+
+      '<div class="kutu"><h3>Markanız<span class="rozet pro">PRO</span></h3><p>Mağaza ya da klinik adınızı ve logonuzu ekleyin; bir aracı gösterirken ekranın üstünde görünsün (logo varsa logo, yoksa ad). Tanıtım döneminde ücretsiz. Logo yalnızca bu cihazda saklanır.</p><label class="alan" for="mAd">İşletme adı<input id="mAd" type="text" maxlength="40" autocomplete="organization" value="'+kacis(marka.ad)+'"></label><div class="msatir"><span class="onz" id="mOnz">'+(marka.logo?'<img alt="Logo önizleme" src="'+marka.logo+'">':'Logo yok')+'</span><label class="dug ikincil" for="mLogo">Logo seç</label><input id="mLogo" class="gorunmez" type="file" accept="image/*"><button class="dug ikincil" id="mSil">Kaldır</button></div></div>'+
       '<div class="kutu"><h3>Vizus PRO (yakında)</h3><p>Araçların hepsi ücretsiz ve öyle kalacak. PRO, uygulamaya özel artılar için hazırlanıyor: mağaza ya da klinik logonuzla markalama, çevrimdışı kullanım, sonuçları kaydetme ve yazdırma, yeni araçlara erken erişim.</p></div>'+
       '<div class="kutu"><h3>Ana ekrana ekle</h3><p>Tarayıcı menüsünden “Ana ekrana ekle”yi seçin; uygulama tam ekran açılır.</p><button class="dug gizli" id="kur">Uygulamayı kur</button></div>'+
       '<div class="kutu"><h3>Hakkında</h3><p>'+T.length+' araç · '+yerel+' tanesi uygulamanın içinde çalışır, kalanı şimdilik siteden açılır. Bu uygulama meslek mensupları ve eğitim içindir; tıbbi cihaz değildir. Tanı ve tedavi kararı göz hekiminin klinik muayenesine dayanır.</p></div>';
@@ -177,7 +195,7 @@ function ac(id){
   son=[id].concat(son.filter(function(x){return x!==id})).slice(0,8);yaz('son',son);
   $('gAd').textContent=t.ad;$('gFav').className=fav.indexOf(id)>-1?'dolu':'';
   $('cerceve').src=t.sayfa?t.sayfa:(t.tur==='yerel'?'arac.html?a='+id:t.url);
-  $('gorunum').classList.remove('gizli');history.pushState({a:id},'','#'+id);$('geri').focus();
+  markaCiz();$('gorunum').classList.remove('gizli');history.pushState({a:id},'','#'+id);$('geri').focus();
 }
 function kapat(){acik=null;$('gorunum').classList.add('gizli');$('gorunum').classList.remove('tam');$('cik').classList.add('gizli');$('cerceve').src='about:blank';ciz()}
 function basla(){$('karsilama').classList.toggle('gizli',!!kim);$('kabuk').classList.toggle('gizli',!kim);if(kim)ciz()}
@@ -191,13 +209,18 @@ document.addEventListener('click',function(e){
   else if(b.id==='degis'){kim=kim==='dr'?'opt':'dr';yaz('kim',kim);sekme='ana';ciz()}
   else if(b.id==='geri')history.back();
   else if(b.id==='gFav'){var i=fav.indexOf(acik.id);if(i>-1)fav.splice(i,1);else fav.unshift(acik.id);yaz('fav',fav);b.className=i>-1?'':'dolu'}
-  else if(b.id==='gTam'){$('gorunum').classList.add('tam');$('cik').classList.remove('gizli');var el=document.documentElement;if(el.requestFullscreen)el.requestFullscreen().catch(function(){})}
-  else if(b.id==='cik'){$('gorunum').classList.remove('tam');b.classList.add('gizli');if(document.fullscreenElement)document.exitFullscreen()}
+  else if(b.id==='gTam'){$('gorunum').classList.add('tam');$('cik').classList.remove('gizli');markaCiz();var el=document.documentElement;if(el.requestFullscreen)el.requestFullscreen().catch(function(){})}
+  else if(b.id==='cik'){$('gorunum').classList.remove('tam');b.classList.add('gizli');markaCiz();if(document.fullscreenElement)document.exitFullscreen()}
+  else if(b.id==='mSil'){marka={ad:'',logo:''};yaz('marka',marka);markaCiz();ciz()}
   else if(b.id==='kur'&&kurOlay){kurOlay.prompt();kurOlay=null;b.classList.add('gizli')}
 });
 $('q').addEventListener('input',ciz);
+document.addEventListener('input',function(e){if(e.target.id==='mAd'){marka.ad=e.target.value.trim();yaz('marka',marka);markaCiz()}});
+document.addEventListener('change',function(e){if(e.target.id!=='mLogo'||!e.target.files[0])return;var f=e.target.files[0],u=URL.createObjectURL(f),im=new Image();
+  im.onload=function(){var k=Math.min(1,360/im.naturalWidth,160/im.naturalHeight),c=document.createElement('canvas');c.width=Math.max(1,Math.round(im.naturalWidth*k));c.height=Math.max(1,Math.round(im.naturalHeight*k));c.getContext('2d').drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);marka.logo=c.toDataURL('image/png');yaz('marka',marka);markaCiz();ciz()};
+  im.onerror=function(){URL.revokeObjectURL(u);$('mOnz').textContent='Görsel okunamadı'};im.src=u});
 window.addEventListener('popstate',function(){if(acik)kapat()});
-document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement){$('gorunum').classList.remove('tam');$('cik').classList.add('gizli')}});
+document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement){$('gorunum').classList.remove('tam');$('cik').classList.add('gizli');markaCiz()}});
 var kurOlay=null;window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();kurOlay=e;if($('kur'))$('kur').classList.remove('gizli')});
 if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js');
 basla();
