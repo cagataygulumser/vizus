@@ -100,6 +100,23 @@ nav.alt button[aria-current=page]{color:var(--m1)}
 .msatir .onz img{max-height:38px;max-width:140px;object-fit:contain}
 .gorunmez{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
 .kutu h3 .rozet{vertical-align:2px;margin-left:6px}
+#alt{position:fixed;inset:0;z-index:20;background:rgba(8,20,45,.45);display:flex;align-items:flex-end;justify-content:center}
+#alt .ic{background:#fff;width:100%;max-width:520px;border-radius:20px 20px 0 0;padding:14px 14px calc(18px + env(safe-area-inset-bottom));display:grid;gap:8px}
+#alt .ic button.sec2{display:flex;align-items:center;gap:12px;min-height:56px;padding:0 14px;border-radius:14px;background:var(--zemin);font-weight:700;font-size:16px;text-align:left;color:var(--ink)}
+#alt .ic button.sec2 svg{width:22px;height:22px;stroke:var(--m1);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+#alt .ic button.sec2 small{display:block;font-weight:500;color:var(--soluk);font-size:13px}
+#alt .ic button.sec2[disabled]{opacity:.5}
+#alt .ic .vaz{height:48px;font-weight:700;color:var(--soluk)}
+#alt h3{font-size:17px;margin:4px 4px 0}
+#alt .dug{display:inline-block;background:var(--g);color:#fff;font-weight:700;border-radius:12px;padding:12px 18px}
+#alt .sira{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
+#bilgi{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:30;background:#14233b;color:#fff;border-radius:12px;padding:11px 16px;font-size:14px;font-weight:600;max-width:calc(100vw - 32px);text-align:center;box-shadow:0 10px 30px rgba(0,20,60,.3)}
+.krow{display:flex;gap:8px;align-items:stretch}
+.krow .arac{flex:1;min-width:0}
+.krow .sil{flex:none;width:64px;border-radius:16px;border:1px solid var(--cizgi);background:#fff;color:#b42318;font-weight:700;font-size:13px}
+.krow .sil.emin{background:#b42318;color:#fff;border-color:#b42318}
+.ilerleme{height:8px;border-radius:99px;background:var(--zemin);overflow:hidden;margin-top:12px}
+.ilerleme i{display:block;height:100%;width:0;background:var(--g);transition:width .2s}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -136,6 +153,7 @@ nav.alt button[aria-current=page]{color:var(--m1)}
     <strong id="gAd"></strong>
     <span id="gMarka" class="gm gizli"></span>
     <button id="gFav" aria-label="Favorilere ekle"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></button>
+    <button id="gDiger" aria-label="Kaydet ve yazdır"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></button>
     <button id="gTam" aria-label="Tam ekran"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
   </div>
   <iframe id="cerceve" title="Araç" allow="camera; microphone; fullscreen; accelerometer; gyroscope"></iframe>
@@ -143,6 +161,8 @@ nav.alt button[aria-current=page]{color:var(--m1)}
   <button id="cik" class="gizli">Tam ekrandan çık</button>
 </div>
 
+<div id="alt" class="gizli" role="dialog" aria-modal="true"><div class="ic" id="altIc"></div></div>
+<div id="bilgi" class="gizli" role="status"></div>
 <script src="katalog.js"></script>
 <script>
 (function(){
@@ -178,12 +198,14 @@ function ciz(){
     K.gruplar.forEach(function(g){h+=bolum(g[1],T.filter(function(t){return t.grup===g[0]}))});
   }else if(sekme==='fav'){
     var f=fav.map(bul).filter(Boolean);
-    h=f.length?bolum('Favoriler',f):'<p class="bos">Henüz favori yok. Bir aracı açıp üstteki yıldıza dokunun.</p>';
+    h=f.length?bolum('Favoriler',f):'<div class="bas"><h2>Favoriler</h2></div><p class="bos">Henüz favori yok. Bir aracı açıp üstteki yıldıza dokunun.</p>';
+    h+='<div class="bas"><h2>Kayıtlar</h2><span>'+(kayitlar.length?kayitlar.length+' kayıt':'')+'</span></div>'+(kayitlar.length?'<div class="izgara">'+kayitlar.map(function(r){return '<div class="krow"><button class="arac" data-k="'+r.id+'"><span class="mono t">KY</span><span class="yazi"><strong>'+kacis(r.baslik)+'</strong><small>'+kacis(r.ad)+' · '+tarihYaz(r.tarih)+'</small></span></button><button class="sil" data-sil="'+r.id+'">Sil</button></div>'}).join('')+'</div>':'<p class="bos">Henüz kayıt yok. Bir araç açıkken üstteki üç noktadan “Sonucu kaydet”i seçin.</p>');
   }else{
     var yerel=T.filter(function(t){return t.tur==='yerel'}).length;
     h='<div class="kutu"><h3>Meslek</h3><p>Ana ekran şu an <b>'+(kim==='dr'?'göz doktoru':'optisyen')+'</b> düzeninde. Tüm araçlara “Tümü” sekmesinden her zaman ulaşırsınız.</p><button class="dug ikincil" id="degis">'+(kim==='dr'?'Optisyen':'Göz doktoru')+' düzenine geç</button></div>'+
       '<div class="kutu"><h3>Markanız<span class="rozet pro">PRO</span></h3><p>Mağaza ya da klinik adınızı ve logonuzu ekleyin; bir aracı gösterirken ekranın üstünde görünsün (logo varsa logo, yoksa ad). Tanıtım döneminde ücretsiz. Logo yalnızca bu cihazda saklanır.</p><label class="alan" for="mAd">İşletme adı<input id="mAd" type="text" maxlength="40" autocomplete="organization" value="'+kacis(marka.ad)+'"></label><div class="msatir"><span class="onz" id="mOnz">'+(marka.logo?'<img alt="Logo önizleme" src="'+marka.logo+'">':'Logo yok')+'</span><label class="dug ikincil" for="mLogo">Logo seç</label><input id="mLogo" class="gorunmez" type="file" accept="image/*"><button class="dug ikincil" id="mSil">Kaldır</button></div></div>'+
-      '<div class="kutu"><h3>Vizus PRO (yakında)</h3><p>Araçların hepsi ücretsiz ve öyle kalacak. PRO, uygulamaya özel artılar için hazırlanıyor: mağaza ya da klinik logonuzla markalama, çevrimdışı kullanım, sonuçları kaydetme ve yazdırma, yeni araçlara erken erişim.</p></div>'+
+      (function(){var d=oku('indi',null);return '<div class="kutu"><h3>Çevrimdışı kullanım<span class="rozet pro">PRO</span></h3><p>'+(d?'Araçlar bu cihaza indirildi ('+d.n+' / '+d.top+' dosya, '+tarihYaz(d.t)+'). İnternet olmadan da açılır.':'Tüm araçları bu cihaza indirin; mağazada ya da klinikte internet olmasa da açılsın. Yaklaşık 2 MB.')+' Kamerayla yüz ölçen araçlar ilk kullanımda internet ister.</p><div class="ilerleme"><i id="indP"></i></div><p id="indM" style="font-size:13px;margin-top:6px"></p><button class="dug'+(d?' ikincil':'')+'" id="indir">'+(d?'Yeniden indir':'Tüm araçları indir')+'</button></div>'})()+
+      '<div class="kutu"><h3>Vizus PRO (yakında)</h3><p>Araçların hepsi ücretsiz ve öyle kalacak. PRO uygulamaya özel artıları kapsıyor: logonuzla markalama, çevrimdışı kullanım, sonuçları kaydetme ve logolu çıktı. Bunlar tanıtım döneminde ücretsiz; mağaza sürümüyle birlikte PRO üyeliğe bağlanacak.</p></div>'+
       '<div class="kutu"><h3>Ana ekrana ekle</h3><p>Tarayıcı menüsünden “Ana ekrana ekle”yi seçin; uygulama tam ekran açılır.</p><button class="dug gizli" id="kur">Uygulamayı kur</button></div>'+
       '<div class="kutu"><h3>Hakkında</h3><p>'+T.length+' araç · '+yerel+' tanesi uygulamanın içinde çalışır, kalanı şimdilik siteden açılır. Bu uygulama meslek mensupları ve eğitim içindir; tıbbi cihaz değildir. Tanı ve tedavi kararı göz hekiminin klinik muayenesine dayanır.</p></div>';
   }
@@ -194,21 +216,70 @@ function ac(id){
   var t=bul(id);if(!t)return;acik=t;
   son=[id].concat(son.filter(function(x){return x!==id})).slice(0,8);yaz('son',son);
   $('gAd').textContent=t.ad;$('gFav').className=fav.indexOf(id)>-1?'dolu':'';
-  $('cerceve').src=t.sayfa?t.sayfa:(t.tur==='yerel'?'arac.html?a='+id:t.url);
+  $('gFav').classList.remove('gizli');git(t.sayfa?t.sayfa:(t.tur==='yerel'?'arac.html?a='+id:t.url));
   markaCiz();$('gorunum').classList.remove('gizli');history.pushState({a:id},'','#'+id);$('geri').focus();
 }
-function kapat(){acik=null;$('gorunum').classList.add('gizli');$('gorunum').classList.remove('tam');$('cik').classList.add('gizli');$('cerceve').src='about:blank';ciz()}
+function kapat(){acik=null;$('gorunum').classList.add('gizli');$('gorunum').classList.remove('tam');$('cik').classList.add('gizli');git('about:blank');if(blobU){URL.revokeObjectURL(blobU);blobU=''}altKapat();ciz()}
+var DB=null,kayitlar=[],bilgiZ=0,blobU='';
+function git(u){try{$('cerceve').contentWindow.location.replace(u)}catch(e){$('cerceve').src=u}}
+function vt(){return DB||(DB=new Promise(function(ok,no){var r=indexedDB.open('vizus',1);r.onupgradeneeded=function(){r.result.createObjectStore('kayit',{keyPath:'id'})};r.onsuccess=function(){ok(r.result)};r.onerror=function(){no(r.error)}}))}
+function vtIs(mod,fn){return vt().then(function(d){return new Promise(function(ok,no){var t=d.transaction('kayit',mod),q=fn(t.objectStore('kayit'));t.oncomplete=function(){ok(q&&q.result)};t.onerror=function(){no(t.error)};t.onabort=function(){no(t.error)}})})}
+function kayitYukle(){return vtIs('readonly',function(s){return s.getAll()}).then(function(r){kayitlar=(r||[]).map(function(x){return{id:x.id,baslik:x.baslik,ad:x.ad,tarih:x.tarih}}).sort(function(a,b){return b.tarih-a.tarih})}).catch(function(){kayitlar=[]})}
+function tarihYaz(t){return new Date(t).toLocaleString('tr-TR',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'})}
+function bilgi(m){var b=$('bilgi');b.textContent=m;b.classList.remove('gizli');clearTimeout(bilgiZ);bilgiZ=setTimeout(function(){b.classList.add('gizli')},3800)}
+function belge(){try{var d=$('cerceve').contentDocument;return d&&d.body?d:null}catch(e){return null}}
+function altKapat(){$('alt').classList.add('gizli');$('altIc').innerHTML=''}
+function altMenu(){var d=belge(),k=acik&&acik.kayit;
+  $('altIc').innerHTML='<button class="sec2" id="aKaydet"'+(d&&!k?'':' disabled')+'><svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"/><path d="M8 4v5h7V4M8 20v-6h8v6"/></svg><span>Sonucu kaydet<small>'+(k?'Bu zaten bir kayıt':d?'Ekranın şu anki hali bu cihaza kaydedilir':'Siteden açılan araç kaydedilemiyor')+'</small></span></button>'+
+  '<button class="sec2" id="aYazdir"'+(d?'':' disabled')+'><svg viewBox="0 0 24 24"><path d="M7 9V4h10v5M7 17H4v-7h16v7h-3"/><path d="M7 14h10v6H7z"/></svg><span>Yazdır ya da PDF yap<small>'+(d?'Üstte logonuz, işletme adınız ve tarih olur':'Siteden açılan araç yazdırılamıyor')+'</small></span></button>'+
+  '<button class="vaz" id="aVaz">Vazgeç</button>';
+  $('alt').classList.remove('gizli');$('aVaz').focus()}
+function anlik(d){var k=d.documentElement.cloneNode(true),i,a,b,r,im,c;
+  a=d.querySelectorAll('canvas,video');b=k.querySelectorAll('canvas,video');
+  for(i=0;i<a.length;i++){r=a[i].getBoundingClientRect();im=d.createElement('img');try{if(a[i].tagName==='VIDEO'){c=d.createElement('canvas');c.width=a[i].videoWidth||1;c.height=a[i].videoHeight||1;c.getContext('2d').drawImage(a[i],0,0);im.src=c.toDataURL('image/jpeg',.85)}else im.src=a[i].toDataURL('image/png')}catch(e){}
+    im.setAttribute('style',(a[i].getAttribute('style')||'')+';width:'+Math.round(r.width)+'px;height:'+Math.round(r.height)+'px');im.className=a[i].className;im.alt='';if(b[i].parentNode)b[i].parentNode.replaceChild(im,b[i])}
+  a=d.querySelectorAll('input,select,textarea');b=k.querySelectorAll('input,select,textarea');
+  for(i=0;i<a.length;i++){if(a[i].tagName==='SELECT'){[].forEach.call(b[i].options,function(o,j){if(j===a[i].selectedIndex)o.setAttribute('selected','');else o.removeAttribute('selected')})}else if(a[i].type==='checkbox'||a[i].type==='radio'){if(a[i].checked)b[i].setAttribute('checked','');else b[i].removeAttribute('checked')}else if(a[i].tagName==='TEXTAREA')b[i].textContent=a[i].value;else b[i].setAttribute('value',a[i].value)}
+  [].forEach.call(k.querySelectorAll('script,iframe,.vzp,#vzps'),function(x){x.parentNode.removeChild(x)});
+  var h=k.querySelector('head')||k,ba=d.createElement('base');ba.href=d.baseURI;h.insertBefore(ba,h.firstChild);
+  return '<!doctype html>'+k.outerHTML}
+function yazdir(){var d=belge();if(!d)return;var s=d.getElementById('vzps'),u=d.getElementById('vzpu'),a=d.getElementById('vzpa');
+  if(!s){s=d.createElement('style');s.id='vzps';s.textContent='.vzp{display:none}@media print{.vzp{display:flex!important;align-items:center;justify-content:space-between;gap:16px;font:13px/1.4 Arial,sans-serif;color:#14233b}#vzpu{border-bottom:2px solid #004aad;padding:0 0 10px;margin:0 0 14px}#vzpu img{height:44px;max-width:200px;object-fit:contain}#vzpu b{font-size:17px}#vzpa{border-top:1px solid #c9d3e3;padding:8px 0 0;margin:16px 0 0;font-size:11px;color:#5b6b85}}';d.head.appendChild(s);
+    u=d.createElement('div');u.id='vzpu';u.className='vzp';d.body.insertBefore(u,d.body.firstChild);a=d.createElement('div');a.id='vzpa';a.className='vzp';d.body.appendChild(a)}
+  u.innerHTML='<span style="display:flex;align-items:center;gap:10px">'+(marka.logo?'<img alt="" src="'+marka.logo+'">':'')+(marka.ad?'<b>'+kacis(marka.ad)+'</b>':(marka.logo?'':'<b>Vizus</b>'))+'</span><span style="text-align:right"><b style="font-size:14px">'+kacis(acik.ad)+'</b><br>'+tarihYaz(acik.kayit?acik.kayit.tarih:Date.now())+'</span>';
+  a.innerHTML='<span>Vizus · app.cagataygulumser.com</span><span>Bilgilendirme ve gösterim amaçlıdır; tıbbi rapor ya da reçete değildir.</span>';
+  try{$('cerceve').contentWindow.focus();$('cerceve').contentWindow.print()}catch(e){bilgi('Bu cihazda yazdırma açılamadı.')}}
+function kayitSor(){var on=acik.ad+' · '+new Date().toLocaleDateString('tr-TR');
+  $('altIc').innerHTML='<h3>Sonucu kaydet</h3><label class="alan" for="kBas">Kayıt adı<input id="kBas" type="text" maxlength="60" value="'+kacis(on)+'"></label><p style="color:var(--soluk);font-size:13px">Kayıt yalnızca bu cihazda saklanır. Kişi adı yazacaksanız cihazınızı başkalarıyla paylaşmadığınızdan emin olun.</p><div class="sira"><button class="vaz" id="aVaz" style="padding:0 14px">Vazgeç</button><button class="dug" id="kTamam">Kaydet</button></div>';
+  $('kBas').focus();$('kBas').select()}
+function kayitYap(){var d=belge();if(!d)return;var z=Date.now(),r={id:String(z),baslik:($('kBas').value.trim()||acik.ad).slice(0,60),arac:acik.id,ad:acik.ad,tarih:z,html:anlik(d)};
+  vtIs('readwrite',function(s){return s.put(r)}).then(kayitYukle).then(function(){altKapat();bilgi('Kaydedildi. Favoriler sekmesinde, Kayıtlar altında.')}).catch(function(){altKapat();bilgi('Kaydedilemedi; cihazda yer kalmamış olabilir.')})}
+function kayitAc(id){vtIs('readonly',function(s){return s.get(id)}).then(function(r){if(!r)return;acik={id:'kayit',ad:r.baslik,kayit:r};$('gAd').textContent=r.baslik;$('gFav').classList.add('gizli');blobU=URL.createObjectURL(new Blob([r.html],{type:'text/html'}));git(blobU);markaCiz();$('gorunum').classList.remove('gizli');history.pushState({k:id},'','#kayit');$('geri').focus()})}
+var CDN='vizus-cdn';
+function indir(){if(!('caches' in window)){bilgi('Bu tarayıcı çevrimdışı saklamayı desteklemiyor.');return}
+  var L=K.cevrimdisi,n=0,hata=0,b=$('indir'),p=$('indP'),m=$('indM');b.disabled=true;
+  caches.open(CDN).then(function(c){function sira(){if(n>=L.length){yaz('indi',{t:Date.now(),n:L.length-hata,top:L.length});b.disabled=false;ciz();bilgi(hata?(L.length-hata)+' dosya indi, '+hata+' dosya alınamadı. İnternet varken yeniden deneyin.':'Tüm araçlar indirildi; internet olmadan da açılır.');return}
+    var u=L[n];fetch(u,{mode:'cors',cache:'reload'}).then(function(r){if(!r.ok)throw 0;return c.put(u,r)}).catch(function(){hata++}).then(function(){n++;if(p)p.style.width=Math.round(n/L.length*100)+'%';if(m)m.textContent=n+' / '+L.length+' dosya';sira()})}sira()})}
 function basla(){$('karsilama').classList.toggle('gizli',!!kim);$('kabuk').classList.toggle('gizli',!kim);if(kim)ciz()}
 
 document.addEventListener('click',function(e){
+  if(e.target.id==='alt'){altKapat();return}
   var b=e.target.closest('button');if(!b)return;
   if(b.dataset.kim){kim=b.dataset.kim;yaz('kim',kim);sekme='ana';basla();window.scrollTo(0,0)}
   else if(b.dataset.a)ac(b.dataset.a);
+  else if(b.dataset.k)kayitAc(b.dataset.k);
+  else if(b.dataset.sil){if(b.classList.contains('emin')){var sid=b.dataset.sil;vtIs('readwrite',function(s){return s.delete(sid)}).then(kayitYukle).then(function(){ciz();bilgi('Kayıt silindi.')})}else{b.classList.add('emin');b.textContent='Emin?';setTimeout(function(){if(b.isConnected){b.classList.remove('emin');b.textContent='Sil'}},3500)}}
+  else if(b.id==='gDiger')altMenu();
+  else if(b.id==='aVaz')altKapat();
+  else if(b.id==='aKaydet')kayitSor();
+  else if(b.id==='aYazdir'){altKapat();yazdir()}
+  else if(b.id==='kTamam')kayitYap();
+  else if(b.id==='indir')indir();
   else if(b.dataset.s){sekme=b.dataset.s;$('q').value='';ciz();window.scrollTo(0,0)}
   else if(b.id==='modDug'){sekme='pro';$('q').value='';ciz()}
   else if(b.id==='degis'){kim=kim==='dr'?'opt':'dr';yaz('kim',kim);sekme='ana';ciz()}
   else if(b.id==='geri')history.back();
-  else if(b.id==='gFav'){var i=fav.indexOf(acik.id);if(i>-1)fav.splice(i,1);else fav.unshift(acik.id);yaz('fav',fav);b.className=i>-1?'':'dolu'}
+  else if(b.id==='gFav'){if(acik.kayit)return;var i=fav.indexOf(acik.id);if(i>-1)fav.splice(i,1);else fav.unshift(acik.id);yaz('fav',fav);b.className=i>-1?'':'dolu'}
   else if(b.id==='gTam'){$('gorunum').classList.add('tam');$('cik').classList.remove('gizli');markaCiz();var el=document.documentElement;if(el.requestFullscreen)el.requestFullscreen().catch(function(){})}
   else if(b.id==='cik'){$('gorunum').classList.remove('tam');b.classList.add('gizli');markaCiz();if(document.fullscreenElement)document.exitFullscreen()}
   else if(b.id==='mSil'){marka={ad:'',logo:''};yaz('marka',marka);markaCiz();ciz()}
@@ -220,6 +291,8 @@ document.addEventListener('change',function(e){if(e.target.id!=='mLogo'||!e.targ
   im.onload=function(){var k=Math.min(1,360/im.naturalWidth,160/im.naturalHeight),c=document.createElement('canvas');c.width=Math.max(1,Math.round(im.naturalWidth*k));c.height=Math.max(1,Math.round(im.naturalHeight*k));c.getContext('2d').drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);marka.logo=c.toDataURL('image/png');yaz('marka',marka);markaCiz();ciz()};
   im.onerror=function(){URL.revokeObjectURL(u);$('mOnz').textContent='Görsel okunamadı'};im.src=u});
 window.addEventListener('popstate',function(){if(acik)kapat()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!$('alt').classList.contains('gizli'))altKapat();else if(e.key==='Enter'&&e.target.id==='kBas')kayitYap()});
+kayitYukle().then(function(){if(kim&&sekme==='fav')ciz()});
 document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement){$('gorunum').classList.remove('tam');$('cik').classList.add('gizli');markaCiz()}});
 var kurOlay=null;window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();kurOlay=e;if($('kur'))$('kur').classList.remove('gizli')});
 if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js');
