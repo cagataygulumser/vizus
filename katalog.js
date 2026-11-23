@@ -4,7 +4,10 @@ window.KATALOG = (function () {
   function y(id, ad, kim, grup, kisa, dosya, kok, pro) { return { id: id, ad: ad, kim: kim, grup: grup, kisa: kisa, tur: 'yerel', dosya: dosya, kok: kok, pro: !!pro }; }
   function s(id, ad, kim, grup, kisa, slug, pro) { return { id: id, ad: ad, kim: kim, grup: grup, kisa: kisa, tur: 'site', url: S + slug + '.html', pro: !!pro }; }
   var K = 'araclar/klinik/', A = 'araclar/';
+  /* Araç kodu tek kaynaktan gelir: sitedeki araçlarla aynı depo (blog-font). */
+  var KOK = 'https://cdn.jsdelivr.net/gh/cagataygulumser/blog-font@main/';
   return {
+    kok: KOK,
     gruplar: [
       ['magaza', 'Mağazada gösterin'], ['olcu', 'Ölçü ve hesap'], ['egitim', 'Eğitim ve sınav'], ['mevzuat', 'Mevzuat'],
       ['muayene', 'Muayene araçları'], ['sasilik', 'Şaşılık ve nöro'], ['cerrahi', 'Katarakt ve retina'], ['kayit', 'Kayıt ve kodlama'], ['test', 'Göz testleri']

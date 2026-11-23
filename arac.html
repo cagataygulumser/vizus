@@ -8,9 +8,9 @@
   document.title=t.ad;
   function css(h){var l=document.createElement('link');l.rel='stylesheet';l.href=h;document.head.appendChild(l)}
   function js(h,cb){var s=document.createElement('script');s.src=h;s.onload=cb;s.onerror=function(){sar.innerHTML='<p id="yok">Araç yüklenemedi. Bağlantınızı kontrol edip yeniden deneyin.</p>'};document.body.appendChild(s)}
-  css(t.id==='studyo'?'cam-gosterim/cgs.css':'araclar/arac.css');
-  if(t.id==='tarayici'||t.id==='studyo'){css('araclar/arac.css')}
+  var R=KATALOG.kok;css(R+(t.id==='studyo'?'cam-gosterim/cgs.css':'araclar/arac.css'));
+  if(t.id==='tarayici'||t.id==='studyo'){css(R+'araclar/arac.css')}
   var d=document.createElement('div');d.id=t.kok;if(t.id!=='studyo')d.className='cgt';sar.appendChild(d);
-  if(t.dosya.indexOf('klinik/')>-1)js('araclar/klinik/ortak.js',function(){js(t.dosya)});else js(t.dosya);
+  if(t.dosya.indexOf('klinik/')>-1)js(R+'araclar/klinik/ortak.js',function(){js(R+t.dosya)});else js(R+t.dosya);
 })();
 </script></body></html>
