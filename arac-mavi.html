@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Mavi Işık Simülatörü</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&display=swap">
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#vz{padding:14px 14px calc(28px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#vz img{max-width:100%;height:auto}</style></head>
+<body><script>window.cgOptimizePostImages=window.cgOptimizePostImages||function(){};</script><div id="vz">
+<div class="cgb" id="cgb">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Manrope:wght@400;500;700&display=swap');
+.cgb{--blue:#004aad;--night:#0a1630;--amber:#ffc83d;--ink:#1d2a44;--soft:#f2f6fd;--line:#d6e1f3;max-width:1180px;margin:0 auto;color:var(--ink);font:17px/1.65 Manrope,Arial,sans-serif;text-align:left}
+.cgb *{box-sizing:border-box}
+.cgb,.cgb p,.cgb li,.cgb div,.cgb label,.cgb span,.cgb a,.cgb button{font-family:Manrope,Arial,sans-serif!important}
+.cgb h2,.cgb h3,.cgb .read b{font-family:'Exo 2',Arial,sans-serif!important;color:var(--night);margin:0;line-height:1.15;letter-spacing:-.01em}
+.cgb h2{font-size:clamp(1.6rem,3.4vw,2.5rem)!important;font-weight:800}
+.cgb h3{font-size:1.2rem!important;font-weight:700;margin-bottom:10px}
+.cgb p{margin:0 0 1em;max-width:68ch}
+.cgb a{color:var(--blue);font-weight:700}
+.cgb .intro{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:end;margin:8px 0 22px}
+.cgb .intro p{margin:0;font-size:1.05rem}
+.cgb .stage{border-radius:22px;overflow:hidden;background:var(--soft);box-shadow:0 24px 60px -28px rgba(0,40,110,.55)}
+.cgb .views{display:grid;grid-template-columns:1.2fr 1fr;background:var(--night)}
+.cgb canvas{display:block;width:100%;height:clamp(260px,34vw,430px)}
+.cgb .bar{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;background:linear-gradient(100deg,#004aad,#2f86ff);padding:16px 18px;color:#fff}
+.cgb .rng{display:flex;align-items:center;gap:12px;font-weight:700;flex:1 1 300px}
+.cgb .rng input{flex:1;accent-color:var(--amber);height:28px;cursor:pointer}
+.cgb .seg{display:inline-flex;flex-wrap:wrap;background:rgba(0,20,70,.35);border-radius:12px;padding:4px}
+.cgb .seg button,.cgb .tog{font-weight:700;font-size:.92rem;color:#fff;background:none;border:0;padding:9px 14px;border-radius:9px;cursor:pointer}
+.cgb .seg button[aria-pressed=true]{background:#fff;color:var(--blue)}
+.cgb .tog{background:rgba(0,20,70,.35);border-radius:12px;padding:13px 16px}
+.cgb .tog[aria-pressed=true]{background:var(--amber);color:var(--night)}
+.cgb button:focus-visible,.cgb input:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.cgb .chk{display:flex;gap:9px;align-items:center;font-weight:500;font-size:.95rem;cursor:pointer}
+.cgb .chk input{width:19px;height:19px;accent-color:var(--amber)}
+.cgb .read{display:grid;grid-template-columns:repeat(3,1fr)}
+.cgb .read>div{padding:20px 22px;border-left:1px solid var(--line);display:flex;gap:14px;align-items:center}
+.cgb .read>div:first-child{border-left:0}
+.cgb .read b{font-size:2.3rem;font-weight:800;min-width:3.4ch}
+.cgb .read span{font-size:.95rem;line-height:1.4}
+.cgb .read i{width:58px;height:58px;border-radius:12px;border:1px solid var(--line);flex:none}
+.cgb .say{margin:0;padding:16px 22px;border-top:1px solid var(--line);max-width:none;font-weight:500}
+.cgb .chips{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;padding:6px 22px 22px}
+.cgb .chips div{font-size:.85rem;text-align:center}
+.cgb .chips i{display:block;height:64px;border-radius:12px;margin-bottom:6px;border:1px solid var(--line)}
+.cgb .note{font-size:.88rem;color:#4a5a78;margin:12px 2px 0}
+.cgb section{margin-top:64px}
+.cgb section>h2{margin-bottom:14px}
+.cgb .dots{position:relative;aspect-ratio:50/20;margin:22px 0;background:radial-gradient(circle,#9db9ea 36%,transparent 39%) 0 0/2% 5%}
+.cgb .dots i{position:absolute;left:62%;top:45%;width:2%;height:5%;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px var(--night),0 0 0 9px rgba(255,200,61,.45)}
+.cgb .two{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid var(--night);margin-top:20px}
+.cgb .two>div{padding:24px 28px 8px 0}
+.cgb .two>div+div{padding-left:28px;border-left:1px solid var(--line)}
+.cgb .two ul{margin:0;padding-left:20px}
+.cgb .two li{margin-bottom:10px}
+.cgb .end{background:var(--night);color:#e8eefc;border-radius:22px;padding:34px 36px;display:grid;grid-template-columns:1.4fr 1fr;gap:34px}
+.cgb .end h2{color:#fff;margin-bottom:12px}
+.cgb .end p{color:#d5def2}
+.cgb .end ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;align-content:center}
+.cgb .end li a{display:block;background:#fff;color:var(--blue);text-decoration:none;padding:13px 16px;border-radius:12px}
+.cgb .end li a:hover{background:var(--amber);color:var(--night)}
+.cgb .src{font-size:.88rem;color:#4a5a78;margin-top:30px;border-top:1px solid var(--line);padding-top:16px}
+.cgb .src p{max-width:none;margin:0 0 6px}
+@media(max-width:820px){
+.cgb{font-size:16px}
+.cgb .intro,.cgb .end,.cgb .two,.cgb .views,.cgb .read{grid-template-columns:1fr;gap:12px}
+.cgb .views,.cgb .read{gap:0}
+.cgb canvas{height:250px}
+.cgb .read>div{border-left:0;border-top:1px solid var(--line);padding:14px 18px}
+.cgb .two>div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+.cgb .chips{grid-template-columns:repeat(3,1fr);padding:6px 18px 18px}
+.cgb .dots{aspect-ratio:25/40;background-size:4% 2.5%}
+.cgb .dots i{width:4%;height:2.5%;left:60%;top:45%}
+.cgb .end{padding:26px 22px}
+.cgb section{margin-top:48px}
+}
+</style>
+
+<div class="intro">
+<h2>Maviyi ne kadar keserseniz, dünya o kadar sararır.</h2>
+<p>Mavi ışık filtreli camın içinden bakınca gerçekten ne değişir? Filtreyi kendiniz ayarlayın. Solda camın içinden görünen masa, sağda ışığın tayfı var: cam hangi renkleri tutuyor, hangilerini geçiriyor, aynı anda izleyin.</p>
+</div>
+
+<div class="stage">
+<div class="views">
+<canvas id="cgb-sc" role="img" aria-label="Camın içinden görünen çalışma masası: ekran, beyaz kupa, mavi defter ve kırmızı elma. Filtre gücü arttıkça sahne sararır."></canvas>
+<canvas id="cgb-sp" role="img" aria-label="Işık tayfı grafiği: soluk alan kaynaktan çıkan ışığı, dolu alan camdan geçen ışığı, kesikli çizgi camın geçirdiği oranı gösterir."></canvas>
+</div>
+<div class="bar">
+<label class="rng"><span>Filtre gücü</span><input type="range" id="cgb-s" min="0" max="100" value="20"></label>
+<div class="seg" role="group" aria-label="Hazır ayarlar">
+<button type="button" data-p="20" aria-pressed="true">Şeffaf mavi ışık camı</button>
+<button type="button" data-p="50" aria-pressed="false">Sarı tonlu cam</button>
+<button type="button" data-p="95" aria-pressed="false">Amber filtre</button>
+</div>
+<div class="seg" role="group" aria-label="Işık kaynağı">
+<button type="button" data-k="led" aria-pressed="true">Ekran ışığı</button>
+<button type="button" data-k="day" aria-pressed="false">Gün ışığı</button>
+<button type="button" data-k="inc" aria-pressed="false">Sarı ampul</button>
+</div>
+<button type="button" class="tog" id="cgb-off" aria-pressed="false">Gözlüğü çıkar</button>
+<label class="chk"><input type="checkbox" id="cgb-ad"> Gözüm alıştı</label>
+</div>
+<div class="read">
+<div><b id="cgb-n1"></b><span>mavi-mor ışık azaldı<br>(400–455 nm arası)</span></div>
+<div><b id="cgb-n2"></b><span>toplam parlaklık azaldı</span></div>
+<div><i id="cgb-w"></i><span>beyaz kâğıt camın içinden bu renkte görünüyor</span></div>
+</div>
+<p class="say" id="cgb-say"></p>
+<div class="chips" id="cgb-ch"></div>
+</div>
+<p class="note">Grafikte soluk alan kaynaktan çıkan ışığı, dolu alan camdan geçeni, kesikli çizgi camın geçirdiği oranı gösterir. Renk kutularında üst yarı gerçek renk, alt yarı camın içinden görünen renktir. Hesap basitleştirilmiş bir modeldir; gerçek camların eğrileri markaya göre değişir.</p>
+
+<section>
+<h2>Ekrandaki mavi ışık, gökyüzündekinin yanında ne kadar?</h2>
+<p>Aşağıda bin nokta var. Hepsi birlikte, açık havada gün ışığından gözünüze gelen mavi ışığı temsil ediyor. Sarı olan tek nokta ise ekranınızdan gelen.</p>
+<div class="dots" role="img" aria-label="Bin noktalık ızgara; yalnızca bir tanesi sarı."><i></i></div>
+<p>Cochrane derlemesinin ilk yazarı Dr. Sumeer Singh'in ifadesiyle, ekranlardan aldığımız mavi ışık gün ışığından aldığımızın yaklaşık binde biri. Şeffaf bir mavi ışık camı da o tek noktanın yalnızca yüzde 10 ile 25'ini tutuyor. Daha fazlasını kesmek için ne gerektiğini yukarıda gördünüz: cam amber olmak zorunda.</p>
+</section>
+
+<section>
+<h2>Peki bu cam ne yapar, ne yapmaz?</h2>
+<div class="two">
+<div><h3>Kesin olanlar</h3><ul>
+<li>Mavi-mor ışığın bir kısmını azaltır.</li>
+<li>Beyazları hafifçe ısıtır. Çoğu kişi birkaç gün sonra fark etmez.</li>
+<li>Dışarıdan bakınca mavi-mor bir yansıma verir.</li>
+<li>Genellikle antirefle özelliği de taşır; cam yüzeyindeki yansımalar azalır.</li>
+</ul></div>
+<div><h3>Kanıtın yetmediği yerler</h3><ul>
+<li>Göz yorgunluğu: 17 çalışmayı inceleyen Cochrane derlemesi, filtresiz camlara göre kısa vadede fark görmedi.</li>
+<li>Uyku: Sonuçlar net değil.</li>
+<li>Retina sağlığı: İncelenen çalışmalar bunu ölçmedi bile. Yani “korur” da “korumaz” da diyemeyiz.</li>
+</ul></div>
+</div>
+<p style="margin-top:22px">Ekran başındaki yorgunluğun asıl nedeni çoğu zaman daha az göz kırpmak ve uzun süre yakına bakmak. Burada işe yarayan şey mola vermek. <a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/20-20-20-ekran-molasi-zamanlayici.html">20-20-20 zamanlayıcısını</a> deneyebilirsiniz.</p>
+</section>
+
+<section>
+<div class="end">
+<div><h2>Kısacası…</h2><p>Şeffaf bir mavi ışık camı mavinin küçük bir kısmını tutar ve renklere neredeyse dokunmaz. Mavinin çoğunu tutan bir cam ise artık şeffaf değildir. İkisi aynı anda olmuyor.</p><p>Artık “mavi ışık filtresi” denince camın içinde ne olduğunu biliyorsunuz :) Hangi camın size uygun olduğunu göz hekiminiz ve optisyeninizle birlikte konuşun.</p></div>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/surucu-cami-simulatoru.html">Sürücü Camı Simülatörü'nü aç</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/mavi-isk-cam-ve-surucu-cam-fark.html">İki camı yan yana karşılaştır</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/goz-testleri.html">Göz testlerine göz at</a></li>
+</ul>
+</div>
+<div class="src">
+<p><strong>Kaynaklar</strong></p>
+<p>Cochrane derlemesi (2023), mavi ışık filtreli gözlük camları: <a href="https://www.college-optometrists.org/news/2023/september/review-of-blue-light-filtering-blocking-lenses" rel="nofollow noopener noreferrer" target="_blank">College of Optometrists özeti</a>, <a href="https://www.citystgeorges.ac.uk/news-and-events/news/2023/08/blue-light-filtering-spectacles-probably-no-difference-eye-strain-visual-performance-sleep-quality" rel="nofollow noopener noreferrer" target="_blank">City St George's, University of London</a></p>
+<p>Dr. Sumeer Singh'in açıklaması: <a href="https://ktvz.com/health/cnn-health/2023/08/17/blue-light-glasses-dont-help-with-eye-strain-major-study-says/" rel="nofollow noopener noreferrer" target="_blank">CNN haberi</a></p>
+<p>Bu sayfa genel bilgilendirme amaçlıdır; kişiye özel cam önerisi ya da tıbbi tavsiye içermez.</p>
+</div>
+</section>
+
+<script>
+(function(){
+var c1=document.getElementById('cgb-sc'),c2=document.getElementById('cgb-sp'),x1=c1.getContext('2d'),x2=c2.getContext('2d');
+var st={s:.2,k:'led',off:false,ad:false},dpr=1;
+function g(l,m,a,b){var s=l<m?a:b;return Math.exp(-.5*Math.pow((l-m)/s,2));}
+function src(l){return st.k==='led'?g(l,450,10,12)+.72*g(l,565,48,62):st.k==='day'?1-.0006*(l-560):Math.exp((l-560)/130);}
+function T(l){if(st.s<=0)return 1;var cut=428+92*st.s,d=.18+.8*st.s;return 1-d/(1+Math.exp((l-cut)/11));}
+function calc(){var X=0,Y=0,Z=0,X0=0,Y0=0,Z0=0,b=0,b0=0;for(var l=380;l<=730;l+=5){var S=src(l),t=T(l),x=1.056*g(l,599.8,37.9,31)+.362*g(l,442,16,26.7)-.065*g(l,501.1,20.4,26.2),y=.821*g(l,568.8,46.9,40.5)+.286*g(l,530.9,16.3,31.1),z=1.217*g(l,437,11.8,36)+.681*g(l,459,26,13.8);X0+=S*x;Y0+=S*y;Z0+=S*z;X+=S*t*x;Y+=S*t*y;Z+=S*t*z;if(l>=400){if(l<=455){b0+=S;b+=S*t;}}}
+function rgb(X,Y,Z){return[3.2406*X-1.5372*Y-.4986*Z,-.9689*X+1.8758*Y+.0415*Z,.0557*X-.204*Y+1.057*Z];}
+var a=rgb(X,Y,Z),a0=rgb(X0,Y0,Z0),t=a.map(function(v,i){return Math.min(1,Math.pow(Math.max(0,v/a0[i]),1/2.2));});
+if(st.ad){var m=(t[0]+t[1]+t[2])/3;t=t.map(function(v){return v+(m-v)*.65;});}
+return{blue:1-b/b0,lum:1-Y/Y0,t:t};}
+function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
+function css(t,base){return'rgb('+base.map(function(v,i){return Math.round(v*t[i]);}).join(',')+')';}
+function scene(t){var c=x1,W=c1.width,H=c1.height,u=Math.min(W,H*1.45),dy=H*.74,i;
+c.fillStyle='#edf1f8';c.fillRect(0,0,W,H);
+c.fillStyle='rgba(255,255,255,.75)';c.beginPath();c.moveTo(W*.62,0);c.lineTo(W*.86,0);c.lineTo(W*.74,dy);c.lineTo(W*.5,dy);c.fill();
+c.fillStyle='#c79f72';c.fillRect(0,dy,W,H-dy);c.fillStyle='#b0875b';c.fillRect(0,dy,W,H*.018);
+var mh=Math.min(H*.5,W*.3),mw=mh/.6,mx=W*.07,my=dy-mh-H*.075;
+c.fillStyle='#2b3140';c.fillRect(mx+mw*.45,my+mh-2,mw*.1,H*.075+2);rr(c,mx+mw*.3,dy-H*.014,mw*.4,H*.028,4);c.fill();
+c.fillStyle='#1b1f2a';rr(c,mx,my,mw,mh,mw*.025);c.fill();
+var sx=mx+mw*.02,sy=my+mw*.02,sw=mw*.96,sh=mh-mw*.04;
+c.fillStyle='#fff';c.fillRect(sx,sy,sw*.46,sh);c.fillStyle='#1d2a44';c.fillRect(sx+sw*.04,sy+sh*.1,sw*.26,sh*.06);
+c.fillStyle='#8792a8';for(i=0;i<6;i++)c.fillRect(sx+sw*.04,sy+sh*(.24+i*.085),sw*(i%3===2?.26:.37),sh*.028);
+c.fillStyle='#2f6fed';rr(c,sx+sw*.04,sy+sh*.8,sw*.16,sh*.1,sh*.02);c.fill();
+c.save();c.beginPath();c.rect(sx+sw*.46,sy,sw*.54,sh);c.clip();
+c.fillStyle='#4c9be8';c.fillRect(sx+sw*.46,sy,sw*.54,sh);
+c.fillStyle='#ffd84a';c.beginPath();c.arc(sx+sw*.88,sy+sh*.22,sh*.09,0,7);c.fill();
+c.fillStyle='#fff';[[.58,.3,.09],[.66,.27,.11],[.74,.31,.08]].forEach(function(o){c.beginPath();c.ellipse(sx+sw*o[0],sy+sh*o[1],sh*o[2]*1.5,sh*o[2],0,0,7);c.fill();});
+c.fillStyle='#3f9b4a';c.beginPath();c.moveTo(sx+sw*.46,sy+sh);c.lineTo(sx+sw*.46,sy+sh*.7);c.quadraticCurveTo(sx+sw*.7,sy+sh*.45,sx+sw,sy+sh*.72);c.lineTo(sx+sw,sy+sh);c.fill();
+c.fillStyle='#2f7d3a';c.beginPath();c.moveTo(sx+sw*.46,sy+sh);c.quadraticCurveTo(sx+sw*.8,sy+sh*.7,sx+sw,sy+sh*.92);c.lineTo(sx+sw,sy+sh);c.fill();c.restore();
+var gx=W*.66,gw=u*.085,gh=u*.11;c.strokeStyle='#fff';c.lineWidth=u*.016;c.beginPath();c.arc(gx+gw,dy-gh*.5,gh*.28,-1.3,1.3);c.stroke();
+c.fillStyle='#fff';rr(c,gx,dy-gh,gw,gh,u*.01);c.fill();c.fillStyle='#dfe5ee';c.fillRect(gx,dy-gh,gw,gh*.1);
+var nx=W*.79,nw=Math.min(u*.19,W*.19),nh=u*.03;c.fillStyle='#2456c9';rr(c,nx,dy-nh,nw,nh,3);c.fill();c.fillStyle='#fff';c.fillRect(nx+nw*.03,dy-nh*.72,nw*.94,nh*.3);
+var ar=u*.042,ax=nx+nw*.5,ay=dy-nh-ar*.94;c.fillStyle='#d8352a';c.beginPath();c.arc(ax,ay,ar,0,7);c.fill();c.strokeStyle='#5b3a1c';c.lineWidth=u*.006;c.beginPath();c.moveTo(ax,ay-ar*.9);c.lineTo(ax+ar*.15,ay-ar*1.35);c.stroke();
+c.fillStyle='#3f9b4a';c.beginPath();c.ellipse(ax+ar*.5,ay-ar*1.25,ar*.4,ar*.18,-.5,0,7);c.fill();
+if(!st.off){c.save();c.globalCompositeOperation='multiply';c.fillStyle=css(t,[255,255,255]);c.fillRect(0,0,W,H);c.restore();
+var lw=u*.028;c.strokeStyle='#10182c';c.lineWidth=lw;rr(c,lw/2,lw/2,W-lw,H-lw,u*.12);c.stroke();
+c.fillStyle='#10182c';c.beginPath();c.rect(0,0,W,H);c.moveTo(lw*.5+u*.12,lw*.5);c.arcTo(W-lw*.5,lw*.5,W-lw*.5,H-lw*.5,u*.12);c.arcTo(W-lw*.5,H-lw*.5,lw*.5,H-lw*.5,u*.12);c.arcTo(lw*.5,H-lw*.5,lw*.5,lw*.5,u*.12);c.arcTo(lw*.5,lw*.5,W-lw*.5,lw*.5,u*.12);c.closePath();c.fill('evenodd');}}
+function spec(){var c=x2,W=c2.width,H=c2.height,pl=W*.07,pw=W*.87,top=H*.16,ph=H*.66,fs=Math.max(11,Math.round(H*.042)),l,mx=0;
+function X(l){return pl+(l-380)/350*pw;}function Yv(v){return top+ph*(1-v);}
+c.fillStyle='#0a1630';c.fillRect(0,0,W,H);
+for(l=380;l<=730;l+=5)mx=Math.max(mx,src(l));
+var gr=c.createLinearGradient(pl,0,pl+pw,0);[[380,'#4b0082'],[420,'#5a2bff'],[460,'#1f6bff'],[490,'#12c4c4'],[530,'#3fd24a'],[580,'#f3e53a'],[610,'#ff9a1e'],[660,'#e8261d'],[730,'#7a0b0b']].forEach(function(o){gr.addColorStop((o[0]-380)/350,o[1]);});
+function area(f,a){c.globalAlpha=a;c.fillStyle=gr;c.beginPath();c.moveTo(X(380),Yv(0));for(var l=380;l<=730;l+=5)c.lineTo(X(l),Yv(f(l)/mx*.9));c.lineTo(X(730),Yv(0));c.fill();c.globalAlpha=1;}
+area(src,.26);area(function(l){return src(l)*(st.off?1:T(l));},1);
+c.fillStyle='rgba(255,255,255,.09)';c.fillRect(X(400),top,X(455)-X(400),ph);
+c.font='700 '+fs+'px Manrope,Arial,sans-serif';c.fillStyle='#cfdcf7';c.textAlign='center';c.fillText('mavi-mor',X(427),top-fs*.5);
+if(!st.off){c.strokeStyle='#fff';c.lineWidth=Math.max(2,H*.006);c.setLineDash([H*.02,H*.014]);c.beginPath();for(l=380;l<=730;l+=5){if(l===380)c.moveTo(X(l),Yv(T(l)));else c.lineTo(X(l),Yv(T(l)));}c.stroke();c.setLineDash([]);c.textAlign='right';c.fillStyle='#fff';c.fillText('camın geçirdiği oran',pl+pw,top-fs*.5);}
+c.strokeStyle='rgba(255,255,255,.3)';c.lineWidth=1;c.beginPath();c.moveTo(pl,Yv(0));c.lineTo(pl+pw,Yv(0));c.stroke();
+c.fillStyle='#9fb0d0';c.textAlign='center';c.font='500 '+fs+'px Manrope,Arial,sans-serif';[400,500,600,700].forEach(function(v){c.fillText(v+' nm',X(v),Yv(0)+fs*1.7);});}
+var CH=[['Beyaz kâğıt',[255,255,255]],['Gökyüzü',[76,155,232]],['Kot',[47,79,143]],['Yaprak',[63,155,74]],['Ten',[224,172,138]],['Domates',[216,53,42]]];
+var box=document.getElementById('cgb-ch');CH.forEach(function(o){var d=document.createElement('div'),i=document.createElement('i');d.appendChild(i);d.appendChild(document.createTextNode(o[0]));box.appendChild(d);o.push(i);});
+function pct(v){return'%'+Math.round(Math.max(0,v)*100);}
+function update(){var r=calc(),t=st.off?[1,1,1]:r.t,p=st.s*100,say;
+scene(t);spec();
+document.getElementById('cgb-n1').textContent=st.off?'%0':pct(r.blue);
+document.getElementById('cgb-n2').textContent=st.off?'%0':pct(r.lum);
+document.getElementById('cgb-w').style.background=css(t,[255,255,255]);
+CH.forEach(function(o){var a=css([1,1,1],o[1]),b=css(t,o[1]);o[2].style.background='linear-gradient('+a+' 50%,'+b+' 50%)';});
+if(st.off)say='Gözlük çıkarıldı: ışığın tamamı olduğu gibi geliyor. Farkı görmek için düğmeye yeniden basın.';
+else if(p===0)say='Filtre yok: bütün renkler olduğu gibi geçiyor.';
+else if(p<=30)say='Piyasadaki şeffaf mavi ışık camları bu bölgede. Mavi-mor ışığın küçük bir kısmı azalıyor, beyazlar belli belirsiz ısınıyor. Görsel fark bu kadar.';
+else if(p<=70)say='Maviyi yarı yarıya kesmek için camın gözle görülür biçimde sarı olması gerekiyor. Gökyüzü ve kot rengi solmaya başladı.';
+else say='Mavinin neredeyse tamamı gitti, ama beyaz kâğıt da amber oldu. Bu artık günlük bir gözlük camı değil, bir filtre; renklerin önemli olduğu işlerde kullanışlı olmaz.';
+if(st.ad){if(!st.off)say+=' “Gözüm alıştı” açık: beyniniz bir süre sonra bu tonu kısmen dengeler, o yüzden fark ilk andaki kadar göze batmaz.';}
+document.getElementById('cgb-say').textContent=say;
+Array.prototype.forEach.call(document.querySelectorAll('#cgb [data-p]'),function(b){b.setAttribute('aria-pressed',Number(b.getAttribute('data-p'))===Math.round(p)?'true':'false');});}
+function size(){dpr=Math.min(window.devicePixelRatio||1,2);[c1,c2].forEach(function(c){var r=c.getBoundingClientRect();c.width=Math.round(r.width*dpr);c.height=Math.round(r.height*dpr);});if(c1.width)update();}
+var rng=document.getElementById('cgb-s');
+rng.addEventListener('input',function(){st.s=rng.value/100;update();});
+Array.prototype.forEach.call(document.querySelectorAll('#cgb [data-p]'),function(b){b.addEventListener('click',function(){rng.value=b.getAttribute('data-p');st.s=rng.value/100;update();});});
+Array.prototype.forEach.call(document.querySelectorAll('#cgb [data-k]'),function(b){b.addEventListener('click',function(){st.k=b.getAttribute('data-k');Array.prototype.forEach.call(document.querySelectorAll('#cgb [data-k]'),function(o){o.setAttribute('aria-pressed',o===b?'true':'false');});update();});});
+var off=document.getElementById('cgb-off');off.addEventListener('click',function(){st.off=!st.off;off.setAttribute('aria-pressed',st.off?'true':'false');off.textContent=st.off?'Gözlüğü tak':'Gözlüğü çıkar';update();});
+document.getElementById('cgb-ad').addEventListener('change',function(e){st.ad=e.target.checked;update();});
+window.addEventListener('resize',size);size();
+if(document.fonts){document.fonts.ready.then(size);}
+})();
+</script>
+</div>
+
+</div></body></html>

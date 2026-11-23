@@ -176,7 +176,7 @@ function ac(id){
   var t=bul(id);if(!t)return;acik=t;
   son=[id].concat(son.filter(function(x){return x!==id})).slice(0,8);yaz('son',son);
   $('gAd').textContent=t.ad;$('gFav').className=fav.indexOf(id)>-1?'dolu':'';
-  $('cerceve').src=t.tur==='yerel'?'arac.html?a='+id:t.url;
+  $('cerceve').src=t.sayfa?t.sayfa:(t.tur==='yerel'?'arac.html?a='+id:t.url);
   $('gorunum').classList.remove('gizli');history.pushState({a:id},'','#'+id);$('geri').focus();
 }
 function kapat(){acik=null;$('gorunum').classList.add('gizli');$('gorunum').classList.remove('tam');$('cik').classList.add('gizli');$('cerceve').src='about:blank';ciz()}

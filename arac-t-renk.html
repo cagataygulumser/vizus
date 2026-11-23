@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Renk Körlüğü Testi</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&display=swap">
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#vz{padding:14px 14px calc(28px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#vz img{max-width:100%;height:auto}</style></head>
+<body><script>window.cgOptimizePostImages=window.cgOptimizePostImages||function(){};</script><div id="vz">
+<div class="rk-wrap" id="rk-wrap">
+<style>
+.rk-wrap{--blue:#004aad;--blue2:#2f86ff;--yellow:#ffd23f;--ink:#243247;--muted:#5f6b7d;--line:#dce3ec;max-width:860px;margin:auto;color:var(--ink);font:17px/1.72 Arial,Helvetica,sans-serif}
+.rk-wrap *{box-sizing:border-box}
+.rk-wrap h2{color:var(--blue);font-size:1.35em;margin:34px 0 10px;line-height:1.3}
+.rk-wrap h3{font-size:1.08em;margin:22px 0 6px;color:var(--ink)}
+.rk-wrap p{margin:0 0 14px}
+.rk-wrap a{color:var(--blue);font-weight:700}
+.rk-lead{font-size:1.12em;font-weight:600;border-left:5px solid var(--blue);padding:14px 18px;background:#f3f7ff;border-radius:8px;margin:0 0 18px}
+.rk-hero{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border-radius:16px;padding:26px 24px;margin:0 0 22px;box-shadow:0 10px 30px rgba(0,74,173,.18)}
+.rk-hero h2{color:#fff;margin:0 0 8px;font-size:1.5em}
+.rk-hero p{color:#eaf1ff;margin:0 0 16px}
+.rk-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.rk-chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:.9em;font-weight:600}
+.rk-btn{display:inline-block;border:0;cursor:pointer;border-radius:12px;padding:14px 26px;font:700 1.05em Arial,Helvetica,sans-serif;background:var(--yellow);color:#1b1b1b;box-shadow:0 6px 18px rgba(0,0,0,.18);transition:transform .12s,box-shadow .12s}
+.rk-btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.22)}
+.rk-btn.rk-ghost{background:#fff;color:var(--blue);border:2px solid var(--blue);box-shadow:none}
+.rk-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin:0 0 22px;box-shadow:0 8px 24px rgba(0,74,173,.08)}
+.rk-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:700;color:var(--blue);margin-bottom:8px}
+.rk-barwrap{height:8px;background:#e9eef7;border-radius:999px;overflow:hidden;margin-bottom:18px}
+.rk-bar{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:999px;transition:width .3s}
+.rk-plate{display:block;width:100%;max-width:380px;height:auto;margin:0 auto 14px;border-radius:50%;background:#fff}
+.rk-q{text-align:center;font-weight:700;font-size:1.1em;margin:0 0 12px}
+.rk-opts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:420px;margin:0 auto 10px}
+.rk-opt{border:2px solid var(--line);background:#f8faff;border-radius:12px;padding:16px 0;font:700 1.5em Arial,Helvetica,sans-serif;color:var(--blue);cursor:pointer;transition:all .12s}
+.rk-opt:hover{border-color:var(--blue2);background:#eef5ff}
+.rk-none{display:block;margin:0 auto;background:none;border:0;color:var(--muted);font:600 .98em Arial,Helvetica,sans-serif;text-decoration:underline;cursor:pointer;padding:8px}
+.rk-hint{text-align:center;color:var(--muted);font-size:.9em;margin:8px 0 0}
+.rk-res-head{border-radius:14px;padding:18px 20px;margin:0 0 16px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue2))}
+.rk-res-head.rk-ok{background:linear-gradient(135deg,#0d8f5a,#2fc48a)}
+.rk-res-head.rk-mid{background:linear-gradient(135deg,#d98a00,#ffb63b)}
+.rk-res-head.rk-bad{background:linear-gradient(135deg,#b4342e,#ef6b5c)}
+.rk-res-head h3{color:#fff;margin:0 0 4px;font-size:1.3em}
+.rk-res-head p{color:#fff;margin:0;opacity:.95}
+.rk-score{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}
+.rk-score div{flex:1 1 150px;background:#f3f7ff;border:1px solid #c9dcff;border-radius:12px;padding:12px 14px;text-align:center}
+.rk-score b{display:block;font-size:1.5em;color:var(--blue)}
+.rk-score span{font-size:.88em;color:var(--muted)}
+.rk-review{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin:0 0 16px}
+.rk-review div{border-radius:10px;padding:8px 10px;font-size:.88em;border:1px solid var(--line);background:#fafbfd}
+.rk-review .ok{border-color:#9fdcbf;background:#edfbf3}
+.rk-review .no{border-color:#f4b5ae;background:#fff0ee}
+.rk-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 6px}
+.rk-box{padding:16px 18px;margin:22px 0;border-radius:10px;background:#eef5ff;border:1px solid #c9dcff}
+.rk-warn{background:#fff8e8;border-color:#f1d28a}
+.rk-table{width:100%;border-collapse:collapse;margin:10px 0 20px;font-size:.95em}
+.rk-table th,.rk-table td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.rk-table th{background:#f3f7ff;color:var(--blue)}
+.rk-faq details{border:1px solid var(--line);border-radius:10px;padding:0 16px;margin:0 0 10px;background:#fff}
+.rk-faq summary{cursor:pointer;font-weight:700;padding:13px 0;color:var(--blue);list-style:none}
+.rk-faq summary::-webkit-details-marker{display:none}
+.rk-faq summary::before{content:"+";display:inline-block;width:22px;font-size:1.2em;color:var(--blue2)}
+.rk-faq details[open] summary::before{content:"\2013 "}
+.rk-faq p{padding:0 0 12px 22px;margin:0}
+.rk-list{padding-left:22px;margin:0 0 14px}
+.rk-list li{margin:0 0 6px}
+.rk-sr{position:absolute;left:-9999px}
+.rk-wrap .rk-hero h2{color:#fff!important}
+.rk-wrap .rk-hero p{color:#eaf1ff!important}
+.rk-wrap .rk-chip{color:#fff!important}
+.rk-wrap .rk-res-head h3,.rk-wrap .rk-res-head p{color:#fff!important}
+.rk-wrap .rk-top{color:#004aad!important}
+.rk-wrap .rk-btn{color:#1b1b1b!important}
+.rk-wrap .rk-btn.rk-ghost{color:#004aad!important}
+@media(max-width:600px){.rk-wrap{font-size:16px}.rk-hero{padding:20px 16px}.rk-card{padding:16px}.rk-opt{font-size:1.35em;padding:14px 0}.rk-lead,.rk-box{padding:13px 14px}}
+</style>
+
+<p class="rk-lead">Kırmızı ile yeşili karıştırdığınızı söyleyen oldu mu? :) Bu ücretsiz renk körlüğü testi, Ishihara testine benzer 12 noktalı kartla renk görmenizi yaklaşık 2 dakikada tarar. Kartlar her açılışta yeniden üretilir; ezberlenemez.</p>
+
+<div class="rk-hero" id="rk-intro">
+  <h2>Online renk körlüğü testi</h2>
+  <p>Her kartta renkli noktaların arasına gizlenmiş bir rakam var. Gördüğünüz rakama dokunun; göremiyorsanız "Rakam göremiyorum" deyin. Ekran parlaklığınızı açın, gece modu ve mavi ışık filtresini kapatın.</p>
+  <div class="rk-chips">
+    <span class="rk-chip">12 kart</span>
+    <span class="rk-chip">~2 dakika</span>
+    <span class="rk-chip">Kırmızı-yeşil + mavi-sarı</span>
+    <span class="rk-chip">Kayıt tutulmaz</span>
+  </div>
+  <button class="rk-btn" id="rk-start" type="button">Teste başla</button>
+</div>
+
+<div aria-live="polite" class="rk-card" id="rk-test" style="display: none;">
+  <div class="rk-top"><span id="rk-prog">Kart 1 / 12</span><span id="rk-type"></span></div>
+  <div class="rk-barwrap"><div class="rk-bar" id="rk-bar"></div></div>
+  <canvas aria-label="Renkli noktalardan oluşan test kartı" class="rk-plate" height="380" id="rk-canvas" width="380"></canvas>
+  <p class="rk-q">Hangi rakamı görüyorsunuz?</p>
+  <div class="rk-opts" id="rk-opts"></div>
+  <button class="rk-none" id="rk-none" type="button">Rakam göremiyorum</button>
+  <p class="rk-hint">İlk gördüğünüz rakamı seçin; uzun uzun bakmayın.</p>
+</div>
+
+<div class="rk-card" id="rk-result" style="display: none;">
+  <div class="rk-res-head" id="rk-res-head"><h3 id="rk-res-title"></h3><p id="rk-res-sub"></p></div>
+  <div class="rk-score">
+    <div><b id="rk-s-total">0/12</b><span>Toplam doğru</span></div>
+    <div><b id="rk-s-rg">0/8</b><span>Kırmızı-yeşil kartlar</span></div>
+    <div><b id="rk-s-tr">0/3</b><span>Mavi-sarı kartlar</span></div>
+  </div>
+  <p id="rk-res-text"></p>
+  <div class="rk-review" id="rk-review"></div>
+  <div class="rk-actions">
+    <button class="rk-btn" id="rk-again" type="button">Testi tekrarla</button>
+    <button class="rk-btn rk-ghost" id="rk-share" type="button">Sonucu paylaş</button>
+  </div>
+  <p class="rk-hint" id="rk-share-note"></p>
+</div>
+
+<div class="rk-box rk-warn"><strong>Önemli sınır</strong><br />Bu sayfa bir tarama aracıdır, tıbbi tanı koymaz. Ekran, parlaklık ve renk ayarları sonucu etkiler. Kuşku duyuyorsanız veya sürücü belgesi, meslek seçimi gibi resmî bir gereklilik söz konusuysa, kesin değerlendirme için bir göz hekimine başvurun.</div>
+
+<h2>Renk körlüğü nedir?</h2>
+<p>Aslında "renk körlüğü" biraz yanıltıcı bir isim. Renk körü dediğimiz insanların büyük çoğunluğu dünyayı siyah-beyaz görmez; sadece bazı renkleri birbirinden ayırt etmekte zorlanır. Tıpta bunun adı <strong>renk görme bozukluğu</strong> ya da halk arasında <strong>daltonizm</strong>.</p>
+<p>Gözünüzü bir kameraya benzetelim. Retinada, yani gözün arka duvarındaki görüntü sensöründe, renkleri algılayan üç tip <strong>koni hücresi</strong> var: biri kırmızı dalga boylarına, biri yeşile, biri de maviye daha duyarlı. Beyin bu üç sensörden gelen sinyalleri harmanlayarak milyonlarca rengi oluşturur. Bu sensörlerden biri eksikse ya da "yanlış kalibre" çalışıyorsa, bazı renkler beyin için birbirine karışır. Ama kişi bunu fark etmez; çünkü doğduğundan beri dünyayı hep böyle görmüştür. Çoğu renk körü, durumunu ya okulda ya askerlikte ya da bir gözlükçüde yapılan testle öğrenir.</p>
+<p>Yaygınlığı sandığınızdan fazla: kalıtsal kırmızı-yeşil renk körlüğü <strong>yaklaşık her 12 erkekten birinde, her 200 kadından birinde</strong> görülür. Erkeklerde bu kadar sık olmasının nedeni, sorumlu genlerin X kromozomunda taşınması. Kadınlarda iki X kromozomu olduğu için biri bozuk olsa bile diğeri işi devralır; erkeklerde ise tek X var, yedek yok.</p>
+
+<h2>Renk körlüğü çeşitleri</h2>
+<p>Hangi koni hücresinin etkilendiğine göre renk körlüğü üçe ayrılır. En sık karşılaşılan tür, kırmızı-yeşil grubudur.</p>
+<table class="rk-table">
+  <tbody><tr><th>Tür</th><th>Hangi koni etkilenir?</th><th>Ne karışır?</th><th>Ne kadar yaygın?</th></tr>
+  <tr><td><strong>Deutan</strong> (döteranopi / döteranomali)</td><td>Yeşile duyarlı koni</td><td>Yeşil ile kırmızı, kahverengi ile yeşil, pembe ile gri</td><td>En yaygın tür; kırmızı-yeşil grubunun büyük kısmı</td></tr>
+  <tr><td><strong>Protan</strong> (protanopi / protanomali)</td><td>Kırmızıya duyarlı koni</td><td>Kırmızı ile koyu yeşil, kırmızı ile siyah; kırmızılar daha sönük görünür</td><td>Kırmızı-yeşil grubunun daha küçük kısmı</td></tr>
+  <tr><td><strong>Tritan</strong> (tritanopi / tritanomali)</td><td>Maviye duyarlı koni</td><td>Mavi ile yeşil, sarı ile mor-pembe</td><td>Nadir; çoğu zaman sonradan ortaya çıkar</td></tr>
+  <tr><td><strong>Akromatopsi</strong></td><td>Koni hücrelerinin tamamı</td><td>Tüm renkler; dünya gri tonlarında görülür, ışık hassasiyeti eşlik eder</td><td>Çok nadir</td></tr>
+</tbody></table>
+<p>Tür adlarının sonundaki ek önemli: "-opi" ile bitenlerde (örneğin döteranopi) ilgili koni hiç çalışmaz, "-omali" ile bitenlerde (döteranomali) koni vardır ama hassasiyeti kaymıştır. İkinci grup çok daha kalabalıktır ve çoğu zaman hafif düzeydedir; kişi günlük hayatta pek sorun yaşamaz, sadece belirli tonlarda tereddüt eder.</p>
+
+<h2>Bu renk körlüğü testi nasıl çalışır?</h2>
+<p>Testin mantığı 1917'de Japon göz hekimi Shinobu Ishihara'nın geliştirdiği yönteme dayanır. Her kart, farklı büyüklük ve parlaklıkta noktalardan oluşur. Rakamı oluşturan noktalar ile arka plandaki noktalar <strong>parlaklık olarak eşit</strong>, sadece renk tonu olarak farklıdır. Normal renk gören bir göz, ton farkından rakamı hemen seçer. Renk görmesi zayıf bir göz ise bu tonları birbirine karıştırdığı için noktalar tek düze bir yığın gibi görünür ve rakam kaybolur.</p>
+<p>Sayfadaki kartlar hazır resim değildir; her açılışta bilgisayar tarafından yeniden üretilir. Rakamlar, noktaların yerleri ve renk tonları her seferinde değişir. Bu yüzden testi ikinci kez açtığınızda farklı kartlar görürsünüz ve sonucu ezberle "geçmek" mümkün değildir.</p>
+<ul class="rk-list">
+  <li><strong>1 kontrol kartı:</strong> Herkesin görebileceği bir rakam. Ekranınızın ve dikkatinizin yerinde olduğunu doğrular.</li>
+  <li><strong>8 kırmızı-yeşil kartı:</strong> Turuncu, kahverengi, yeşil ve pembe tonlarla hazırlanır; protan ve deutan tipi bozuklukları tarar.</li>
+  <li><strong>3 mavi-sarı kartı:</strong> Turkuaz, mavi, sarı ve mor tonlarla hazırlanır; daha nadir görülen tritan tipi bozukluğu tarar.</li>
+</ul>
+
+<h2>Sonuçlar ne anlama geliyor?</h2>
+<p>Test bittiğinde kaç kartı doğru bildiğinizi grup grup görürsünüz. Yorumlama şu şekilde:</p>
+<ul class="rk-list">
+  <li><strong>Kırmızı-yeşil kartların 7–8'i doğru:</strong> Bu grupta renk görmeniz normal görünüyor.</li>
+  <li><strong>5–6'sı doğru:</strong> Hafif bir zayıflık belirtisi olabilir; ekran kaynaklı da olabilir. Testi iyi ışıkta tekrarlayın, sürerse göz muayenesinde söyleyin.</li>
+  <li><strong>4 veya daha azı doğru:</strong> Kırmızı-yeşil renk görme bozukluğu için belirgin bir işaret. Göz hekimi, klinik Ishihara kitabı ve gerekirse ek testlerle türünü ve derecesini netleştirir.</li>
+  <li><strong>Mavi-sarı kartlarda 2 veya daha az doğru:</strong> Tritan tipi bozukluk ya da ekran renk ayarı sorunu. Bu tür genellikle sonradan ortaya çıktığı için göz muayenesini ihmal etmeyin.</li>
+  <li><strong>Kontrol kartı yanlışsa:</strong> Sonuç güvenilir değildir. Parlaklığı artırın, gece modunu kapatın ve tekrar deneyin.</li>
+</ul>
+<div class="rk-box"><strong>Neden önemli?</strong><br />Renk görme bozukluğu kalıtsal olduğunda hayat boyu sabittir ve tehlikeli değildir. Ama <strong>sonradan başlayan</strong> renk görme değişiklikleri farklıdır: katarakt, glokom, sarı nokta hastalığı, diyabetin göze etkileri, optik sinir sorunları ve bazı ilaçlar renk algısını bozabilir. "Eskiden ayırt ediyordum, artık edemiyorum" diyorsanız bu, test sonucundan bağımsız olarak göz hekimine gitmek için yeterli bir nedendir.</div>
+
+<h2>Doğru sonuç için ipuçları</h2>
+<ul class="rk-list">
+  <li>Ekran parlaklığını yüksek tutun; gece modu, mavi ışık filtresi ve "göz koruma" modlarını kapatın.</li>
+  <li>Gün ışığı alan bir ortamda ve ekrana dik açıyla bakın. Yan açıdan bakmak renkleri soldurur.</li>
+  <li>Gözlük veya kontakt lens kullanıyorsanız takın. Renkli ya da fotokromik camlar sonucu etkileyebilir.</li>
+  <li>Her karta en fazla birkaç saniye bakın. Uzun süre bakınca göz ipuçları aramaya başlar; Ishihara testinde de süre sınırı vardır.</li>
+  <li>Sonuç beklediğiniz gibi değilse başka bir cihazda tekrarlayın. Telefon ekranları ile bilgisayar ekranları renkleri farklı gösterir.</li>
+</ul>
+
+<h2>Renk körlüğü tedavi edilebilir mi?</h2>
+<p>Kalıtsal renk körlüğünün bugün için bilinen bir tedavisi yok. Piyasadaki "renk körlüğü gözlükleri" özel filtrelerle kırmızı ve yeşil arasındaki kontrastı artırır; bazı kullanıcılar renkleri daha canlı algılar. Ama bu gözlükler eksik koniyi geri getirmez, yani renk körlüğünü <strong>düzeltmez</strong>, bazı durumlarda yaşamayı kolaylaştırır. Her türde ve her kişide de işe yaramaz; denemeden karar vermemek gerekir. Gen tedavisi üzerine umut verici hayvan çalışmaları var, fakat insanlarda rutin bir tedavi henüz yok.</p>
+<p>Sonradan oluşan renk görme bozukluklarında ise durum farklı: altta yatan neden (örneğin katarakt) tedavi edildiğinde renk algısı düzelebilir. Bu yüzden kalıtsal mı, sonradan mı ayrımı önemlidir.</p>
+
+<h2>Sürücü belgesi ve meslek seçimi</h2>
+<p>Türkiye'deki sürücü sağlık mevzuatına göre renk körlüğü, tek başına sürücü belgesi almaya engel değildir; trafik ışıklarının yeri ve parlaklığı zaten sabittir. Buna karşılık pilotluk, denizcilik, demiryolu, polislik, askerî okullar, elektrik-elektronik ve bazı laboratuvar meslekleri gibi alanlarda renk görme şartı aranır ve giriş muayenelerinde Ishihara benzeri testler uygulanır. Bu mesleklere yönelecek gençlerin renk görmesini erkenden öğrenmesi, ileride yaşanacak hayal kırıklığını önler. Çocuklarda okul öncesi dönemde yapılan göz muayenesi bunun için en iyi fırsattır.</p>
+
+<h2>Sık sorulan sorular</h2>
+<div class="rk-faq">
+  <details><summary>Online renk körlüğü testi güvenilir mi?</summary><p>Tarama amacıyla evet, tanı amacıyla hayır. Ekran renkleri cihazdan cihaza değiştiği için online testler klinik Ishihara kitabının yerini tutmaz. Testte zorlandıysanız bunu bir göz hekimine söylemek için yeterli bir nedendir.</p></details>
+  <details><summary>Renk körlüğü nasıl anlaşılır?</summary><p>Çoğu kişi günlük hayatta fark etmez. Kırmızı-yeşil tonlarını karıştırmak, kahverengi ile yeşili ayırt edememek, pişmemiş ve pişmiş eti renginden anlamakta zorlanmak, kıyafet renklerinde sık yanılmak ipucu olabilir. Kesin değerlendirme için noktalı kartlardan oluşan testler ve göz muayenesi gerekir.</p></details>
+  <details><summary>Renk körü ehliyet alabilir mi?</summary><p>Türkiye'de renk körlüğü sürücü belgesi almaya engel sayılmaz. Sağlık raporu sürecinde genel göz muayenesi yapılır; renk görme ayrıca bir koşul olarak aranmaz. Güncel durumu sağlık raporunu veren hekimden teyit edin.</p></details>
+  <details><summary>En sık görülen renk körlüğü türü hangisidir?</summary><p>Deutan tipi (yeşil konisinin etkilendiği) kırmızı-yeşil renk körlüğü en sık görülen türdür. Mavi-sarı (tritan) ve tam renk körlüğü çok daha nadirdir.</p></details>
+  <details><summary>Ishihara testi kaç karttan oluşur?</summary><p>Tam Ishihara kitabı 38 karttan oluşur; kısaltılmış 14 ve 24 kartlık sürümleri de vardır. Kitapta rakamlı kartların yanında, çocuklar ve okuma bilmeyenler için çizgi takip kartları da bulunur. Bu sayfadaki 12 kart, hızlı tarama için tasarlanmıştır.</p></details>
+  <details><summary>Renk körlüğü gözlüğü işe yarıyor mu?</summary><p>Bazı kullanıcılarda kırmızı-yeşil kontrastını artırarak renkleri daha ayırt edilebilir yapar; ancak renk körlüğünü tedavi etmez ve herkeste aynı sonucu vermez. Satın almadan önce denemek en doğrusudur.</p></details>
+  <details><summary>Renk körlüğü sonradan oluşur mu?</summary><p>Evet. Katarakt, glokom, sarı nokta hastalığı, diyabet, optik sinir hastalıkları ve bazı ilaçlar renk görmeyi bozabilir. Sonradan başlayan renk algısı değişikliği mutlaka göz hekimine gösterilmelidir.</p></details>
+</div>
+
+<div class="rk-box"><strong>İlgili araç</strong><br />Gözlük reçetenizdeki rakamların ne anlama geldiğini merak ediyorsanız <a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/gozluk-receteni-oku.html">Gözlük Reçeteni Oku</a> aracına da göz atın.</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Online renk körlüğü testi güvenilir mi?","acceptedAnswer":{"@type":"Answer","text":"Tarama amacıyla evet, tanı amacıyla hayır. Ekran renkleri cihazdan cihaza değiştiği için online testler klinik Ishihara kitabının yerini tutmaz. Testte zorlandıysanız bunu bir göz hekimine söylemek için yeterli bir nedendir."}},
+{"@type":"Question","name":"Renk körlüğü nasıl anlaşılır?","acceptedAnswer":{"@type":"Answer","text":"Kırmızı-yeşil tonlarını karıştırmak, kahverengi ile yeşili ayırt edememek, kıyafet renklerinde sık yanılmak ipucu olabilir. Kesin değerlendirme için noktalı kartlardan oluşan testler ve göz muayenesi gerekir."}},
+{"@type":"Question","name":"Renk körü ehliyet alabilir mi?","acceptedAnswer":{"@type":"Answer","text":"Türkiye'de renk körlüğü sürücü belgesi almaya engel sayılmaz. Sağlık raporu sürecinde genel göz muayenesi yapılır; renk görme ayrıca bir koşul olarak aranmaz."}},
+{"@type":"Question","name":"En sık görülen renk körlüğü türü hangisidir?","acceptedAnswer":{"@type":"Answer","text":"Deutan tipi kırmızı-yeşil renk körlüğü en sık görülen türdür. Mavi-sarı (tritan) ve tam renk körlüğü çok daha nadirdir."}},
+{"@type":"Question","name":"Ishihara testi kaç karttan oluşur?","acceptedAnswer":{"@type":"Answer","text":"Tam Ishihara kitabı 38 karttan oluşur; 14 ve 24 kartlık kısaltılmış sürümleri de vardır. Bu sayfadaki 12 kart hızlı tarama için tasarlanmıştır."}},
+{"@type":"Question","name":"Renk körlüğü gözlüğü işe yarıyor mu?","acceptedAnswer":{"@type":"Answer","text":"Bazı kullanıcılarda kırmızı-yeşil kontrastını artırır; ancak renk körlüğünü tedavi etmez ve herkeste aynı sonucu vermez. Satın almadan önce denemek en doğrusudur."}},
+{"@type":"Question","name":"Renk körlüğü sonradan oluşur mu?","acceptedAnswer":{"@type":"Answer","text":"Evet. Katarakt, glokom, sarı nokta hastalığı, diyabet, optik sinir hastalıkları ve bazı ilaçlar renk görmeyi bozabilir. Sonradan başlayan değişiklik göz hekimine gösterilmelidir."}}
+]}
+</script>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var startBtn=$('rk-start'),testEl=$('rk-test'),resEl=$('rk-result'),cv=$('rk-canvas'),optsEl=$('rk-opts'),noneBtn=$('rk-none'),progEl=$('rk-prog'),typeEl=$('rk-type'),barEl=$('rk-bar');
+  var SIZE=380,CX=190,CY=190,R=182;
+  var DIGITS=['2','3','5','6','7','8','9'];
+  var TYPES={ctrl:'Kontrol',rg:'K\u0131rm\u0131z\u0131-ye\u015fil',tr:'Mavi-sar\u0131'};
+  /* bg/fg: h = ton aral\u0131\u011f\u0131 (OKLCH derece), c = doygunluk, l = parlakl\u0131k. Rakam ve zemin ayn\u0131 parlakl\u0131k aral\u0131\u011f\u0131n\u0131 kullan\u0131r. */
+  var CONTROL={k:'ctrl',bg:{h:[0,360],c:[0,0.015],l:[0.6,0.8]},fg:{h:[20,40],c:[0.13,0.17],l:[0.3,0.42]}};
+  var RG=[
+    {k:'rg',bg:{h:[55,85],c:[0.11,0.15],l:[0.62,0.78]},fg:{h:[135,158],c:[0.11,0.15],l:[0.62,0.78]}},
+    {k:'rg',bg:{h:[140,165],c:[0.10,0.14],l:[0.62,0.78]},fg:{h:[35,60],c:[0.10,0.14],l:[0.62,0.78]}},
+    {k:'rg',bg:{h:[15,40],c:[0.10,0.14],l:[0.62,0.76]},fg:{h:[110,135],c:[0.10,0.14],l:[0.62,0.76]}},
+    {k:'rg',bg:{h:[80,100],c:[0.12,0.16],l:[0.66,0.8]},fg:{h:[155,178],c:[0.12,0.16],l:[0.66,0.8]}},
+    {k:'rg',bg:{h:[140,160],c:[0.10,0.14],l:[0.6,0.76]},fg:{h:[20,40],c:[0.10,0.14],l:[0.6,0.76]}},
+    {k:'rg',bg:{h:[60,80],c:[0.11,0.15],l:[0.64,0.78]},fg:{h:[128,150],c:[0.11,0.15],l:[0.64,0.78]}},
+    {k:'rg',bg:{h:[25,45],c:[0.12,0.16],l:[0.58,0.74]},fg:{h:[110,132],c:[0.12,0.16],l:[0.58,0.74]}},
+    {k:'rg',bg:{h:[150,175],c:[0.10,0.14],l:[0.64,0.78]},fg:{h:[45,65],c:[0.10,0.14],l:[0.64,0.78]}}
+  ];
+  var TR=[
+    {k:'tr',bg:{h:[175,200],c:[0.10,0.14],l:[0.62,0.78]},fg:{h:[255,280],c:[0.10,0.14],l:[0.62,0.78]}},
+    {k:'tr',bg:{h:[90,110],c:[0.10,0.13],l:[0.7,0.82]},fg:{h:[300,330],c:[0.10,0.13],l:[0.7,0.82]}},
+    {k:'tr',bg:{h:[185,205],c:[0.10,0.14],l:[0.62,0.78]},fg:{h:[265,290],c:[0.10,0.14],l:[0.62,0.78]}}
+  ];
+  function rnd(a,b){return a+Math.random()*(b-a);}
+  function pick(a){return a[Math.floor(Math.random()*a.length)];}
+  function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  /* OKLCH -> sRGB: t\u00fcm tonlarda e\u015fit alg\u0131lanan parlakl\u0131k i\u00e7in */
+  function oklch(L,C,h){
+    var hr=h*Math.PI/180,a=C*Math.cos(hr),b=C*Math.sin(hr);
+    var l_=L+0.3963377774*a+0.2158037573*b,m_=L-0.1055613458*a-0.0638541728*b,s_=L-0.0894841775*a-1.2914855480*b;
+    var l=l_*l_*l_,m=m_*m_*m_,s=s_*s_*s_;
+    var r=4.0767416621*l-3.3077115913*m+0.2309699292*s,g=-1.2684380046*l+2.6097574011*m-0.0041960863*s,bb=-0.0041960863*l-0.7034186147*m+1.7076147010*s;
+    function gam(x){x=Math.max(0,Math.min(1,x));return Math.round(255*(x<=0.0031308?12.92*x:1.055*Math.pow(x,1/2.4)-0.055));}
+    return 'rgb('+gam(r)+','+gam(g)+','+gam(bb)+')';
+  }
+  function colorOf(spec){return oklch(rnd(spec.l[0],spec.l[1]),rnd(spec.c[0],spec.c[1]),rnd(spec.h[0],spec.h[1]));}
+  function makeMask(ch){
+    var m=document.createElement('canvas');m.width=SIZE;m.height=SIZE;
+    var c=m.getContext('2d');c.fillStyle='#000';c.font='bold 270px Arial,Helvetica,sans-serif';c.textAlign='center';c.textBaseline='middle';
+    c.fillText(ch,CX,CY+12);
+    var d=c.getImageData(0,0,SIZE,SIZE).data;
+    return function(x,y){x=Math.round(x);y=Math.round(y);if(x<0||y<0||x>=SIZE||y>=SIZE)return false;return d[(y*SIZE+x)*4+3]>128;};
+  }
+  function classify(mask,x,y,r){
+    var k=r*0.62,n=0;
+    if(mask(x,y))n++;if(mask(x+k,y))n++;if(mask(x-k,y))n++;if(mask(x,y+k))n++;if(mask(x,y-k))n++;
+    if(n===5)return 1;if(n===0)return 0;return -1;
+  }
+  function packDots(mask){
+    var dots=[],sizes=[[15,120],[12,220],[9.5,400],[7.5,800],[5.8,1600],[4.6,2600]];
+    for(var si=0;si<sizes.length;si++){
+      var s=sizes[si][0],tries=sizes[si][1];
+      for(var t=0;t<tries;t++){
+        var ang=Math.random()*6.2832,d=Math.sqrt(Math.random())*(R-s-1),x=CX+Math.cos(ang)*d,y=CY+Math.sin(ang)*d,ok=true;
+        for(var i=0;i<dots.length;i++){var dx=dots[i].x-x,dy=dots[i].y-y,md=dots[i].r+s+1.5;if(dx*dx+dy*dy<md*md){ok=false;break;}}
+        if(!ok)continue;
+        var cl=classify(mask,x,y,s);if(cl<0)continue;
+        dots.push({x:x,y:y,r:s*rnd(0.86,1),f:cl===1});
+      }
+    }
+    return dots;
+  }
+  function drawPlate(spec,ch){
+    var mask=makeMask(ch),dots=packDots(mask),dpr=Math.min(window.devicePixelRatio||1,2);
+    cv.width=SIZE*dpr;cv.height=SIZE*dpr;
+    var c=cv.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,SIZE,SIZE);
+    c.fillStyle='#fdfdfb';c.beginPath();c.arc(CX,CY,R+4,0,6.2832);c.fill();
+    for(var i=0;i<dots.length;i++){var p=dots[i];c.fillStyle=colorOf(p.f?spec.fg:spec.bg);c.beginPath();c.arc(p.x,p.y,p.r,0,6.2832);c.fill();}
+  }
+  var plates=[],idx=0,answers=[],busy=false;
+  function buildPlates(){
+    plates=[CONTROL].concat(shuffle(RG.concat(TR)));
+    var last='';
+    for(var i=0;i<plates.length;i++){var ch;do{ch=pick(DIGITS);}while(ch===last);last=ch;plates[i].digit=ch;}
+  }
+  function showPlate(){
+    var p=plates[idx];
+    progEl.textContent='Kart '+(idx+1)+' / '+plates.length;
+    typeEl.textContent=TYPES[p.k];
+    barEl.style.width=Math.round(idx/plates.length*100)+'%';
+    drawPlate(p,p.digit);
+    var opts=[p.digit],pool=DIGITS.slice();
+    while(opts.length<4){var d=pick(pool);if(opts.indexOf(d)<0)opts.push(d);}
+    shuffle(opts);optsEl.innerHTML='';
+    for(var i=0;i<opts.length;i++){var b=document.createElement('button');b.type='button';b.className='rk-opt';b.textContent=opts[i];b.setAttribute('data-v',opts[i]);b.onclick=onAnswer;optsEl.appendChild(b);}
+    busy=false;
+  }
+  function onAnswer(e){
+    if(busy)return;busy=true;
+    var v=e.currentTarget.getAttribute('data-v')||'';
+    var p=plates[idx];answers.push({k:p.k,digit:p.digit,given:v,ok:v===p.digit});
+    idx++;
+    if(idx<plates.length){setTimeout(showPlate,120);}else{finish();}
+  }
+  noneBtn.onclick=function(){onAnswer({currentTarget:noneBtn});};
+  noneBtn.setAttribute('data-v','');
+  function finish(){
+    barEl.style.width='100%';
+    var rg=0,tr=0,ctrlOk=true,total=0;
+    for(var i=0;i<answers.length;i++){var a=answers[i];if(a.ok)total++;if(a.k==='rg'&&a.ok)rg++;if(a.k==='tr'&&a.ok)tr++;if(a.k==='ctrl')ctrlOk=a.ok;}
+    $('rk-s-total').textContent=total+'/'+answers.length;$('rk-s-rg').textContent=rg+'/'+RG.length;$('rk-s-tr').textContent=tr+'/'+TR.length;
+    var head=$('rk-res-head'),title,sub,text,cls;
+    if(!ctrlOk){
+      cls='rk-mid';title='Sonu\u00e7 g\u00fcvenilir de\u011fil';sub='Kontrol kart\u0131 yanl\u0131\u015f i\u015faretlendi.';
+      text='Kontrol kart\u0131ndaki rakam\u0131 herkes g\u00f6rebilir. Yanl\u0131\u015f i\u015faretlenmesi genellikle ekran parlakl\u0131\u011f\u0131, gece modu veya h\u0131zl\u0131 dokunma kaynakl\u0131d\u0131r. Parlakl\u0131\u011f\u0131 art\u0131r\u0131p filtreleri kapatarak testi tekrar deneyin.';
+    }else if(rg>=7&&tr===3){
+      cls='rk-ok';title='Renk g\u00f6rmeniz normal g\u00f6r\u00fcn\u00fcyor';sub='K\u0131rm\u0131z\u0131-ye\u015fil ve mavi-sar\u0131 kartlar\u0131n tamam\u0131na yak\u0131n\u0131 do\u011fru.';
+      text='Bu tarama testinde renk g\u00f6rme zay\u0131fl\u0131\u011f\u0131na i\u015faret eden bir bulgu \u00e7\u0131kmad\u0131. Yine de d\u00fczenli g\u00f6z muayenesi, renk g\u00f6rmeyi de i\u00e7eren tam bir de\u011ferlendirme i\u00e7in en g\u00fcvenilir yoldur.';
+    }else if(rg<=4){
+      cls='rk-bad';title='K\u0131rm\u0131z\u0131-ye\u015fil renk g\u00f6rme zay\u0131fl\u0131\u011f\u0131 belirtisi';sub='K\u0131rm\u0131z\u0131-ye\u015fil kartlar\u0131n \u00e7o\u011fu okunamad\u0131.';
+      text='Bu sonu\u00e7, k\u0131rm\u0131z\u0131-ye\u015fil (protan veya deutan tipi) renk g\u00f6rme bozuklu\u011fu i\u00e7in belirgin bir i\u015farettir. Tan\u0131 i\u00e7in bir g\u00f6z hekimine ba\u015fvurun; klinik Ishihara kitab\u0131 ve gerekirse ek testlerle t\u00fcr\u00fc ve derecesi netle\u015fir. Bu durum tehlikeli de\u011fildir, ancak baz\u0131 meslekler i\u00e7in \u00f6nceden bilinmesi \u00f6nemlidir.';
+    }else if(rg<=6){
+      cls='rk-mid';title='Hafif k\u0131rm\u0131z\u0131-ye\u015fil zay\u0131fl\u0131k olabilir';sub='Birka\u00e7 k\u0131rm\u0131z\u0131-ye\u015fil kartta teredd\u00fct edildi.';
+      text='Hafif bir renk g\u00f6rme zay\u0131fl\u0131\u011f\u0131 (\u00e7o\u011funlukla d\u00f6teranomali) ya da ekran kaynakl\u0131 bir sapma olabilir. Testi iyi ayd\u0131nlat\u0131lm\u0131\u015f bir ortamda, parlakl\u0131\u011f\u0131 y\u00fcksek ba\u015fka bir cihazda tekrarlay\u0131n; sonu\u00e7 de\u011fi\u015fmiyorsa bir sonraki g\u00f6z muayenesinde belirtin.';
+    }else{
+      cls='rk-mid';title='Mavi-sar\u0131 kartlarda zorlanma';sub='K\u0131rm\u0131z\u0131-ye\u015fil normal, mavi-sar\u0131 kartlarda eksik var.';
+      text='Mavi-sar\u0131 kartlar ekran renk ayarlar\u0131ndan daha \u00e7ok etkilenir; \u00f6nce gece modunu ve mavi \u0131\u015f\u0131k filtresini kapat\u0131p tekrar deneyin. Sonu\u00e7 de\u011fi\u015fmezse tritan tipi renk g\u00f6rme bozuklu\u011fu i\u00e7in g\u00f6z hekimine ba\u015fvurun; bu t\u00fcr \u00e7o\u011fu zaman sonradan ortaya \u00e7\u0131kt\u0131\u011f\u0131 i\u00e7in muayene \u00f6zellikle \u00f6nemlidir.';
+    }
+    head.className='rk-res-head '+cls;$('rk-res-title').textContent=title;$('rk-res-sub').textContent=sub;$('rk-res-text').textContent=text;
+    var rv=$('rk-review');rv.innerHTML='';
+    for(var j=0;j<answers.length;j++){var a2=answers[j],dv=document.createElement('div');dv.className=a2.ok?'ok':'no';dv.innerHTML='<strong>Kart '+(j+1)+'</strong><br>'+TYPES[a2.k]+'<br>'+(a2.ok?'\u2713 Do\u011fru':'\u2717 '+(a2.given?'Se\u00e7ilen '+a2.given:'G\u00f6r\u00fclmedi')+' \u00b7 Do\u011fru '+a2.digit);rv.appendChild(dv);}
+    testEl.style.display='none';resEl.style.display='block';
+    window.__rkShare='Renk k\u00f6rl\u00fc\u011f\u00fc testinde '+answers.length+' karttan '+total+' do\u011fru yapt\u0131m ('+title+'). Sen de dene: https://www.cagataygulumser.com/p/renk-korlugu-testi.html';
+    resEl.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function startTest(){
+    idx=0;answers=[];buildPlates();
+    resEl.style.display='none';testEl.style.display='block';showPlate();
+    testEl.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  startBtn.onclick=startTest;
+  $('rk-again').onclick=startTest;
+  $('rk-share').onclick=function(){
+    var t=window.__rkShare||'',note=$('rk-share-note');
+    if(navigator.share){navigator.share({text:t}).catch(function(){});}
+    else if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){note.textContent='Sonu\u00e7 metni panoya kopyaland\u0131.';});}
+    else{note.textContent=t;}
+  };
+})();
+</script>
+</div>
+<style>
+.cgt{--b:#004aad;--b2:#2f86ff;--t:#243247;--m:#5b6b80;--l:#dce6f5;max-width:860px;margin:0 auto;background:#fff;color:var(--t);font:17px/1.7 Arial,Helvetica,sans-serif;padding:6px 4px;border-radius:14px}
+.cgt *{box-sizing:border-box}
+.cgt h2{font-family:'Exo 2',Arial,sans-serif;color:var(--b);font-size:1.35em;line-height:1.3;margin:30px 0 10px}
+.cgt h3{font-family:'Exo 2',Arial,sans-serif;color:#13325f;font-size:1.12em;line-height:1.35;margin:20px 0 8px}
+.cgt p{margin:0 0 14px}
+.cgt ul{margin:0 0 14px;padding-left:22px}
+.cgt .lead{font-size:1.08em;font-weight:600;border-left:5px solid var(--b);padding:14px 18px;background:#f3f7ff;border-radius:10px;margin:0 0 18px}
+.cgt .tool{background:#fff;border:1px solid var(--l);border-radius:18px;padding:22px;margin:24px 0;box-shadow:0 8px 28px rgba(0,74,173,.08)}
+.cgt .tool-h{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:0 0 14px;font-family:'Exo 2',Arial,sans-serif;font-weight:700;font-size:1.18em;color:var(--b)}
+.cgt .badge{display:inline-block;background:linear-gradient(135deg,#004aad,#2f86ff);color:#fff;border-radius:999px;padding:3px 12px;font:700 .72em Arial,sans-serif}
+.cgt .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#004aad,#2f86ff);color:#fff!important;border:0;border-radius:12px;padding:12px 20px;font:700 16px Arial,sans-serif;cursor:pointer;text-decoration:none!important;margin:4px 6px 4px 0;transition:transform .15s,box-shadow .15s;line-height:1.2}
+.cgt .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,74,173,.25)}
+.cgt .btn.alt{background:#eef5ff;color:var(--b)!important;border:1px solid #c9dcff}
+.cgt .btn.sm{padding:9px 14px;font-size:15px}
+.cgt .btn:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none}
+.cgt .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.cgt .center{text-align:center}
+.cgt .stage{display:flex;justify-content:center;align-items:center;min-height:180px;margin:12px 0;background:#fff;border-radius:12px;overflow:hidden}
+.cgt .q{padding:14px 0;border-bottom:1px solid #edf1f7}
+.cgt .q:last-child{border-bottom:0}
+.cgt .q b{display:block;margin-bottom:8px;line-height:1.45}
+.cgt .opts{display:flex;flex-wrap:wrap;gap:6px}
+.cgt .opts label{position:relative;flex:1 1 auto;min-width:92px;text-align:center;border:1px solid #c9dcff;border-radius:10px;padding:8px 10px;cursor:pointer;font-size:.92em;background:#f8fbff;user-select:none;line-height:1.35}
+.cgt .opts input{position:absolute;opacity:0;pointer-events:none}
+.cgt .opts label.on{background:var(--b);color:#fff;border-color:var(--b)}
+.cgt .res{display:none;margin-top:18px;padding:18px;border-radius:14px;background:#eef5ff;border:1px solid #c9dcff}
+.cgt .res.show{display:block}
+.cgt .res.ok{background:#ecfaf1;border-color:#a8e2bf}
+.cgt .res.mid{background:#fff8e8;border-color:#f1d28a}
+.cgt .res.hi{background:#fff0f0;border-color:#f3b3b3}
+.cgt .res h3{margin-top:0}
+.cgt .meter{height:12px;background:#e6edf7;border-radius:99px;overflow:hidden;margin:10px 0 14px}
+.cgt .meter i{display:block;height:100%;background:linear-gradient(90deg,#22b07d,#f2b33d,#e5484d);border-radius:99px;width:0;transition:width .7s}
+.cgt .box{padding:16px 18px;margin:22px 0;border-radius:12px;background:#eef5ff;border:1px solid #c9dcff}
+.cgt .warn{background:#fff8e8;border-color:#f1d28a}
+.cgt .steps{counter-reset:s;list-style:none;padding:0;margin:0 0 14px}
+.cgt .steps li{counter-increment:s;position:relative;padding:7px 0 7px 44px}
+.cgt .steps li:before{content:counter(s);position:absolute;left:0;top:6px;width:30px;height:30px;border-radius:50%;background:var(--b);color:#fff;font-weight:700;text-align:center;line-height:30px;font-size:.9em}
+.cgt .faq details{border:1px solid var(--l);border-radius:12px;padding:12px 16px;margin:8px 0;background:#fbfdff}
+.cgt .faq summary{cursor:pointer;font-weight:700;color:#13325f}
+.cgt .faq details p{margin:10px 0 0}
+.cgt .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px;margin:12px 0}
+.cgt .card{display:block;border:1px solid var(--l);border-radius:14px;padding:13px;background:#fff;text-decoration:none!important;color:var(--t)!important;transition:transform .15s,box-shadow .15s;font-weight:400}
+.cgt .card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,74,173,.12)}
+.cgt .card .ic{font-size:1.5em;line-height:1}
+.cgt .card b{display:block;margin:6px 0 2px;color:var(--b);font-family:'Exo 2',Arial,sans-serif;line-height:1.3}
+.cgt .card small{color:var(--m);font-size:.82em;line-height:1.4;display:block}
+.cgt a{color:var(--b);font-weight:700}
+.cgt .muted{color:var(--m);font-size:.9em}
+.cgt .pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.cgt .pill{border:1px solid #c9dcff;border-radius:99px;padding:7px 15px;background:#f8fbff;font:700 .9em Arial,sans-serif;color:var(--b);cursor:pointer}
+.cgt .pill.on{background:var(--b);color:#fff;border-color:var(--b)}
+.cgt .prog{font:700 .85em Arial,sans-serif;color:var(--m);margin:0 0 6px}
+.cgt input[type=range]{width:100%;accent-color:#004aad}
+.cgt .hide{display:none!important}
+@media(max-width:600px){.cgt{font-size:16px}.cgt .tool{padding:15px}.cgt .lead,.cgt .box{padding:13px 14px}.cgt .btn{padding:11px 16px}}
+</style>
+<div class="cgt" style="margin-top: 8px;">
+<h2>Diğer göz testleri</h2><div class="grid"><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/astigmat-testi.html"><span class="ic">🕐</span><b>Astigmat Testi</b><small>Saat kadranındaki çizgiler</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/amsler-testi.html"><span class="ic">🔲</span><b>Amsler (Sarı Nokta) Testi</b><small>Izgaradaki çizgiler düz mü?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/gorme-keskinligi-testi.html"><span class="ic">👁️</span><b>Görme Keskinliği Testi</b><small>Ekranda E harfi testi</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/yakin-okuma-testi.html"><span class="ic">📖</span><b>Yakın Okuma Testi</b><small>Kolunuz yetmiyor mu?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kontrast-duyarliligi-testi.html"><span class="ic">🌫️</span><b>Kontrast Duyarlılığı Testi</b><small>Soluklaşan harfleri seçin</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kirmizi-yesil-testi.html"><span class="ic">🔴</span><b>Kırmızı-Yeşil Testi</b><small>Gözlüğünüz hâlâ uygun mu?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/renk-siralama-testi.html"><span class="ic">🌈</span><b>Renk Sıralama Testi</b><small>Renk tonlarını sıralayın</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kuru-goz-testi.html"><span class="ic">💧</span><b>Kuru Göz Testi</b><small>Belirti anketi</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-yorgunlugu-testi.html"><span class="ic">💻</span><b>Dijital Göz Yorgunluğu Testi</b><small>Ekran alışkanlıklarınız</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/miyopi-risk-testi.html"><span class="ic">🧒</span><b>Çocuk Miyopi Risk Testi</b><small>Ebeveynler için</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/glokom-risk-testi.html"><span class="ic">🛡️</span><b>Glokom Risk Testi</b><small>Göz tansiyonu riski</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-muayenesi-ne-zaman.html"><span class="ic">📅</span><b>Ne Zaman Muayene Olmalıyım?</b><small>Kişisel muayene aralığı</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kor-nokta-testi.html"><span class="ic">⚫</span><b>Kör Nokta Testi</b><small>Noktanın kaybolduğunu görün</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/baskin-goz-testi.html"><span class="ic">🎯</span><b>Baskın Göz Testi</b><small>Hangi gözünüz lider?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/ardil-goruntu-testi.html"><span class="ic">✨</span><b>Ardıl Görüntü Testi</b><small>Gözünüzü kandıran illüzyon</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-sagligi-bilgi-yarismasi.html"><span class="ic">🧠</span><b>Göz Sağlığı Bilgi Yarışması</b><small>10 soruda kendinizi deneyin</small></a></div><p class="center"><a target="_blank" rel="noopener" class="btn" href="https://www.cagataygulumser.com/p/goz-testleri.html">Tüm göz testleri</a></p>
+</div>
+</div></body></html>

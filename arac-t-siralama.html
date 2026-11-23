@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Renk Sıralama Testi</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&display=swap">
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#vz{padding:14px 14px calc(28px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#vz img{max-width:100%;height:auto}</style></head>
+<body><script>window.cgOptimizePostImages=window.cgOptimizePostImages||function(){};</script><div id="vz">
+<style>
+.cgt{--b:#004aad;--b2:#2f86ff;--t:#243247;--m:#5b6b80;--l:#dce6f5;max-width:860px;margin:0 auto;background:#fff;color:var(--t);font:17px/1.7 Arial,Helvetica,sans-serif;padding:6px 4px;border-radius:14px}
+.cgt *{box-sizing:border-box}
+.cgt h2{font-family:'Exo 2',Arial,sans-serif;color:var(--b);font-size:1.35em;line-height:1.3;margin:30px 0 10px}
+.cgt h3{font-family:'Exo 2',Arial,sans-serif;color:#13325f;font-size:1.12em;line-height:1.35;margin:20px 0 8px}
+.cgt p{margin:0 0 14px}
+.cgt ul{margin:0 0 14px;padding-left:22px}
+.cgt .lead{font-size:1.08em;font-weight:600;border-left:5px solid var(--b);padding:14px 18px;background:#f3f7ff;border-radius:10px;margin:0 0 18px}
+.cgt .tool{background:#fff;border:1px solid var(--l);border-radius:18px;padding:22px;margin:24px 0;box-shadow:0 8px 28px rgba(0,74,173,.08)}
+.cgt .tool-h{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:0 0 14px;font-family:'Exo 2',Arial,sans-serif;font-weight:700;font-size:1.18em;color:var(--b)}
+.cgt .badge{display:inline-block;background:linear-gradient(135deg,#004aad,#2f86ff);color:#fff;border-radius:999px;padding:3px 12px;font:700 .72em Arial,sans-serif}
+.cgt .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#004aad,#2f86ff);color:#fff!important;border:0;border-radius:12px;padding:12px 20px;font:700 16px Arial,sans-serif;cursor:pointer;text-decoration:none!important;margin:4px 6px 4px 0;transition:transform .15s,box-shadow .15s;line-height:1.2}
+.cgt .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,74,173,.25)}
+.cgt .btn.alt{background:#eef5ff;color:var(--b)!important;border:1px solid #c9dcff}
+.cgt .btn.sm{padding:9px 14px;font-size:15px}
+.cgt .btn:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none}
+.cgt .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.cgt .center{text-align:center}
+.cgt .stage{display:flex;justify-content:center;align-items:center;min-height:180px;margin:12px 0;background:#fff;border-radius:12px;overflow:hidden}
+.cgt .q{padding:14px 0;border-bottom:1px solid #edf1f7}
+.cgt .q:last-child{border-bottom:0}
+.cgt .q b{display:block;margin-bottom:8px;line-height:1.45}
+.cgt .opts{display:flex;flex-wrap:wrap;gap:6px}
+.cgt .opts label{position:relative;flex:1 1 auto;min-width:92px;text-align:center;border:1px solid #c9dcff;border-radius:10px;padding:8px 10px;cursor:pointer;font-size:.92em;background:#f8fbff;user-select:none;line-height:1.35}
+.cgt .opts input{position:absolute;opacity:0;pointer-events:none}
+.cgt .opts label.on{background:var(--b);color:#fff;border-color:var(--b)}
+.cgt .res{display:none;margin-top:18px;padding:18px;border-radius:14px;background:#eef5ff;border:1px solid #c9dcff}
+.cgt .res.show{display:block}
+.cgt .res.ok{background:#ecfaf1;border-color:#a8e2bf}
+.cgt .res.mid{background:#fff8e8;border-color:#f1d28a}
+.cgt .res.hi{background:#fff0f0;border-color:#f3b3b3}
+.cgt .res h3{margin-top:0}
+.cgt .meter{height:12px;background:#e6edf7;border-radius:99px;overflow:hidden;margin:10px 0 14px}
+.cgt .meter i{display:block;height:100%;background:linear-gradient(90deg,#22b07d,#f2b33d,#e5484d);border-radius:99px;width:0;transition:width .7s}
+.cgt .box{padding:16px 18px;margin:22px 0;border-radius:12px;background:#eef5ff;border:1px solid #c9dcff}
+.cgt .warn{background:#fff8e8;border-color:#f1d28a}
+.cgt .steps{counter-reset:s;list-style:none;padding:0;margin:0 0 14px}
+.cgt .steps li{counter-increment:s;position:relative;padding:7px 0 7px 44px}
+.cgt .steps li:before{content:counter(s);position:absolute;left:0;top:6px;width:30px;height:30px;border-radius:50%;background:var(--b);color:#fff;font-weight:700;text-align:center;line-height:30px;font-size:.9em}
+.cgt .faq details{border:1px solid var(--l);border-radius:12px;padding:12px 16px;margin:8px 0;background:#fbfdff}
+.cgt .faq summary{cursor:pointer;font-weight:700;color:#13325f}
+.cgt .faq details p{margin:10px 0 0}
+.cgt .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px;margin:12px 0}
+.cgt .card{display:block;border:1px solid var(--l);border-radius:14px;padding:13px;background:#fff;text-decoration:none!important;color:var(--t)!important;transition:transform .15s,box-shadow .15s;font-weight:400}
+.cgt .card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,74,173,.12)}
+.cgt .card .ic{font-size:1.5em;line-height:1}
+.cgt .card b{display:block;margin:6px 0 2px;color:var(--b);font-family:'Exo 2',Arial,sans-serif;line-height:1.3}
+.cgt .card small{color:var(--m);font-size:.82em;line-height:1.4;display:block}
+.cgt a{color:var(--b);font-weight:700}
+.cgt .muted{color:var(--m);font-size:.9em}
+.cgt .pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.cgt .pill{border:1px solid #c9dcff;border-radius:99px;padding:7px 15px;background:#f8fbff;font:700 .9em Arial,sans-serif;color:var(--b);cursor:pointer}
+.cgt .pill.on{background:var(--b);color:#fff;border-color:var(--b)}
+.cgt .prog{font:700 .85em Arial,sans-serif;color:var(--m);margin:0 0 6px}
+.cgt input[type=range]{width:100%;accent-color:#004aad}
+.cgt .hide{display:none!important}
+@media(max-width:600px){.cgt{font-size:16px}.cgt .tool{padding:15px}.cgt .lead,.cgt .box{padding:13px 14px}.cgt .btn{padding:11px 16px}}
+</style>
+<div class="cgt" id="cgt-sirala">
+<p class="lead">Renkleri tek tek tanımak kolaydır; peki birbirine çok yakın tonları doğru sırayla dizebilir misiniz? Bu renk sıralama testi, renk tonları arasındaki ince farkları ne kadar iyi ayırt ettiğinizi oyun gibi ölçer.</p>
+<h2>Renk sıralama testi nedir?</h2>
+<p>Göz muayenelerinde renk görmeyi değerlendirmek için iki tür test sık kullanılır. Birincisi, noktaların içinde rakam aranan plaka testleridir; bunlar özellikle kırmızı-yeşil renk zayıflığını hızlıca taramak için idealdir. İkincisi ise renk sıralama testleridir: Kişiden, aynı parlaklıktaki ve birbirine yakın tonlardaki renk kapaklarını bir referans rengin yanından başlayarak doğal bir sıraya dizmesi istenir.</p>
+<p>Sıralama testlerinin avantajı, kişinin hangi renk eksenlerinde karışıklık yaşadığını göstermesidir. Kırmızı-yeşil eksenindeki zorlanma ile mavi-sarı eksenindeki zorlanma farklı hatalar üretir. Bu sayfadaki test, klinikte kullanılan sıralama testlerinin mantığından esinlenen basitleştirilmiş bir ekran versiyonudur.</p>
+<h2>Test nasıl yapılır?</h2>
+<ol class="steps"><li>Ekran parlaklığını açın; gece modu, mavi ışık filtresi ve renk filtrelerini kapatın.</li><li>Sıralama ilk renkle (referans) başlar. Alttaki karışık renklerden referansa en çok benzeyen rengi seçin.</li><li>Her seferinde, sıradaki son renge en yakın tonu seçerek devam edin. Yanlış seçtiğinizi düşünürseniz sıradaki renge dokunarak geri alabilirsiniz.</li><li>Tüm renkler dizildiğinde sonucunuzu ve renk çemberi üzerindeki çizginizi görün.</li></ol>
+<div class="tool"><div class="tool-h">Renk sıralama testi <span class="badge">16 ton · ~2 dk</span></div>
+<p class="prog">Sıralamanız</p><div data-seq style="display:flex;flex-wrap:wrap;gap:6px;min-height:52px;padding:8px;border:1px dashed #c9dcff;border-radius:12px;background:#f8fbff"></div>
+<p class="prog" style="margin-top:14px">Karışık renkler · sıradaki tonu seçin</p><div data-pool style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:6px"></div>
+<div class="center" style="margin-top:10px"><button class="btn alt sm" data-reset>Baştan başla</button></div>
+<div class="res"></div></div>
+<h2>Sonucunuz ne anlama gelir?</h2>
+<p>Renkler doğru sıralandığında renk çemberinde düzgün bir halka oluşur. Birbirinden uzak tonlar yan yana konduğunda ise çember içinde çapraz çizgiler belirir. Tek tük küçük kaymalar normaldir ve çoğu zaman ekran ayarından ya da dikkatten kaynaklanır. Çok sayıda ve aynı yönde uzanan çapraz çizgiler ise belirli bir renk ekseninde zorlanmaya işaret edebilir.</p>
+<p>Bu test bir tarama ve farkındalık aracıdır. Ekranların renk gösterimi birbirinden çok farklıdır; bu yüzden düşük bir sonuç, mutlaka renk görme bozukluğu olduğu anlamına gelmez. Testte zorlandıysanız ya da renk algınızın değiştiğini düşünüyorsanız göz muayenesinde standart renk görme testleri istenebilir.</p>
+<div class="box"><strong>Renk algısı sonradan değişirse</strong><br>Doğuştan renk zayıflığı hayat boyu sabit kalır. Ancak renklerin solgunlaşması, sarımsı görünmesi ya da bir gözde diğerinden farklı algılanması; katarakt, optik sinir ve retina hastalıkları gibi durumların işareti olabilir. Böyle bir değişikliği bir göz hekimine mutlaka söyleyin.</div>
+<div class="faq"><h2>Sık sorulan sorular</h2>
+<details><summary>Plaka testiyle bu test arasındaki fark nedir?</summary><p>Plaka testleri hızlı tarama içindir ve çoğunlukla kırmızı-yeşil ayrımını yoklar. Sıralama testleri ise ince ton farklarını ayırt etme becerisini ve karışıklığın hangi renk ekseninde olduğunu gösterir. İkisi birbirini tamamlar.</p></details>
+<details><summary>Grafik tasarımcıyım, bu test işime yarar mı?</summary><p>Ton ayrımı becerinizi eğlenceli bir şekilde yoklamanızı sağlar; ancak ekranınızın kalibrasyonu sonucu doğrudan etkiler. Profesyonel renk işleri için hem ekran kalibrasyonu hem de düzenli göz muayenesi önemlidir.</p></details>
+<details><summary>Kadınlar renkleri daha mı iyi ayırt eder?</summary><p>Kalıtsal kırmızı-yeşil renk zayıflığı erkeklerde çok daha sık görüldüğü için toplum genelinde kadınlar bu tür testlerde ortalama olarak daha az hata yapar. Ancak renk ayrımı becerisi kişiden kişiye değişir.</p></details></div>
+<div class="box warn"><strong>Önemli not</strong><br>Bu sayfadaki test bilgilendirme ve farkındalık amaçlıdır; teşhis koymaz, gözlük ya da lens numarası belirlemez ve göz muayenesinin yerini tutmaz. Ekran ayarları, ortam ışığı ve mesafe sonucu etkileyebilir. Görmenizde ani bulanıklık, ışık çakması, perde inmesi, görme alanında kayıp ya da göz ağrısı varsa vakit kaybetmeden bir göz hekimine başvurun.<br><a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/goz-saglg-merkezleri.html">İlinizdeki göz sağlığı merkezlerini görün →</a></div>
+<h2>Diğer göz testleri</h2><div class="grid"><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/renk-korlugu-testi.html"><span class="ic">🎨</span><b>Renk Körlüğü Testi</b><small>Noktaların içindeki rakamı bulun</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/astigmat-testi.html"><span class="ic">🕐</span><b>Astigmat Testi</b><small>Saat kadranındaki çizgiler</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/amsler-testi.html"><span class="ic">🔲</span><b>Amsler (Sarı Nokta) Testi</b><small>Izgaradaki çizgiler düz mü?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/gorme-keskinligi-testi.html"><span class="ic">👁️</span><b>Görme Keskinliği Testi</b><small>Ekranda E harfi testi</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/yakin-okuma-testi.html"><span class="ic">📖</span><b>Yakın Okuma Testi</b><small>Kolunuz yetmiyor mu?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kontrast-duyarliligi-testi.html"><span class="ic">🌫️</span><b>Kontrast Duyarlılığı Testi</b><small>Soluklaşan harfleri seçin</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kirmizi-yesil-testi.html"><span class="ic">🔴</span><b>Kırmızı-Yeşil Testi</b><small>Gözlüğünüz hâlâ uygun mu?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/renk-siralama-testi.html"><span class="ic">🌈</span><b>Renk Sıralama Testi</b><small>Renk tonlarını sıralayın</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kuru-goz-testi.html"><span class="ic">💧</span><b>Kuru Göz Testi</b><small>Belirti anketi</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-yorgunlugu-testi.html"><span class="ic">💻</span><b>Dijital Göz Yorgunluğu Testi</b><small>Ekran alışkanlıklarınız</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/miyopi-risk-testi.html"><span class="ic">🧒</span><b>Çocuk Miyopi Risk Testi</b><small>Ebeveynler için</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/glokom-risk-testi.html"><span class="ic">🛡️</span><b>Glokom Risk Testi</b><small>Göz tansiyonu riski</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-muayenesi-ne-zaman.html"><span class="ic">📅</span><b>Ne Zaman Muayene Olmalıyım?</b><small>Kişisel muayene aralığı</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kor-nokta-testi.html"><span class="ic">⚫</span><b>Kör Nokta Testi</b><small>Noktanın kaybolduğunu görün</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/baskin-goz-testi.html"><span class="ic">🎯</span><b>Baskın Göz Testi</b><small>Hangi gözünüz lider?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/ardil-goruntu-testi.html"><span class="ic">✨</span><b>Ardıl Görüntü Testi</b><small>Gözünüzü kandıran illüzyon</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-sagligi-bilgi-yarismasi.html"><span class="ic">🧠</span><b>Göz Sağlığı Bilgi Yarışması</b><small>10 soruda kendinizi deneyin</small></a></div><p class="center"><a target="_blank" rel="noopener" class="btn" href="https://www.cagataygulumser.com/p/goz-testleri.html">Tüm göz testleri</a></p>
+</div>
+<script>//<![CDATA[
+(function(){var R=document.getElementById("cgt-sirala");if(!R)return;
+function qform(root,qs){var h='';qs.forEach(function(q,i){h+='<div class="q"><b>'+(i+1)+'. '+q.t+'</b><div class="opts">';q.o.forEach(function(o,j){h+='<label><input type="radio" name="q'+i+'" value="'+j+'">'+o[0]+'</label>'});h+='</div></div>'});root.innerHTML=h;root.addEventListener('change',function(e){var n=e.target.name;root.querySelectorAll('input[name="'+n+'"]').forEach(function(x){x.parentNode.classList.toggle('on',x.checked)})});return function(){var a=[];for(var i=0;i<qs.length;i++){var c=root.querySelector('input[name="q'+i+'"]:checked');if(!c){var el=root.querySelectorAll('.q')[i];el.scrollIntoView({behavior:'smooth',block:'center'});el.style.background='#fff8e8';setTimeout(function(){el.style.background=''},1500);return null}a.push(qs[i].o[+c.value][1])}return a}}
+function show(el,cls,html){el.className='res show '+cls;el.innerHTML=html;el.scrollIntoView({behavior:'smooth',block:'nearest'})}
+var SEQ=R.querySelector('[data-seq]'),POOL=R.querySelector('[data-pool]'),RES=R.querySelector('.res'),N=16,cols=[],seq=[],pool=[];
+function ok2rgb(L,C,h){var hr=h*Math.PI/180,a=C*Math.cos(hr),b=C*Math.sin(hr);var l_=L+0.3963377774*a+0.2158037573*b,m_=L-0.1055613458*a-0.0638541728*b,s_=L-0.0894841775*a-1.291485548*b;var l=l_*l_*l_,m=m_*m_*m_,s=s_*s_*s_;var r=4.0767416621*l-3.3077115913*m+0.2309699292*s,g=-1.2684380046*l+2.6097574011*m-0.4105193037*s*0+(-0.3413193965*s),bb=-0.0041960863*l-0.7034186147*m+1.707614701*s;function gm(x){x=Math.max(0,Math.min(1,x));return Math.round(255*(x<=0.0031308?12.92*x:1.055*Math.pow(x,1/2.4)-0.055))}return 'rgb('+gm(r)+','+gm(g)+','+gm(bb)+')'}
+for(var i=0;i<N;i++)cols.push(ok2rgb(0.72,0.095,(250+i*20)%360));
+function cap(i,big){return '<button data-c="'+i+'" style="width:'+(big?46:42)+'px;height:'+(big?46:42)+'px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #c9dcff;background:'+cols[i]+';cursor:pointer;padding:0"></button>'}
+function sh(a){for(var k=a.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1)),t=a[k];a[k]=a[j];a[j]=t}return a}
+function reset(){seq=[0];pool=[];for(var i=1;i<N;i++)pool.push(i);sh(pool);RES.className='res';draw()}
+function draw(){SEQ.innerHTML=seq.map(function(i,k){return k===0?'<span title="Referans" style="position:relative;display:inline-block">'+cap(i,1).replace('<button','<button disabled')+'<b style="position:absolute;top:-8px;left:-4px;font-size:10px;background:#004aad;color:#fff;border-radius:6px;padding:0 4px">R</b></span>':cap(i,1)}).join('');POOL.innerHTML=pool.map(function(i){return cap(i)}).join('');if(!pool.length)score()}
+POOL.addEventListener('click',function(e){var c=e.target.getAttribute('data-c');if(c===null)return;c=+c;pool.splice(pool.indexOf(c),1);seq.push(c);draw()});
+SEQ.addEventListener('click',function(e){var c=e.target.getAttribute('data-c');if(c===null||e.target.disabled)return;c=+c;if(c===0)return;seq.splice(seq.indexOf(c),1);pool.push(c);RES.className='res';draw()});
+R.querySelector('[data-reset]').addEventListener('click',reset);
+function score(){var maj=0,min=0,tot=0;for(var k=1;k<seq.length;k++){var d=Math.abs(seq[k]-seq[k-1]);tot+=d;if(d>=3)maj++;else if(d===2)min++}
+var pts='';seq.forEach(function(i){var a=(i/N)*2*Math.PI-Math.PI/2;pts+=(110+Math.cos(a)*85).toFixed(1)+','+(110+Math.sin(a)*85).toFixed(1)+' '});var dots='';for(var i=0;i<N;i++){var a=(i/N)*2*Math.PI-Math.PI/2;dots+='<circle cx="'+(110+Math.cos(a)*85).toFixed(1)+'" cy="'+(110+Math.sin(a)*85).toFixed(1)+'" r="9" fill="'+cols[i]+'" stroke="#fff" stroke-width="2"/>'}
+var svg='<svg viewBox="0 0 220 220" style="width:100%;max-width:240px;display:block;margin:0 auto 10px"><polyline points="'+pts+'" fill="none" stroke="#243247" stroke-width="2" stroke-linejoin="round"/>'+dots+'</svg>';var cls,h;
+if(maj===0&&min<=2){cls='ok';h='<h3>Renk tonlar\u0131n\u0131 \u00e7ok iyi s\u0131ralad\u0131n\u0131z</h3><p>S\u0131ralaman\u0131zda b\u00fcy\u00fck bir atlama yok. Bu testte ince renk farklar\u0131n\u0131 ay\u0131rt etme beceriniz iyi g\u00f6r\u00fcn\u00fcyor.</p>'}
+else if(maj<=2){cls='mid';h='<h3>Birka\u00e7 tonda kar\u0131\u015f\u0131kl\u0131k ya\u015fad\u0131n\u0131z</h3><p>S\u0131ralaman\u0131zda '+maj+' b\u00fcy\u00fck, '+min+' k\u00fc\u00e7\u00fck atlama var. Bu, ekran ayarlar\u0131ndan ya da dikkatten kaynaklanabilir. Testi farkl\u0131 bir ekranda tekrarlayabilirsiniz; zorlanma s\u00fcrerse g\u00f6z muayenesinde belirtin.</p>'}
+else{cls='hi';h='<h3>Renk tonlar\u0131n\u0131 s\u0131ralamakta belirgin zorland\u0131n\u0131z</h3><p>S\u0131ralaman\u0131zda '+maj+' b\u00fcy\u00fck atlama var ve renk \u00e7emberinde \u00e7apraz \u00e7izgiler olu\u015ftu. Bu, belirli bir renk ekseninde ay\u0131rt etme g\u00fc\u00e7l\u00fc\u011f\u00fcne i\u015faret edebilir. Standart renk g\u00f6rme testleri i\u00e7in bir g\u00f6z hekimine ba\u015fvurabilirsiniz.</p>'}
+show(RES,cls,svg+h+'<p class="muted">Bu test tarama ama\u00e7l\u0131d\u0131r ve te\u015fhis koymaz.</p>')}
+reset();
+})();
+//]]></script>
+</div></body></html>

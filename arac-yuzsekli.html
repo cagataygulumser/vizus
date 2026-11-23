@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Yüz Şekli Testi</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&display=swap">
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#vz{padding:14px 14px calc(28px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#vz img{max-width:100%;height:auto}</style></head>
+<body><script>window.cgOptimizePostImages=window.cgOptimizePostImages||function(){};</script><div id="vz">
+Yüz şeklime hangi gözlük yakışır? Dört ölçüyle yüz şeklinizi bulun; oval, yuvarlak, kare, kalp yüz için çerçeve formlarını görün.<div id="cgyuz"><style>
+#cgyuz{--b1:#004aad;--b2:#2f86ff;--y:#ffd400;--ink:#14233b;--mut:#5b6b82;--line:#d6e2f5;--bg:#f3f7ff;--ok:#0f7a4a;--okbg:#e9f8f0;--no:#b3261e;--nobg:#fdecea;max-width:none;margin:0 auto;color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif;text-align:left}
+#cgyuz *{box-sizing:border-box}
+#cgyuz h2,#cgyuz h3,#cgyuz .code{font-family:"Exo 2",Arial,sans-serif}
+#cgyuz .hd{background:linear-gradient(120deg,var(--b1),var(--b2));border-radius:16px;padding:20px 22px;margin:0 0 14px}
+#cgyuz .hd p{margin:0;font-size:1.05em;color:#fff!important}
+#cgyuz .lay{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+#cgyuz .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0 14px}
+#cgyuz .card h2{margin:0 0 4px!important;font-size:1.25em;color:var(--b1)!important}
+#cgyuz .card h3{margin:16px 0 8px!important;font-size:1.05em;color:var(--ink)!important}
+#cgyuz .sub{margin:0 0 14px;color:var(--mut);font-size:.95em}
+#cgyuz .g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#cgyuz label.f{display:block;font-weight:700;font-size:.92em;margin:0 0 6px}
+#cgyuz select,#cgyuz input[type=text]{width:100%;height:46px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font:inherit;color:var(--ink);background:#fff}
+#cgyuz select:focus,#cgyuz input[type=text]:focus{outline:2px solid var(--b2);outline-offset:1px}
+#cgyuz .seg{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0}
+#cgyuz .seg label{flex:1 1 180px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;font-size:.95em;display:flex;gap:8px;align-items:center}
+#cgyuz .res{border-radius:12px;padding:14px 16px;margin:12px 0 0;border:1px solid var(--line)}
+#cgyuz .res b{display:block;font-family:"Exo 2",Arial,sans-serif;font-size:1.05em}
+#cgyuz .res small{display:block;color:var(--mut);margin:2px 0 8px}
+#cgyuz .res .tag{display:inline-block;font-weight:700;font-size:.85em;border-radius:20px;padding:3px 10px}
+#cgyuz .res p{margin:8px 0 0;font-size:.95em}
+#cgyuz .res.ok{background:var(--okbg);border-color:#bfe6d1}
+#cgyuz .res.ok .tag{background:var(--ok);color:#fff}
+#cgyuz .res.no{background:var(--nobg);border-color:#f3c5c0}
+#cgyuz .res.no .tag{background:var(--no);color:#fff}
+#cgyuz .note{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0 0;font-size:.95em}
+#cgyuz .note ul,#cgyuz .card ul{margin:6px 0 0;padding-left:20px}
+#cgyuz .note li,#cgyuz .card li{margin:3px 0}
+#cgyuz .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+#cgyuz .chips button{border:1px solid var(--line);background:#fff;color:var(--b1);font:700 15px/1 "Exo 2",Arial,sans-serif;border-radius:10px;padding:10px 14px;cursor:pointer}
+#cgyuz .chips button.on{background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff;border-color:transparent}
+#cgyuz .cres{border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0 0;background:var(--bg)}
+#cgyuz .cres .code{font-size:1.6em;font-weight:800;color:var(--b1);line-height:1}
+#cgyuz .cres .nm{font-weight:700;margin:6px 0 4px}
+#cgyuz .cres p{margin:4px 0 0;font-size:.95em}
+#cgyuz table{width:100%;border-collapse:collapse;margin:8px 0 0;font-size:.95em}
+#cgyuz th,#cgyuz td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}
+#cgyuz th{color:var(--mut);font-size:.85em;text-transform:uppercase;letter-spacing:.04em}
+#cgyuz details{border-bottom:1px solid var(--line);padding:10px 0}
+#cgyuz summary{cursor:pointer;font-weight:700}
+#cgyuz details p{margin:8px 0 0;font-size:.95em}
+#cgyuz .src{font-size:.88em;color:var(--mut);margin:14px 0 0}
+#cgyuz .warn{background:#fff8e8;border:1px solid #f1d28a;border-radius:12px;padding:12px 14px;font-size:.93em;margin:0}
+@media(min-width:900px){#cgyuz .lay{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){#cgyuz .g2{grid-template-columns:1fr}}
+
+#cgyuz .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+#cgyuz input[type=number],#cgyuz input[type=date]{width:100%;height:46px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font:inherit;color:var(--ink);background:#fff}
+#cgyuz .res{background:var(--bg)}
+#cgyuz .res .tag{background:var(--b1);color:#fff}
+#cgyuz .res.wa{background:#fff8e8;border-color:#f1d28a}
+#cgyuz .res.wa .tag{background:#8a5a00;color:#fff}
+#cgyuz .btn{border:1px solid var(--line);background:#fff;color:var(--b1);font:700 15px/1 "Exo 2",Arial,sans-serif;border-radius:10px;padding:11px 14px;cursor:pointer}
+#cgyuz .btn.pri{background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff;border-color:transparent}
+#cgyuz .big{font-family:"Exo 2",Arial,sans-serif;font-size:2.4em;font-weight:800;color:var(--b1);line-height:1.05}
+#cgyuz label.f{margin-top:10px}
+@media(max-width:640px){#cgyuz .g3{grid-template-columns:1fr}}
+</style><div class="hd"><p>Yüz şeklim ne, hangi çerçeve formları yüzümle dengeli durur? Bir mezura ile dört ölçü alın; yüz şeklinizi ve genel stil bilgisini görün.</p></div>
+<div class="lay"><div>
+<div class="card"><h2>Dört ölçü alın</h2><p class="sub">Aynanın karşısında, esnek bir mezurayla santimetre olarak ölçün.</p>
+<div class="g2"><div><label class="f" for="y-f">Alın genişliği</label><input type="number" id="y-f" step="0.5" value="13"></div><div><label class="f" for="y-c">Elmacık kemikleri arası</label><input type="number" id="y-c" step="0.5" value="14"></div><div><label class="f" for="y-j">Çene hattı genişliği</label><input type="number" id="y-j" step="0.5" value="11.5"></div><div><label class="f" for="y-l">Yüz uzunluğu</label><input type="number" id="y-l" step="0.5" value="19"></div></div>
+<div class="note"><ul><li><b>Alın:</b> Kaşların biraz üstünde, alnın en geniş yeri.</li><li><b>Elmacık:</b> Gözlerin dış köşesinin altındaki en çıkıntılı iki nokta arası.</li><li><b>Çene hattı:</b> Kulak altındaki çene köşelerinin arası.</li><li><b>Uzunluk:</b> Saç çizgisinin ortasından çene ucuna.</li></ul></div></div>
+</div><div>
+<div class="card"><h2>Yüz şekliniz</h2><div class="big" id="y-o"></div><div id="y-r" class="res"></div>
+<h3>Tüm yüz şekilleri</h3><table><tbody id="y-t"></tbody></table></div>
+</div></div>
+<p class="warn"><b>Not:</b> Yüz şekli sınıflaması kesin bir ölçü değil, genel bir stil rehberidir; kişiye özel çerçeve önerisi değildir. Çerçevenin yüzünüze oturup oturmadığını en iyi deneyerek ve optisyeninize ayar yaptırarak anlarsınız.</p>
+<script>
+(function(){var root=document.getElementById('cgyuz');if(!root)return;function q(s){return root.querySelector(s)}
+var S={oval:['Oval','Yüz uzunluğu genişliğinden belirgin fazla, alın çeneden biraz geniş, hatlar yumuşak.','Oranları dengeli olduğu için çoğu çerçeve formu uyumlu durur. Yüzün en geniş yeri kadar ya da biraz daha geniş çerçeveler dengeyi korur.'],yuvarlak:['Yuvarlak','Uzunluk ile genişlik birbirine yakın, elmacıklar geniş, çene hattı yumuşak.','Köşeli ve dikdörtgen formlar yüze çizgi kazandırır; yüksekliğinden geniş çerçeveler yüzü daha uzun gösterir.'],kare:['Kare','Alın, elmacık ve çene genişliği birbirine yakın, çene hattı belirgin.','Yuvarlak ve oval formlar köşeli hatları yumuşatır; ince çerçeveler daha hafif bir görünüm verir.'],kalp:['Kalp','Alın geniş, çene dar ve sivri.','Alt kısmı biraz daha geniş ya da ince, hafif çerçeveler üst ile altı dengeler; aşırı süslü üst hatlar alnı daha geniş gösterebilir.'],elmas:['Elmas','Elmacıklar en geniş yer; alın ve çene dar.','Oval ve üst hattı belirgin formlar (kedi gözü gibi) elmacıklarla uyumlu durur.'],uzun:['Uzun (dikdörtgen)','Yüz uzunluğu genişliğinin belirgin üstünde; alın, elmacık ve çene benzer genişlikte.','Cam yüksekliği fazla, geniş çerçeveler yüzü daha kısa ve dengeli gösterir.'],ucgen:['Üçgen','Çene hattı alından geniş.','Üst kısmı belirgin, kaş hattını vurgulayan çerçeveler üst yüzü dengeler.']};
+function v(s){var x=parseFloat(String(q(s).value).replace(',','.'));return isNaN(x)?0:x}
+function calc(){var F=v('#y-f'),C=v('#y-c'),J=v('#y-j'),L=v('#y-l');if(!(F>5&&C>5&&J>5&&L>8)){q('#y-o').innerHTML='?';q('#y-r').innerHTML='<p>Dört ölçüyü de santimetre olarak girin.</p>';return}
+var W=Math.max(F,C,J),r=L/W,k;
+if(Math.abs(F-J)/W<=0.07&&Math.abs(C-F)/W<=0.07){k=r>=1.3?'uzun':'kare'}
+else if(r>=1.6){k='uzun'}
+else if(F>=C*0.97&&F>J*1.1){k='kalp'}
+else if(J>F*1.08&&J>=C*0.95){k='ucgen'}
+else if(F<C*0.86&&J<C*0.86){k='elmas'}
+else if(r<1.22){k='yuvarlak'}
+else{k='oval'}
+q('#y-o').innerHTML=S[k][0];q('#y-r').innerHTML='<b>'+S[k][1]+'</b><p>'+S[k][2]+'</p><p>Uzunluk / genişlik oranınız: '+r.toFixed(2).replace('.',',')+'</p>';
+var h='';for(var i in S){h+='<tr><td><b>'+S[i][0]+'</b></td><td>'+S[i][1]+'</td></tr>'}q('#y-t').innerHTML=h}
+root.addEventListener('input',calc);calc()})();
+</script></div>
+</div></body></html>

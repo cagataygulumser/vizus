@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Reçete Okuyucu</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&display=swap">
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#vz{padding:14px 14px calc(28px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#vz img{max-width:100%;height:auto}</style></head>
+<body><script>window.cgOptimizePostImages=window.cgOptimizePostImages||function(){};</script><div id="vz">
+
+<style>
+#cgrx{--b1:#004aad;--b2:#2f86ff;--bg:#fff;--soft:#f3f7ff;--soft2:#e8f0ff;--line:#d5e0f2;--fg:#1c2a40;--mut:#5a6b85;--ok:#0f7a4a;--okbg:#e9f7f0;--warn:#8a5a00;--warnbg:#fff6df;--warnln:#f0d48a;--paper:#fffdf7;--onb:#fff;
+  color:var(--fg);font-size:16px;line-height:1.6;text-align:left;margin:0 0 28px}
+html[data-cg-theme="dark"] #cgrx{--b1:#6ea8ff;--b2:#2f86ff;--bg:#101826;--soft:#172235;--soft2:#1e2c45;--line:#2c3c5a;--fg:#e8eef8;--mut:#9fb0cb;--ok:#5fd6a0;--okbg:#12301f;--warn:#f3cf7a;--warnbg:#33290f;--warnln:#6a5520;--paper:#182236;--onb:#fff}
+#cgrx *{box-sizing:border-box}
+#cgrx [hidden]{display:none!important}
+#cgrx h2,#cgrx h3,#cgrx h4{font-family:"Exo 2",Arial,sans-serif;color:var(--fg);margin:0;padding:0;border:0;background:none;text-transform:none;letter-spacing:0;text-wrap:balance}
+#cgrx h3{font-size:1.4em;line-height:1.2}
+#cgrx h4{font-size:1.05em;line-height:1.3}
+#cgrx p{margin:0}
+#cgrx a{color:var(--b1);font-weight:600}
+#cgrx .hero{background:linear-gradient(120deg,#004aad,#2f86ff);color:#fff;border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+#cgrx .hero .k{font:700 .75em/1.3 "Exo 2",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+#cgrx .hero h2{color:#fff;font-size:clamp(1.5em,3.4vw,2.1em);line-height:1.15}
+#cgrx .hero p{max-width:68ch;opacity:.95}
+#cgrx .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+#cgrx .chips span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 12px;font-size:.84em;font-weight:600}
+#cgrx .nav{display:flex;gap:8px;overflow-x:auto;padding:14px 0 4px;scrollbar-width:none}
+#cgrx .nav a{flex:none;text-decoration:none;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:7px 14px;font-size:.88em}
+#cgrx .nav a:hover{background:var(--soft)}
+#cgrx section{margin-top:26px;scroll-margin-top:90px;display:flex;flex-direction:column;gap:14px}
+#cgrx .sub{color:var(--mut);max-width:70ch}
+#cgrx .card{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:18px}
+#cgrx .tool{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-items:start}
+@media(min-width:980px){#cgrx .tool{grid-template-columns:minmax(0,440px) minmax(0,1fr)}}
+#cgrx .form{background:var(--paper);display:flex;flex-direction:column;gap:14px;min-width:0}
+#cgrx .form .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+#cgrx .tag{font:700 .72em/1 "Exo 2",Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--b1)}
+#cgrx .grid{display:grid;grid-template-columns:74px repeat(3,minmax(0,1fr));gap:8px;align-items:center}
+#cgrx .grid .h{font:700 .78em/1.2 "Exo 2",Arial,sans-serif;color:var(--mut);text-align:center}
+#cgrx .grid .h small{display:block;font-weight:500;font-size:.9em}
+#cgrx .grid .r{font-weight:700;font-size:.92em;line-height:1.2}
+#cgrx .grid .r small{display:block;color:var(--mut);font-weight:500}
+#cgrx input[type=text],#cgrx select{width:100%;min-width:0;height:44px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg);font:600 16px/1 Arial,sans-serif;text-align:center;padding:0 6px;margin:0;box-shadow:none;font-variant-numeric:tabular-nums}
+#cgrx input[type=text]:focus,#cgrx select:focus,#cgrx button:focus-visible,#cgrx summary:focus-visible,#cgrx a:focus-visible{outline:3px solid var(--b2);outline-offset:1px}
+#cgrx input.bad{border-color:#c0392b;background:rgba(192,57,43,.08)}
+#cgrx .seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+#cgrx .seg button{flex:1;border:0;border-radius:0;background:var(--bg);color:var(--fg);font:600 .86em/1.2 Arial,sans-serif;padding:10px 6px;cursor:pointer;margin:0;box-shadow:none;width:auto}
+#cgrx .seg button+button{border-left:1px solid var(--line)}
+#cgrx .seg button[aria-pressed=true]{background:var(--b1);color:var(--onb)}
+html[data-cg-theme="dark"] #cgrx .seg button[aria-pressed=true]{background:#2f86ff}
+#cgrx .lbl{font-weight:700;font-size:.92em}
+#cgrx .row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#cgrx .row2 label,#cgrx .one label{display:flex;flex-direction:column;gap:4px;font-size:.84em;color:var(--mut);font-weight:600}
+#cgrx details.opt{border-top:1px dashed var(--line);padding-top:10px}
+#cgrx details.opt>summary{cursor:pointer;font-weight:700;font-size:.92em;color:var(--b1)}
+#cgrx details.opt>div{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+#cgrx .btns{display:flex;flex-wrap:wrap;gap:8px}
+#cgrx .btn{border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:10px;font:700 .92em/1 Arial,sans-serif;padding:13px 16px;cursor:pointer;margin:0;box-shadow:none;width:auto;text-transform:none}
+#cgrx .btn.p{background:linear-gradient(120deg,#004aad,#2f86ff);border-color:transparent;color:#fff;flex:1 1 150px}
+#cgrx .note{font-size:.84em;color:var(--mut)}
+#cgrx .out{display:flex;flex-direction:column;gap:14px;min-width:0}
+#cgrx .demo{background:var(--warnbg);border:1px solid var(--warnln);color:var(--warn);border-radius:12px;padding:10px 14px;font-size:.9em;font-weight:600;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+#cgrx .demo button{border:1px solid currentColor;background:transparent;color:inherit;border-radius:8px;font:700 .9em/1 Arial,sans-serif;padding:8px 10px;cursor:pointer;margin:0;box-shadow:none;width:auto}
+#cgrx .eyes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:12px}
+#cgrx .eye{display:flex;flex-direction:column;gap:10px}
+#cgrx .eye .hd{display:flex;justify-content:space-between;align-items:center;gap:8px}
+#cgrx .rxline{font:700 1.15em/1.2 "Exo 2",Arial,sans-serif;font-variant-numeric:tabular-nums;color:var(--b1)}
+#cgrx .eye .body{display:grid;grid-template-columns:112px minmax(0,1fr);gap:12px;align-items:start}
+#cgrx .eye svg{width:112px;height:112px;display:block}
+#cgrx .eye ul{margin:0;padding-left:18px;font-size:.93em}
+#cgrx .eye li+li{margin-top:5px}
+#cgrx .tbl{overflow-x:auto}
+#cgrx table{border-collapse:collapse;width:100%;font-size:.93em;margin:0}
+#cgrx th,#cgrx td{border:0;border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top;background:none;color:var(--fg)}
+#cgrx th{font:700 .8em/1.3 "Exo 2",Arial,sans-serif;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+#cgrx td.n{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+#cgrx .list{margin:0;padding-left:20px}
+#cgrx .list li+li{margin-top:6px}
+#cgrx .warns li{color:var(--warn)}
+#cgrx .box{border-radius:14px;padding:16px 18px;background:var(--soft);border:1px solid var(--line)}
+#cgrx .box.law{background:var(--okbg);border-color:transparent}
+#cgrx .box.law h4{color:var(--ok)}
+#cgrx .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+#cgrx .paper{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px;font-size:.9em}
+#cgrx .paper .ln{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#cgrx .paper .dots{flex:1;min-width:40px;border-bottom:1px dotted var(--mut);height:1em}
+#cgrx .paper table{font-size:.95em}
+#cgrx .paper td,#cgrx .paper th{text-align:center;padding:6px 4px}
+#cgrx .num{flex:none;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--b1);color:var(--onb);font:700 12px/1 Arial,sans-serif}
+html[data-cg-theme="dark"] #cgrx .num{background:#2f86ff}
+#cgrx .legend{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+#cgrx .legend li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start}
+#cgrx .acc{border:1px solid var(--line);border-radius:14px;background:var(--bg);overflow:hidden}
+#cgrx .acc details+details{border-top:1px solid var(--line)}
+#cgrx .acc summary{cursor:pointer;padding:14px 16px;font:700 1em/1.35 "Exo 2",Arial,sans-serif;list-style-position:inside}
+#cgrx .acc details[open]>summary{background:var(--soft)}
+#cgrx .acc .in{padding:14px 16px 18px;display:flex;flex-direction:column;gap:10px;max-width:78ch}
+#cgrx .acc .in ul{margin:0;padding-left:20px}
+#cgrx .acc .in li+li{margin-top:5px}
+#cgrx .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:10px}
+#cgrx .tools a{display:block;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg)}
+#cgrx .tools a:hover{background:var(--soft)}
+#cgrx .tools span{display:block;color:var(--mut);font-weight:400;font-size:.86em}
+#cgrx .foot{margin-top:22px;border-top:1px solid var(--line);padding-top:14px;font-size:.84em;color:var(--mut);max-width:80ch}
+@media(max-width:600px){#cgrx{font-size:15px}#cgrx .hero{padding:20px 16px;border-radius:14px}#cgrx .card{padding:14px}#cgrx .grid{grid-template-columns:58px repeat(3,minmax(0,1fr));gap:6px}#cgrx .eye .body{grid-template-columns:92px minmax(0,1fr)}#cgrx .eye svg{width:92px;height:92px}}
+#cgrx h2,#cgrx h3,#cgrx h4{margin:0!important;padding:0!important}
+#cgrx .hero h2{color:#fff!important}
+#cgrx section>h3,#cgrx .card h4,#cgrx .box h4{color:var(--fg)!important}
+#cgrx .box.law h4{color:var(--ok)!important}
+</style>
+<div id="cgrx">
+<div class="hero">
+<span class="k">Gözlük reçetesi rehberi</span>
+<h2>Reçetenizde yazanları sade bir dille okuyun</h2>
+<p>Göz hekiminizin yazdığı SFR, SİL, AKS ve ADD değerlerini girin. Her değerin ne anlama geldiğini, reçetenin diğer yazım biçimini ve optisyeninize sorabileceğiniz soruları görün.</p>
+<div class="chips"><span>Muayene veya teşhis değildir</span><span>Cam önerisi içermez</span><span>Girdiğiniz değerler cihazınızda kalır</span></div>
+</div>
+<div aria-label="Sayfa bölümleri" class="nav">
+<a href="#rx-oku">Reçeteyi oku</a><a href="#rx-anatomi">Reçetede neler yazar</a><a href="#rx-sozluk">Kısaltmalar</a><a href="#rx-rehber">Rehber</a><a href="#rx-yasal">Yasal çerçeve</a><a href="#rx-sss">Sık sorulanlar</a>
+</div>
+<section id="rx-oku">
+<h3>Reçeteyi oku</h3>
+<div class="tool">
+<div class="card form">
+<div class="top"><span class="tag">Reçete formu</span><span class="note">Virgül veya nokta kullanabilirsiniz</span></div>
+<span class="lbl">Uzak</span>
+<div class="grid">
+<span></span><span class="h">SFR<small>SPH</small></span><span class="h">SİL<small>CYL</small></span><span class="h">AKS<small>AX</small></span>
+<span class="r">Sağ<small>OD · R</small></span><input aria-label="Sağ göz sferik" autocomplete="off" id="rx-rs" inputmode="text" placeholder="-2,25" type="text"/><input aria-label="Sağ göz silindirik" autocomplete="off" id="rx-rc" placeholder="-0,75" type="text"/><input aria-label="Sağ göz aks" autocomplete="off" id="rx-ra" inputmode="numeric" placeholder="180" type="text"/>
+<span class="r">Sol<small>OS · L</small></span><input aria-label="Sol göz sferik" autocomplete="off" id="rx-ls" placeholder="-1,75" type="text"/><input aria-label="Sol göz silindirik" autocomplete="off" id="rx-lc" placeholder="-1,25" type="text"/><input aria-label="Sol göz aks" autocomplete="off" id="rx-la" inputmode="numeric" placeholder="10" type="text"/>
+</div>
+<span class="lbl">Yakın</span>
+<div aria-label="Yakın bilgisi" class="seg" id="rx-near" role="group">
+<button aria-pressed="true" data-v="none" type="button">Yazmıyor</button><button aria-pressed="false" data-v="add" type="button">ADD yazıyor</button><button aria-pressed="false" data-v="sep" type="button">Ayrı yakın değer</button>
+</div>
+<div class="one" hidden="" id="rx-addbox"><label>ADD (adisyon)<input autocomplete="off" id="rx-add" placeholder="+1,50" type="text"/></label></div>
+<div class="row2" hidden="" id="rx-sepbox">
+<label>Sağ yakın SFR<input autocomplete="off" id="rx-rn" placeholder="-0,75" type="text"/></label>
+<label>Sol yakın SFR<input autocomplete="off" id="rx-ln" placeholder="-0,25" type="text"/></label>
+</div>
+<details class="opt"><summary>Prizma ve PD (reçetenizde varsa)</summary>
+<div>
+<div class="row2">
+<label>Sağ prizma (Δ)<input autocomplete="off" id="rx-rp" placeholder="örn. 2" type="text"/></label>
+<label>Sağ taban yönü<select id="rx-rb"><option value="">Seçin</option><option value="ic">İç (BI)</option><option value="dis">Dış (BO)</option><option value="yukari">Yukarı (BU)</option><option value="asagi">Aşağı (BD)</option></select></label>
+<label>Sol prizma (Δ)<input autocomplete="off" id="rx-lp" placeholder="örn. 2" type="text"/></label>
+<label>Sol taban yönü<select id="rx-lb"><option value="">Seçin</option><option value="ic">İç (BI)</option><option value="dis">Dış (BO)</option><option value="yukari">Yukarı (BU)</option><option value="asagi">Aşağı (BD)</option></select></label>
+</div>
+<div class="one"><label>PD (mm) — tek sayı ya da sağ/sol, örn. 63 veya 31/32<input autocomplete="off" id="rx-pd" placeholder="63" type="text"/></label></div>
+</div></details>
+<div class="btns"><button class="btn p" id="rx-go" type="button">Reçeteyi oku</button><button class="btn" id="rx-ex" type="button">Örnek doldur</button><button class="btn" id="rx-cl" type="button">Temizle</button></div>
+<p class="note">Bu araç yalnızca hekiminizin yazdığı değerleri açıklar. Değer üretmez, reçeteyi değiştirmez.</p>
+</div>
+<div aria-live="polite" class="out" id="rx-out"></div>
+</div>
+</section>
+<section id="rx-anatomi">
+<h3>Bir gözlük reçetesinde neler yazar?</h3>
+<p class="sub">Türkiye'de numaralı gözlük camı, yalnızca göz hastalıkları uzmanı hekimin yazdığı reçeteyle verilir. Kâğıt ya da e-reçete olsun, aşağıdaki bilgiler bulunur.</p>
+<div class="two">
+<div aria-label="Örnek reçete şeması" class="paper">
+<div class="ln"><span class="num">1</span><b>Hekim:</b><span class="dots"></span><span>Dip./Tescil No:</span><span class="dots"></span></div>
+<div class="ln"><span class="num">2</span><b>Kurum:</b><span class="dots"></span><span class="num">3</span><b>Tarih:</b><span class="dots"></span></div>
+<div class="ln"><span class="num">4</span><b>Hasta:</b><span class="dots"></span></div>
+<div class="tbl"><table><thead><tr><th></th><th>SFR</th><th>SİL</th><th>AKS</th></tr></thead><tbody>
+<tr><td><span class="num">5</span> Uzak Sağ</td><td>−2,25</td><td>−0,75</td><td>180</td></tr>
+<tr><td>Uzak Sol</td><td>−1,75</td><td>−1,25</td><td>10</td></tr>
+<tr><td><span class="num">6</span> Yakın / ADD</td><td colspan="3">+1,50</td></tr></tbody></table></div>
+<div class="ln"><span class="num">7</span><b>Cam tipi / rengi:</b><span class="dots"></span><span class="num">8</span><b>PD:</b> 63</div>
+<div class="ln"><span class="num">9</span><b>İmza / kaşe ya da e-imza</b><span class="dots"></span></div>
+</div>
+<ul class="legend">
+<li><span class="num">1</span><span><b>Hekim bilgileri.</b> Adı, diploma veya tescil numarası. Bu bilgiler eksikse optisyenlik müessesesi reçeteyi kabul edemez.</span></li>
+<li><span class="num">2</span><span><b>Kurum.</b> Hekimin çalıştığı sağlık kuruluşu ya da görev adresi.</span></li>
+<li><span class="num">3</span><span><b>Tarih.</b> SGK ödemesinden yararlanmak için reçetenin belirli bir süre içinde müesseseye getirilmesi gerekir.</span></li>
+<li><span class="num">4</span><span><b>Hasta bilgileri.</b> Reçete kişiye özeldir, başkası için kullanılamaz.</span></li>
+<li><span class="num">5</span><span><b>Uzak değerleri.</b> Sağ ve sol göz için ayrı ayrı sferik (SFR), silindirik (SİL) ve aks (AKS).</span></li>
+<li><span class="num">6</span><span><b>Yakın değerleri.</b> ADD olarak ya da ayrı bir yakın satırı olarak yazılır. Her reçetede bulunmaz.</span></li>
+<li><span class="num">7</span><span><b>Cam tipi ve rengi.</b> Hekim tek odaklı, bifokal, progresif gibi bir tip ya da renk belirtmiş olabilir.</span></li>
+<li><span class="num">8</span><span><b>PD.</b> Göz bebekleri arası mesafe. Her reçetede yazmaz; gözlük yapılırken müessesede ölçülür.</span></li>
+<li><span class="num">9</span><span><b>İmza.</b> Islak imza ve kaşe ya da e-reçetede elektronik imza.</span></li>
+</ul>
+</div>
+</section>
+<section id="rx-sozluk">
+<h3>Kısaltmalar sözlüğü</h3>
+<div class="one"><label class="lbl" for="rx-q">Reçetenizde gördüğünüz kısaltmayı yazın</label><input autocomplete="off" id="rx-q" placeholder="örn. CYL, OD, ADD" style="text-align:left;padding:0 12px;max-width:340px" type="text"/></div>
+<div class="card tbl" style="padding:6px 8px"><table><thead><tr><th>Kısaltma</th><th>Açılımı</th><th>Ne anlatır?</th></tr></thead><tbody id="rx-abbr"></tbody></table></div>
+</section>
+<section id="rx-rehber">
+<h3>Reçete okuma rehberi</h3>
+<div class="acc">
+<details open=""><summary>Diyoptri nedir, sayılar neden 0,25 adımlarla yazılır?</summary><div class="in">
+<p>Diyoptri (D), bir camın ışığı ne kadar kırdığını gösteren birimdir. Odak uzaklığının metre cinsinden tersidir: 2,00 D'lik bir cam ışığı yarım metrede odaklar. Sayı büyüdükçe cam güçlenir.</p>
+<p>Camlar 0,25 D'lik adımlarla üretilir; bu yüzden reçetelerde −1,25, +2,50 gibi değerler görürsünüz. Bazı reçetelerde 0,12 adımları da bulunabilir.</p></div></details>
+<details><summary>Eksi (−) ve artı (+) ne anlama gelir?</summary><div class="in">
+<p><b>Eksi değerler</b> miyopi için yazılır. Miyopide uzak bulanık, yakın nettir. Eksi camlar ortası ince, kenarı kalın camlardır.</p>
+<p><b>Artı değerler</b> hipermetropi için ya da yakın görüş için yazılır. Artı camlar ortası kalın, kenarı ince camlardır.</p>
+<p>İşaret reçetenin en önemli ayrıntısıdır. +2,00 ile −2,00 birbirinin tam tersi camlardır. Reçetenizde işaret okunmuyorsa tahmin yürütmeyin, hekiminize ya da reçeteyi yazan kuruma sorun.</p></div></details>
+<details><summary>Silindir ve aks: astigmat nasıl yazılır?</summary><div class="in">
+<p>Astigmatta gözün kırma gücü her yönde aynı değildir. Bunu düzeltmek için cama yalnızca bir yönde etki eden silindirik güç eklenir.</p>
+<ul><li><b>SİL (CYL)</b> bu ek gücün miktarıdır.</li><li><b>AKS (AX)</b> silindirin yönüdür; 0 ile 180 derece arasında yazılır. Aks bir "numara" değildir, büyük ya da küçük olması astigmatın az ya da çok olduğunu göstermez.</li><li>180 yatay, 90 dikey yöndür. 0 ile 180 aynı yönü gösterir.</li><li>Silindir yazıyorsa aks da yazmalıdır. Biri eksikse reçete tamamlanmamıştır.</li></ul></div></details>
+<details><summary>Aynı reçete iki farklı biçimde yazılabilir (transpoze)</summary><div class="in">
+<p>Bazı hekimler silindiri eksi, bazıları artı işaretle yazar. İkisi de aynı camı anlatır. Çevirmek için üç adım yeter:</p>
+<ul><li>Sferik ile silindiri toplayın: yeni sferik budur.</li><li>Silindirin işaretini değiştirin.</li><li>Aksa 90 ekleyin; 180'i geçerse 90 çıkarın.</li></ul>
+<p>Örnek: +1,00 / −2,00 × 180 ile −1,00 / +2,00 × 90 aynı reçetedir. Bu sayfadaki araç iki yazımı da gösterir.</p></div></details>
+<details><summary>ADD ve yakın reçetesi</summary><div class="in">
+<p>ADD (adisyon), yakını görmek için uzak değerinin üstüne eklenen artı güçtür. Çoğunlukla 40 yaş sonrasında, gözün yakına odaklanma gücü azaldığında (presbiyopi) yazılır.</p>
+<ul><li>Yakın sferik = uzak sferik + ADD. Silindir ve aks aynı kalır.</li><li>Bazı hekimler ADD yerine ayrı bir "yakın" satırı yazar. İkisi aynı bilgiyi taşır.</li><li>Bilgisayar gibi ara mesafeler için hekim ayrı bir değer yazabilir.</li></ul></div></details>
+<details><summary>Prizma ve taban yönü</summary><div class="in">
+<p>Prizma, görüntüyü belirli bir yöne kaydıran özel bir düzeltmedir ve prizma diyoptrisi (Δ) ile yazılır. 1 Δ, bir metre uzaktaki görüntüyü 1 cm kaydırır.</p>
+<p>Prizmanın yanında mutlaka taban yönü bulunur: iç (BI), dış (BO), yukarı (BU) veya aşağı (BD). Çoğu reçetede prizma yoktur.</p></div></details>
+<details><summary>PD (pupilla mesafesi) neden önemli?</summary><div class="in">
+<p>PD, iki göz bebeğinin merkezleri arasındaki mesafedir ve milimetre ile yazılır. Camın optik merkezi göz bebeğinin karşısına gelsin diye kullanılır.</p>
+<ul><li>Tek sayı (örn. 63) iki göz arasını, iki sayı (örn. 31/32) her gözün burun ortasına uzaklığını gösterir.</li><li>Yakın PD, uzak PD'den birkaç milimetre küçüktür.</li><li>Gözlük yapılırken PD ve montaj yüksekliği, seçtiğiniz çerçeve yüzünüzdeyken müessesede ölçülür.</li></ul></div></details>
+<details><summary>Cam türleri hakkında genel bilgi</summary><div class="in">
+<ul><li><b>Tek odaklı:</b> Camın her yeri aynı güçtedir.</li><li><b>Bifokal:</b> Üstte uzak, altta görünür bir pencerede yakın bölgesi vardır.</li><li><b>Progresif:</b> Uzaktan yakına çizgisiz, kademeli geçiş yapar.</li><li><b>Mesafeye özel camlar:</b> Masa başı gibi belirli mesafeler için tasarlanır.</li><li><b>İndeks:</b> Cam malzemesinin kırma gücüdür (1,50, 1,60, 1,67, 1,74 gibi). İndeks yükseldikçe aynı numara daha ince camla karşılanır.</li></ul>
+<p>Hangi camın size uygun olduğu bu sayfada belirlenmez. Bu seçim; reçeteniz, çerçeveniz ve ölçülerinizle birlikte optisyenlik müessesesinde yapılır.</p></div></details>
+<details><summary>Gözlük reçetesi ile kontakt lens reçetesi aynı şey değildir</summary><div class="in">
+<p>Gözlük camı gözün yaklaşık 12 mm önünde, kontakt lens ise gözün üstünde durur. Bu yüzden özellikle yüksek numaralarda iki reçetenin değerleri farklıdır. Kontakt lens reçetesinde ayrıca temel eğri (BC) ve çap (DIA) gibi bilgiler bulunur.</p>
+<p>Gözlük reçetenizdeki değerlerle kontakt lens alınmaz. Kontakt lens için göz hekiminizin ayrıca yazdığı reçete gerekir.</p></div></details>
+<details><summary>Reçeteyi okurken en sık yapılan hatalar</summary><div class="in">
+<ul><li>Artı ile eksiyi karıştırmak.</li><li>Sağ ve sol göz satırlarını ters okumak.</li><li>Aksı "astigmat numarası" sanmak.</li><li>ADD'yi ayrı bir göz numarası sanmak.</li><li>Eski tarihli reçetedeki değerleri hâlâ geçerli saymak.</li><li>Gözlük reçetesindeki değerle kontakt lens almaya çalışmak.</li></ul></div></details>
+</div>
+</section>
+<section id="rx-yasal">
+<h3>Yasal çerçeve: 5193 sayılı Optisyenlik Hakkında Kanun</h3>
+<div class="two">
+<div class="box law"><h4>Kanun özetle ne diyor?</h4>
+<ul class="list" style="margin-top:8px"><li>Numaralı gözlük camı, yalnızca göz hastalıkları uzmanı hekimin reçetesiyle satılır.</li><li>Reçetesiz numaralı cam satmak, vermek veya önermek yasaktır.</li><li>Optisyen göz ve görme muayenesi ya da testi yapamaz; reçete yazamaz.</li><li>Optisyenlik müessesesinde kontakt lens uygulaması yapılamaz; kontakt lens de reçeteyle satılır.</li><li>Müessese, karşıladığı reçeteleri kayıt altına alır.</li></ul></div>
+<div class="box"><h4>Bu sayfa ne yapar, ne yapmaz?</h4>
+<ul class="list" style="margin-top:8px"><li>Hekiminizin yazdığı değerlerin ne anlama geldiğini genel bilgi olarak açıklar.</li><li>Göz muayenesi, görme testi ya da teşhis değildir.</li><li>Numara belirlemez, reçetenizi değiştirmez.</li><li>Kişiye özel cam, çerçeve ya da ürün önermez.</li><li>Reçetenizle ilgili her karar için göz hekiminize; gözlüğünüzün yapımı için ruhsatlı bir optisyenlik müessesesine başvurun.</li></ul></div>
+</div>
+<p class="note">Özet bilgilendirme amaçlıdır, hukuki görüş değildir. Mevzuat değişebilir; güncel metin için Resmî Gazete ve mevzuat.gov.tr esas alınmalıdır.</p>
+</section>
+<section id="rx-sss">
+<h3>Sık sorulan sorular</h3>
+<div class="acc" id="rx-faq"></div>
+</section>
+<section>
+<h3>İlgili araçlar</h3>
+<div class="tools">
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/transpoze-hesaplama.html">Transpoze<span>Artı ve eksi silindir yazımı</span></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/sferik-esdeger-hesaplama.html">Sferik Eşdeğer<span>Reçetenin tek sayılık özeti</span></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/adisyon-add-hesaplama.html">Adisyon (ADD)<span>Uzak ve yakın değer ilişkisi</span></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/pd-ve-montaj-yuksekligi-olcer.html">PD Ölçer<span>Kamerayla ön ölçüm</span></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/pd-ve-montaj-yuksekligi-simulatoru.html">Gözlük Camı Simülatörü<span>Cam ve çerçeve ilişkisi</span></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/sgk-gozluk-katki-payi-hesaplayici.html">SGK Katkı Payı<span>SGK ödemesi hakkında</span></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/optik-sozluk.html">Optik Sözlük<span>Terimlerin sade açıklaması</span></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/goz-muayenesi-ne-zaman.html">Ne Zaman Muayene?<span>Göz muayenesi aralıkları</span></a>
+</div>
+</section>
+<p class="foot">Son güncelleme: 12 Kasım 2026. Kaynak: 5193 sayılı Optisyenlik Hakkında Kanun ve Optisyenlik Müesseseleri Hakkında Yönetmelik. Bu sayfadaki bilgiler genel bilgilendirme amaçlıdır; göz hekimi muayenesinin ve reçetesinin yerini tutmaz.</p>
+</div>
+<script>
+(function(){
+"use strict";
+var $=function(i){return document.getElementById(i)};
+var out=$("rx-out"),nearMode="none",demo=false;
+var ABBR=[
+["OD \u00b7 R \u00b7 Sağ","Oculus Dexter","Sağ göz."],["OS \u00b7 L \u00b7 Sol","Oculus Sinister","Sol göz."],["OU","Oculus Uterque","Her iki göz."],
+["SFR \u00b7 SPH \u00b7 S","Sferik","Camın temel gücü. Eksi miyopi, artı hipermetropi için yazılır."],
+["SİL \u00b7 CYL \u00b7 C","Silindirik","Astigmat düzeltmesinin miktarı."],["AKS \u00b7 AX \u00b7 A","Aks","Silindirin yönü, 0\u2013180 derece."],
+["ADD","Adisyon","Yakın için uzak değerin üstüne eklenen artı güç."],["Uzak \u00b7 D \u00b7 DV","Distance Vision","Uzak görüş için yazılan değerler."],
+["Yakın \u00b7 N \u00b7 NV","Near Vision","Yakın görüş için yazılan değerler."],["Orta \u00b7 INT","Intermediate","Ara mesafe (ekran) için yazılan değer."],
+["PD \u00b7 PM","Pupilla mesafesi","İki göz bebeği arasındaki mesafe, mm."],["D \u00b7 Dpt","Diyoptri","Cam gücünün birimi."],
+["PL \u00b7 Plano \u00b7 0,00","Plano","Sferik güç yok; numarasız."],["DS","Diyoptri sferik","Yalnızca sferik güç var, silindir yok."],
+["\u0394 \u00b7 PD \u00b7 Prizm","Prizma diyoptrisi","Prizma miktarı."],["BI \u00b7 BO","Base In / Base Out","Prizma tabanı içe (buruna) / dışa (şakağa)."],
+["BU \u00b7 BD","Base Up / Base Down","Prizma tabanı yukarı / aşağı."],["VA \u00b7 GK","Görme keskinliği","Muayenede ölçülen görme düzeyi; cam gücü değildir."],
+["BC \u00b7 DIA","Base Curve / Diameter","Kontakt lens reçetesinde temel eğri ve çap."],["BVD \u00b7 Verteks","Verteks mesafesi","Camın arka yüzü ile göz arasındaki mesafe."]];
+var FAQ=[
+["Reçetemdeki numarayı bu sayfa belirleyebilir mi?","Hayır. Numarayı yalnızca göz hastalıkları uzmanı hekim muayeneyle belirler. Bu sayfa, yazılmış değerlerin ne anlama geldiğini açıklar."],
+["Reçetesiz numaralı gözlük alabilir miyim?","Hayır. 5193 sayılı Kanun'a göre numaralı cam yalnızca göz hekimi reçetesiyle verilir. Optisyenin reçetesiz numaralı cam satması, vermesi veya önermesi yasaktır."],
+["Optisyen göz numaramı ölçebilir mi?","Hayır. Kanun, optisyenin göz ve görme muayenesi ya da testi yapmasını yasaklar. Optisyen, hekimin reçetesine göre gözlüğü hazırlar; PD ve montaj yüksekliği gibi gözlük ölçülerini alır."],
+["Aks değerim 180, bu yüksek bir astigmat mı?","Hayır. Aks astigmatın yönünü gösterir, miktarını değil. Miktar silindir (SİL/CYL) sütununda yazar."],
+["Reçetem artı silindirle yazılmış, yanlış mı?","Değil. Aynı cam artı ya da eksi silindirle yazılabilir. Araç iki yazımı da gösterir."],
+["ADD neden iki göz için tek yazılmış?","ADD çoğunlukla iki göz için aynıdır ve tek satırda yazılır. Hekim gerek görürse gözlere farklı ADD yazabilir."],
+["Eski reçetemle gözlük yaptırabilir miyim?","Göz değerleri zamanla değişebilir. Reçetenizin güncelliği için göz hekiminize danışın. SGK ödemesinden yararlanmak için reçetenin belirli bir süre içinde müesseseye getirilmesi gerekir."],
+["Gözlük reçetemle kontakt lens alabilir miyim?","Hayır. Kontakt lens için göz hekiminin ayrıca yazdığı kontakt lens reçetesi gerekir; değerler ve içerdiği bilgiler farklıdır."],
+["Reçetemde PD yazmıyor, sorun mu?","Değil. PD her reçetede yazmaz. Gözlük hazırlanırken, seçtiğiniz çerçeveyle birlikte müessesede ölçülür."],
+["Girdiğim değerler kaydediliyor mu?","Hayır. Hesaplama tarayıcınızda yapılır, değerler hiçbir yere gönderilmez."]];
+function num(v){v=String(v||"").trim().toLowerCase().replace(/\s+/g,"").replace(",",".").replace(/[\u2212\u2013\u2014]/g,"-");
+  if(v==="")return null;if(/^(pl|plano|düz|duz|pln)$/.test(v))return 0;
+  if(!/^[+-]?\d*\.?\d+$/.test(v))return NaN;return parseFloat(v)}
+function f(n){var s=Math.abs(n).toFixed(2).replace(".",",");return n===0?"0,00":(n>0?"+":"\u2212")+s}
+function q25(n){return Math.abs(n*4-Math.round(n*4))<1e-6}
+function read(id){var el=$(id),v=num(el.value);el.classList.toggle("bad",v!==null&&isNaN(v));return v}
+function eye(side){var p=side==="R"?"r":"l";var s=read("rx-"+p+"s"),c=read("rx-"+p+"c"),a=read("rx-"+p+"a");
+  var e={side:side,name:side==="R"?"Sağ göz":"Sol göz",raw:{s:s,c:c,a:a},warn:[],empty:s===null&&c===null&&a===null};
+  if([s,c,a].some(function(x){return x!==null&&isNaN(x)})){e.warn.push(e.name+": okunamayan bir değer var. Yalnızca sayı, artı/eksi ve virgül kullanın.");e.invalid=true;return e}
+  s=s||0;c=c||0;
+  if(c!==0&&a===null){e.warn.push(e.name+": silindir yazılmış ama aks girilmemiş. Reçetede silindirin yanında mutlaka aks bulunur.")}
+  if(c===0&&a!==null&&e.raw.c===null){e.warn.push(e.name+": aks girilmiş ama silindir yok. Aks yalnızca silindirle birlikte anlam taşır.")}
+  if(a!==null&&(a<0||a>180||a!==Math.round(a))){e.warn.push(e.name+": aks 0 ile 180 arasında tam sayı olmalıdır.");$("rx-"+p+"a").classList.add("bad");a=null}
+  if(!q25(s)||!q25(c))e.warn.push(e.name+": değerler genellikle 0,25 adımlarla yazılır. Reçetenizdeki sayıyı yeniden kontrol edin.");
+  if(Math.abs(s)>20||Math.abs(c)>8)e.warn.push(e.name+": alışılmadık büyüklükte bir değer girdiniz. Virgülün yerini kontrol edin.");
+  e.plusCyl=c>0;e.S0=s;e.C0=c;e.A0=a;
+  if(a===0)a=180;
+  if(c>0){s=s+c;c=-c;if(a!==null)a=a<=90?a+90:a-90}
+  e.S=s;e.C=c;e.A=c===0?null:a;e.SE=s+c/2;e.M2=s+c;
+  var pv=read("rx-"+p+"p");e.pr=(pv&&!isNaN(pv))?pv:0;e.base=$("rx-"+p+"b").value;
+  if(e.pr&&!e.base)e.warn.push(e.name+": prizma yazılmış ama taban yönü seçilmemiş.");
+  return e}
+function band(v,lo,hi){v=Math.abs(v);return v<=lo?"düşük":v<=hi?"orta":"yüksek"}
+function rxText(s,c,a){return f(s)+(c!==0?" / "+f(c)+(a!==null?" &#215; "+a+"\u00b0":""):"")}
+function dial(e){var w=112,cx=56,cy=56,r=40,h='<svg viewBox="0 0 112 112" role="img" aria-label="'+e.name+' aks şeması"><circle cx="56" cy="56" r="40" fill="none" stroke="var(--line)" stroke-width="1.5"/>';
+  for(var d=0;d<180;d+=30){var t=d*Math.PI/180;h+='<line x1="'+(cx+Math.cos(t)*36)+'" y1="'+(cy-Math.sin(t)*36)+'" x2="'+(cx+Math.cos(t)*40)+'" y2="'+(cy-Math.sin(t)*40)+'" stroke="var(--mut)" stroke-width="1"/><line x1="'+(cx-Math.cos(t)*36)+'" y1="'+(cy+Math.sin(t)*36)+'" x2="'+(cx-Math.cos(t)*40)+'" y2="'+(cy+Math.sin(t)*40)+'" stroke="var(--mut)" stroke-width="1"/>'}
+  h+='<text x="101" y="60" font-size="9" fill="var(--mut)">0</text><text x="51" y="11" font-size="9" fill="var(--mut)">90</text><text x="0" y="60" font-size="9" fill="var(--mut)">180</text>';
+  if(e.A!==null){var a=e.A*Math.PI/180,x=Math.cos(a)*r,y=Math.sin(a)*r;
+    h+='<line x1="'+(cx-x)+'" y1="'+(cy+y)+'" x2="'+(cx+x)+'" y2="'+(cy-y)+'" stroke="var(--b1)" stroke-width="3.5" stroke-linecap="round"/>';
+    h+='<line x1="'+(cx+y)+'" y1="'+(cy+x)+'" x2="'+(cx-y)+'" y2="'+(cy-x)+'" stroke="var(--mut)" stroke-width="1.5" stroke-dasharray="3 3"/>'}
+  else h+='<circle cx="56" cy="56" r="4" fill="var(--b1)"/>';
+  return h+'</svg>'}
+function eyeCard(e){var li=[];
+  if(e.S===0&&e.C===0)li.push("Bu göz için numara yazılmamış (plano).");
+  else{
+    if(e.S<0&&e.M2<=0)li.push("<b>"+f(e.S)+" D sferik:</b> eksi değer, uzağı bulanık gösteren miyopi için yazılır. "+band(e.S,3,6)[0].toUpperCase()+band(e.S,3,6).slice(1)+" derecede bir değerdir.");
+    else if(e.S>0&&e.M2>=0)li.push("<b>"+f(e.S)+" D sferik:</b> artı değer, hipermetropi için yazılır. "+band(e.S,2,5)[0].toUpperCase()+band(e.S,2,5).slice(1)+" derecede bir değerdir.");
+    else if(e.S>0&&e.M2<0)li.push("<b>"+f(e.S)+" D sferik, "+f(e.C)+" D silindir:</b> bir yönde artı, diğer yönde eksi güç yazılmış. Buna karma astigmat yazımı denir.");
+    else if(e.S===0)li.push("Sferik güç yok; yalnızca astigmat düzeltmesi yazılmış.");
+    if(e.C!==0){var t="";if(e.A!==null){t=(e.A>=150||e.A<=30)?" Aks yataya yakın.":(e.A>=60&&e.A<=120)?" Aks dikeye yakın.":" Aks eğik (oblik) yönde."}
+      li.push("<b>"+f(e.C)+" D silindir"+(e.A!==null?", "+e.A+"\u00b0 aks":"")+":</b> astigmat düzeltmesi, "+band(e.C,0.75,2)+" derecede."+t)}
+    else li.push("Silindir yok: astigmat düzeltmesi yazılmamış.")}
+  if(e.pr)li.push("<b>"+String(e.pr).replace(".",",")+" \u0394 prizma"+(e.base?", taban "+({ic:"içe",dis:"dışa",yukari:"yukarı",asagi:"aşağı"}[e.base]):"")+":</b> görüntüyü kaydıran özel bir düzeltme yazılmış.");
+  return '<div class="card eye"><div class="hd"><h4>'+e.name+" ("+(e.side==="R"?"OD":"OS")+')</h4><span class="rxline">'+rxText(e.S0,e.C0,e.A0)+'</span></div><div class="body">'+dial(e)+"<ul><li>"+li.join("</li><li>")+"</li></ul></div>"+(e.C!==0&&e.A!==null?'<p class="note">Kalın çizgi aks yönünü, kesikli çizgi silindir gücünün etki ettiği yönü gösterir.</p>':"")+"</div>"}
+function render(scroll){
+  var R=eye("R"),L=eye("L"),eyes=[R,L].filter(function(e){return !e.empty&&!e.invalid}),warn=R.warn.concat(L.warn),h="";
+  var add=null,nr=null,nl=null;
+  if(nearMode==="add"){add=read("rx-add");if(add!==null&&isNaN(add)){warn.push("ADD değeri okunamadı.");add=null}
+    if(add!==null){if(add<0)warn.push("ADD artı bir değerdir. İşareti kontrol edin.");if(add>4)warn.push("ADD genellikle +0,75 ile +3,50 arasında yazılır. Değeri kontrol edin.");if(!q25(add))warn.push("ADD genellikle 0,25 adımlarla yazılır.")}}
+  if(nearMode==="sep"){nr=read("rx-rn");nl=read("rx-ln");if(nr!==null&&isNaN(nr))nr=null;if(nl!==null&&isNaN(nl))nl=null}
+  if(demo)h+='<div class="demo"><span>Örnek reçete gösteriliyor. Kendi değerlerinizi yazdığınızda sonuçlar güncellenir.</span><button type="button" id="rx-own">Kendi reçetemi gireceğim</button></div>';
+  if(!eyes.length){h+='<div class="card"><h4>Sonuçlar burada görünecek</h4><p class="sub" style="margin-top:6px">Reçetenizdeki uzak değerlerini soldaki forma yazın. Sağ ve sol göz için açıklama, aks şeması, reçetenin diğer yazımı ve sorabileceğiniz sorular burada listelenir.</p></div>';
+    if(warn.length)h+='<div class="card"><h4>Kontrol edin</h4><ul class="list warns" style="margin-top:8px"><li>'+warn.join("</li><li>")+"</li></ul></div>";
+    out.innerHTML=h;bind();return}
+  h+='<div class="eyes">'+eyes.map(eyeCard).join("")+"</div>";
+  var rows="";
+  eyes.forEach(function(e){
+    rows+='<tr><td>'+e.name+'</td><td>Eksi silindir yazımı</td><td class="n">'+rxText(e.S,e.C,e.A)+"</td></tr>";
+    if(e.C!==0&&e.A!==null)rows+='<tr><td>'+e.name+'</td><td>Artı silindir yazımı</td><td class="n">'+rxText(e.M2,-e.C,e.A<=90?e.A+90:e.A-90)+"</td></tr>";
+    rows+='<tr><td>'+e.name+'</td><td>Sferik eşdeğer</td><td class="n">'+f(Math.round(e.SE*100)/100)+" D</td></tr>";
+    if(e.C!==0&&e.A!==null){var a2=e.A<=90?e.A+90:e.A-90;rows+='<tr><td>'+e.name+'</td><td>Yönlere göre güç</td><td class="n">'+e.A+"\u00b0: "+f(e.S)+" D \u00b7 "+a2+"\u00b0: "+f(e.M2)+" D</td></tr>"}
+    if(add!==null&&add>0){rows+='<tr><td>'+e.name+'</td><td>Yakın (uzak + ADD)</td><td class="n">'+rxText(e.S0+add,e.C0,e.A0)+"</td></tr>"}
+    var n=e.side==="R"?nr:nl;if(n!==null){rows+='<tr><td>'+e.name+'</td><td>Yakın değeri</td><td class="n">'+rxText(n,e.C0,e.A0)+'</td></tr><tr><td>'+e.name+'</td><td>Buna karşılık gelen ADD</td><td class="n">'+f(Math.round((n-e.S0)*100)/100)+" D</td></tr>";if(n-e.S0<0)warn.push(e.name+": yakın değeri uzak değerinden daha eksi. Satırları ters girmiş olabilirsiniz.")}
+  });
+  h+='<div class="card"><h4>Aynı reçetenin açılımı</h4><div class="tbl" style="margin-top:8px"><table><thead><tr><th>Göz</th><th>Bilgi</th><th>Değer</th></tr></thead><tbody>'+rows+"</tbody></table></div>"+
+     '<p class="note" style="margin-top:10px">Sferik eşdeğer, reçetenin tek sayılık kaba özetidir; gözlük bu değerle yapılmaz. Tablodaki tüm satırlar hekiminizin yazdığı reçetenin matematiksel karşılığıdır, yeni bir reçete değildir.</p></div>';
+  var notes=[];
+  if(eyes.length===2){var d=Math.abs(R.SE-L.SE);if(d>=1.5)notes.push("İki göz arasında yaklaşık "+f(Math.round(d*100)/100).replace("+","")+" D fark var. İki camın kalınlığı ve görüntü büyüklüğü birbirinden farklı olabilir.");
+    if((R.SE>0&&L.SE<0)||(R.SE<0&&L.SE>0))notes.push("Bir göz artı, diğeri eksi yazılmış. Bu mümkündür; yine de işaretleri reçetenizle karşılaştırın.")}
+  if(eyes.some(function(e){return e.plusCyl}))notes.push("Reçeteniz artı silindirle yazılmış. Tabloda eksi silindir karşılığını da görebilirsiniz; ikisi aynı camı anlatır.");
+  if(add!==null&&add>0)notes.push("ADD "+f(add)+" D: yakın görüş için uzak değerin üstüne eklenen güç. Hekim uzak ve yakın için ayrı ayrı ya da tek camda çözüm öngörmüş olabilir.");
+  var pd=$("rx-pd").value.trim();if(pd){var m=pd.replace(/,/g,".").match(/^(\d+(?:\.\d+)?)(?:\s*[\/\-]\s*(\d+(?:\.\d+)?))?$/);
+    if(!m)warn.push("PD okunamadı. 63 ya da 31/32 biçiminde yazın.");else{var tot=m[2]?parseFloat(m[1])+parseFloat(m[2]):parseFloat(m[1]);
+      notes.push("PD "+(m[2]?m[1]+" / "+m[2]+" mm (toplam "+String(tot).replace(".",",")+" mm)":String(tot).replace(".",",")+" mm")+": camların optik merkezleri bu mesafeye göre yerleştirilir.");
+      if(tot<45||tot>80)warn.push("PD yetişkinlerde çoğunlukla 54\u201374 mm arasındadır. Değeri kontrol edin.")}}
+  if(warn.length)h+='<div class="card"><h4>Kontrol edin</h4><ul class="list warns" style="margin-top:8px"><li>'+warn.join("</li><li>")+"</li></ul></div>";
+  if(notes.length)h+='<div class="card"><h4>Reçetenizde dikkat çeken noktalar</h4><ul class="list" style="margin-top:8px"><li>'+notes.join("</li><li>")+"</li></ul></div>";
+  var qs=["Reçetemdeki değerler seçtiğim çerçeveyle uyumlu mu?","Camın optik merkezi ve montaj yüksekliği nasıl ölçülecek?"];
+  if(eyes.some(function(e){return Math.abs(e.S)>=4||Math.abs(e.M2)>=4}))qs.push("Bu numarada cam kalınlığını neler etkiler?");
+  if(eyes.some(function(e){return e.C!==0}))qs.push("Astigmatlı camda aksın doğru yerleştiği nasıl kontrol ediliyor?");
+  if((add!==null&&add>0)||nr!==null||nl!==null)qs.push("Uzak ve yakın için hangi cam türleri var, aralarındaki farklar neler?");
+  if(eyes.some(function(e){return e.pr}))qs.push("Prizmalı camın yapımında nelere dikkat ediliyor?");
+  qs.push("Reçetemdeki bir değeri okuyamıyorum; bunu hekimime mi sormalıyım?");
+  h+='<div class="card"><h4>Optisyeninize ve hekiminize sorabileceğiniz sorular</h4><ul class="list" style="margin-top:8px"><li>'+qs.join("</li><li>")+"</li></ul></div>";
+  out.innerHTML=h;bind();
+  if(scroll&&window.innerWidth<980)out.scrollIntoView({behavior:"smooth",block:"start"})}
+function bind(){var b=$("rx-own");if(b)b.onclick=function(){clearAll();$("rx-rs").focus()}}
+var IDS=["rs","rc","ra","ls","lc","la","add","rn","ln","rp","lp","pd"];
+function setNear(v){nearMode=v;[].forEach.call($("rx-near").children,function(b){b.setAttribute("aria-pressed",b.getAttribute("data-v")===v)});$("rx-addbox").hidden=v!=="add";$("rx-sepbox").hidden=v!=="sep"}
+function clearAll(){IDS.forEach(function(i){var e=$("rx-"+i);e.value="";e.classList.remove("bad")});$("rx-rb").value="";$("rx-lb").value="";setNear("none");demo=false;render(false)}
+function example(){clearAll();$("rx-rs").value="-2,25";$("rx-rc").value="-0,75";$("rx-ra").value="180";$("rx-ls").value="-1,75";$("rx-lc").value="-1,25";$("rx-la").value="10";setNear("add");$("rx-add").value="+1,50";$("rx-pd").value="63";demo=true;render(false)}
+IDS.forEach(function(i){$("rx-"+i).addEventListener("input",function(){demo=false;render(false)})});
+$("rx-rb").addEventListener("change",function(){render(false)});$("rx-lb").addEventListener("change",function(){render(false)});
+$("rx-near").addEventListener("click",function(ev){var b=ev.target.closest("button");if(!b)return;setNear(b.getAttribute("data-v"));demo=false;render(false)});
+$("rx-go").onclick=function(){render(true)};$("rx-ex").onclick=example;$("rx-cl").onclick=clearAll;
+function abbr(qv){qv=(qv||"").toLocaleLowerCase("tr");var rows=ABBR.filter(function(r){return !qv||r.join(" ").toLocaleLowerCase("tr").indexOf(qv)>=0});
+  $("rx-abbr").innerHTML=rows.length?rows.map(function(r){return '<tr><td class="n">'+r[0]+"</td><td>"+r[1]+"</td><td>"+r[2]+"</td></tr>"}).join(""):'<tr><td colspan="3">Bu kısaltma listede yok. Reçeteyi yazan hekime ya da kuruma sorabilirsiniz.</td></tr>'}
+$("rx-q").addEventListener("input",function(){abbr(this.value)});abbr("");
+$("rx-faq").innerHTML=FAQ.map(function(x){return "<details><summary>"+x[0]+'</summary><div class="in"><p>'+x[1]+"</p></div></details>"}).join("");
+try{var ld=document.createElement("script");ld.type="application/ld+json";ld.textContent=JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:FAQ.map(function(x){return {"@type":"Question",name:x[0],acceptedAnswer:{"@type":"Answer",text:x[1]}}})});document.head.appendChild(ld)}catch(e){}
+example();
+})();
+</script>
+<script type="text/javascript">window.cgOptimizePostImages(document.currentScript.parentElement);</script>
+<div style="clear: both;"></div>
+
+</div></body></html>

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Hesaplama Araçları</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&display=swap">
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#vz{padding:14px 14px calc(28px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#vz img{max-width:100%;height:auto}</style></head>
+<body><script>window.cgOptimizePostImages=window.cgOptimizePostImages||function(){};</script><div id="vz">
+
+<style>
+#cgoh{--b1:#004aad;--b2:#2f86ff;--bg:#fff;--soft:#f3f7ff;--soft2:#e6efff;--line:#d5e0f2;--fg:#1c2a40;--mut:#5a6b85;--glass:#bfe0ff;--glass2:#7fb6f5;--warn:#8a5a00;--warnbg:#fff6df;
+  color:var(--fg);font-size:16px;line-height:1.55;text-align:left;margin:0 0 28px}
+html[data-cg-theme="dark"] #cgoh{--b1:#7db0ff;--b2:#2f86ff;--bg:#101826;--soft:#172235;--soft2:#20304d;--line:#2c3c5a;--fg:#e8eef8;--mut:#9fb0cb;--glass:#274a78;--glass2:#5b9be6;--warn:#f3cf7a;--warnbg:#33290f}
+#cgoh *{box-sizing:border-box}
+#cgoh [hidden]{display:none!important}
+#cgoh h2,#cgoh h3,#cgoh h4{font-family:"Exo 2",Arial,sans-serif;margin:0!important;padding:0!important;border:0;background:none;text-transform:none;letter-spacing:0;color:var(--fg)!important}
+#cgoh p{margin:0}
+#cgoh a{color:var(--b1)}
+#cgoh button{font-family:Arial,sans-serif;margin:0;box-shadow:none;text-transform:none;letter-spacing:0;width:auto;cursor:pointer}
+#cgoh button:focus-visible,#cgoh input:focus-visible,#cgoh select:focus-visible,#cgoh a:focus-visible{outline:3px solid var(--b2);outline-offset:2px}
+#cgoh .hero{background:linear-gradient(120deg,#004aad,#2f86ff);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:12px}
+#cgoh .hero .k{font:700 .75em/1.3 "Exo 2",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.85}
+#cgoh .hero h2{color:#fff!important;font-size:clamp(1.45em,3.2vw,2em);line-height:1.15;text-wrap:balance}
+#cgoh .hero p{color:#fff;opacity:.95;max-width:70ch}
+#cgoh .pre{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:2px}
+#cgoh .pre span{color:#fff;opacity:.85;font-size:.86em;font-weight:600}
+#cgoh .pre button{border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.14);color:#fff;border-radius:999px;padding:7px 13px;font-weight:700;font-size:.86em}
+#cgoh .pre button[aria-pressed=true]{background:#fff;color:#004aad}
+#cgoh .lay{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:16px;align-items:start}
+@media(min-width:1000px){#cgoh .lay{grid-template-columns:330px minmax(0,1fr)}#cgoh .inp{position:sticky;top:96px}}
+#cgoh .card{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px;min-width:0}
+#cgoh .inp{display:flex;flex-direction:column;gap:12px}
+#cgoh .tag{font:700 .72em/1 "Exo 2",Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--b1)}
+#cgoh .f{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:8px;align-items:center}
+#cgoh .f label{font-weight:700;font-size:.9em;line-height:1.25}
+#cgoh .f label small{display:block;font-weight:500;color:var(--mut);font-size:.86em}
+#cgoh .st{display:grid;grid-template-columns:36px minmax(0,1fr) 36px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg)}
+#cgoh .st button{border:0;background:var(--soft);color:var(--b1);font:700 18px/1 Arial,sans-serif;height:40px;padding:0}
+#cgoh .st input,#cgoh select{width:100%;min-width:0;height:40px;border:0;background:var(--bg);color:var(--fg);font:700 15px/1 Arial,sans-serif;text-align:center;padding:0 2px;margin:0;box-shadow:none;border-radius:0;font-variant-numeric:tabular-nums}
+#cgoh select{border:1px solid var(--line);border-radius:10px}
+#cgoh .sep{border-top:1px dashed var(--line);margin:2px 0}
+#cgoh .res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;min-width:0}
+#cgoh .r{display:flex;flex-direction:column;gap:8px}
+#cgoh .r.w{grid-column:1/-1}
+#cgoh .r .hd{display:flex;align-items:center;gap:10px}
+#cgoh .ic{flex:none;min-width:44px;height:30px;padding:0 8px;border-radius:8px;background:var(--soft2);color:var(--b1);display:inline-flex;align-items:center;justify-content:center;font:700 .8em/1 "Exo 2",Arial,sans-serif}
+#cgoh .r h3{font-size:1.02em;line-height:1.25}
+#cgoh .big{font:700 1.5em/1.2 "Exo 2",Arial,sans-serif;color:var(--b1);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+#cgoh .big small{font-size:.55em;color:var(--mut);font-weight:600}
+#cgoh .ex{font-size:.9em;color:var(--mut)}
+#cgoh .ex b{color:var(--fg)}
+#cgoh .fx{font:500 .8em/1.4 ui-monospace,Menlo,Consolas,monospace;color:var(--mut);background:var(--soft);border-radius:8px;padding:6px 9px;overflow-wrap:anywhere}
+#cgoh .more{margin-top:auto;font-size:.86em;font-weight:700;text-decoration:none}
+#cgoh .more:hover{text-decoration:underline}
+#cgoh svg{display:block;max-width:100%;height:auto}
+#cgoh .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px;align-items:center}
+#cgoh table{border-collapse:collapse;width:100%;font-size:.9em;margin:0}
+#cgoh th,#cgoh td{white-space:nowrap;border:0;border-bottom:1px solid var(--line);padding:6px 8px;text-align:right;background:none;color:var(--fg);font-variant-numeric:tabular-nums}
+#cgoh th:first-child,#cgoh td:first-child{text-align:left}
+#cgoh th{font:700 .78em/1.3 "Exo 2",Arial,sans-serif;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+#cgoh tr.on td{background:var(--soft2);font-weight:700}
+#cgoh .bar{height:8px;border-radius:4px;background:var(--glass2);min-width:2px}
+#cgoh .rng{display:flex;align-items:center;gap:10px;font-size:.88em;font-weight:600}
+#cgoh .rng input{flex:1;min-width:0;accent-color:var(--b2)}
+#cgoh .warn{background:var(--warnbg);color:var(--warn);border-radius:10px;padding:8px 12px;font-size:.88em;font-weight:600}
+#cgoh .sec{margin-top:26px;display:flex;flex-direction:column;gap:12px}
+#cgoh .sec h3{font-size:1.35em}
+#cgoh .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:10px}
+#cgoh .tools a{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 10px;align-items:center;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg);font-weight:700}
+#cgoh .tools a:hover{background:var(--soft)}
+#cgoh .tools .ic{grid-row:span 2}
+#cgoh .tools small{color:var(--mut);font-weight:400;font-size:.84em}
+#cgoh .foot{margin-top:22px;border-top:1px solid var(--line);padding-top:14px;font-size:.84em;color:var(--mut);max-width:80ch}
+@media(max-width:600px){#cgoh{font-size:15px}#cgoh .hero{padding:20px 16px;border-radius:14px}#cgoh .card{padding:14px}#cgoh .f{grid-template-columns:minmax(0,1fr) 138px}}
+</style>
+<div id="cgoh">
+<div class="hero">
+<span class="k">Optik hesap masası</span>
+<h2>Bir reçete yazın, dokuz hesap aynı anda yapılsın</h2>
+<p>Transpoze, sferik eşdeğer, verteks, adisyon, desantrasyon, minimum cam çapı, cam kalınlığı, prizmatik etki ve büyütme. Değeri değiştirdiğiniz an hepsi birlikte güncellenir; cam kesiti gözünüzün önünde incelip kalınlaşır.</p>
+<div aria-label="Hazır örnekler" class="pre" id="oh-pre" role="group"><span>Hazır örnek:</span></div>
+</div>
+<div class="lay">
+<div class="card inp">
+<span class="tag">Reçete</span>
+<div id="oh-f1"></div>
+<div class="sep"></div>
+<span class="tag">Çerçeve ve ölçü</span>
+<div id="oh-f2"></div>
+<div class="f"><label for="oh-n">Cam indeksi</label><select id="oh-n"><option value="1.5">1,50</option><option value="1.56">1,56</option><option selected="" value="1.6">1,60</option><option value="1.67">1,67</option><option value="1.74">1,74</option></select></div>
+<p class="ex" style="font-size:.82em">Tek göz için hesaplanır. Sonuçlar yaklaşık değerlerdir.</p>
+</div>
+<div aria-live="polite" class="res" id="oh-res">
+<div class="card r w" id="oh-th"></div>
+<div class="card r w" id="oh-dec"></div>
+<div class="card r" id="oh-tr"></div>
+<div class="card r" id="oh-se"></div>
+<div class="card r" id="oh-ad"></div>
+<div class="card r" id="oh-vx"></div>
+<div class="card r" id="oh-pr"></div>
+<div class="card r" id="oh-mag"></div>
+</div>
+</div>
+<div class="sec">
+<h3>Tüm araçlar</h3>
+<div class="tools">
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/pd-ve-montaj-yuksekligi-simulatoru.html"><span class="ic">SİM</span>Gözlük Camı Simülatörü<small>Cam, çerçeve ve merkezleme ilişkisi</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/pd-ve-montaj-yuksekligi-olcer.html"><span class="ic">ÖLÇ</span>PD Ölçer<small>Kamerayla PD ve montaj yüksekliği</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/gozluk-receteni-oku.html"><span class="ic">Rx</span>Reçeteni Oku<small>Reçetedeki değerlerin anlamı</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/canl-goz-atlas.html"><span class="ic">ATL</span>Canlı Göz Atlası<small>Göz anatomisi canlı kamerada</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/sgk-gozluk-katki-payi-hesaplayici.html"><span class="ic">SGK</span>SGK Katkı Payı<small>SGK ödemesi hesaplayıcı</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/optik-sozluk.html"><span class="ic">A-Z</span>Optik Sözlük<small>333 terim, sade açıklamalar</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/transpoze-hesaplama.html"><span class="ic">SPH</span>Transpoze<small>Artı ve eksi silindir yazımı</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/sferik-esdeger-hesaplama.html"><span class="ic">SE</span>Sferik Eşdeğer<small>Tek sayılık özet</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/verteks-hesaplama-gozluk-lens-donusturme.html"><span class="ic">VD</span>Verteks Dönüşümü<small>Mesafeye göre etkili güç</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/adisyon-add-hesaplama.html"><span class="ic">ADD</span>Adisyon<small>Uzak ve yakın ilişkisi</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/pd-ve-desantrasyon-hesaplama.html"><span class="ic">PD</span>PD ve Desantrasyon<small>Merkez kaydırma</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/minimum-cam-cap-hesaplama.html"><span class="ic">ÇAP</span>Minimum Cam Çapı<small>Gereken ham cam çapı</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/tahmini-cam-kalnlg-hesaplama.html"><span class="ic">mm</span>Tahmini Cam Kalınlığı<small>Kenar ve merkez kalınlığı</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/prizmatik-etki-hesaplama.html"><span class="ic">Δ</span>Prizmatik Etki<small>Prentice kuralı</small></a>
+<a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/gozluk-buyutme-oran-hesaplama.html"><span class="ic">%</span>Gözlük Büyütme Oranı<small>Görüntü büyüklüğü değişimi</small></a>
+</div>
+</div>
+<p class="foot">Bu sayfa optisyenler ve öğrenciler için meslek içi hesaplama aracıdır. Reçete oluşturmaz, göz muayenesinin yerini tutmaz, kişiye özel cam ya da ürün önerisi değildir. Kalınlık ve çap değerleri basitleştirilmiş formüllerle hesaplanır; üretici verileri farklı olabilir.</p>
+</div>
+<script>
+(function(){
+"use strict";
+var $=function(i){return document.getElementById(i)};
+var F1=[["s","Sferik","SFR \u00b7 SPH",0.25,-20,20,-3,"D"],["c","Silindirik","SİL \u00b7 CYL",0.25,-8,8,-1,"D"],["a","Aks","AKS \u00b7 derece",5,0,180,180,""],["add","Adisyon","ADD \u00b7 yoksa 0",0.25,0,4,0,"D"]];
+var F2=[["pd","PD","iki göz arası \u00b7 mm",0.5,45,80,63,""],["A","Cam genişliği","A ölçüsü \u00b7 mm",1,35,70,52,""],["dbl","Köprü","DBL \u00b7 mm",1,10,26,18,""],["ed","Efektif çap","ED \u00b7 mm",1,35,80,54,""],["vd","Verteks mesafesi","mm",1,6,20,12,""]];
+var PRE=[["Düşük miyop",{s:-1.5,c:-0.5,a:180,add:0}],["Yüksek miyop",{s:-7,c:-1.5,a:10,add:0}],["Hipermetrop + ADD",{s:3,c:-0.75,a:90,add:2}],["Yüksek astigmat",{s:0.5,c:-3.5,a:170,add:0}]];
+var V={},edTouched=false,pr=5;
+function dec(st){return st<1?2:(st<1||st===0.5?1:0)}
+function fmt(v,st){var d=st===0.25?2:st===0.5?1:0;return v.toFixed(d).replace(".",",")}
+function sg(n){return n===0?"0,00":(n>0?"+":"\u2212")+Math.abs(n).toFixed(2).replace(".",",")}
+function mm(n,d){return n.toFixed(d==null?1:d).replace(".",",")}
+function field(par,f){var w=document.createElement("div");w.className="f";
+  w.innerHTML='<label for="oh-'+f[0]+'">'+f[1]+"<small>"+f[2]+'</small></label><div class="st"><button type="button" data-d="-1" aria-label="'+f[1]+' azalt">\u2212</button><input type="text" inputmode="decimal" id="oh-'+f[0]+'" autocomplete="off"><button type="button" data-d="1" aria-label="'+f[1]+' artır">+</button></div>';
+  par.appendChild(w);var inp=w.querySelector("input");V[f[0]]=f[6];
+  function set(v,write){v=Math.max(f[4],Math.min(f[5],v));V[f[0]]=v;if(write)inp.value=(f[7]==="D"&&f[0]!=="add"?(v>0?"+":"")+fmt(v,f[3]):fmt(v,f[3])).replace("-","\u2212");if(f[0]==="ed")edTouched=true;render()}
+  f.set=function(v){V[f[0]]=v;inp.value=(f[7]==="D"&&f[0]!=="add"?(v>0?"+":"")+fmt(v,f[3]):fmt(v,f[3])).replace("-","\u2212")};
+  f.set(f[6]);
+  w.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;clearPre();set(Math.round((V[f[0]]+f[3]*(+b.getAttribute("data-d")))/f[3])*f[3],true)});
+  inp.addEventListener("input",function(){var t=inp.value.replace(",",".").replace(/[\u2212\u2013]/g,"-").trim(),n=parseFloat(t);if(!isNaN(n)){clearPre();V[f[0]]=Math.max(f[4],Math.min(f[5],n));if(f[0]==="ed")edTouched=true;render()}});
+  inp.addEventListener("blur",function(){f.set(V[f[0]])})}
+F1.forEach(function(f){field($("oh-f1"),f)});F2.forEach(function(f){field($("oh-f2"),f)});
+function clearPre(){[].forEach.call($("oh-pre").querySelectorAll("button"),function(b){b.setAttribute("aria-pressed","false")})}
+PRE.forEach(function(p,i){var b=document.createElement("button");b.type="button";b.textContent=p[0];b.setAttribute("aria-pressed","false");
+  b.onclick=function(){F1.forEach(function(f){f.set(p[1][f[0]])});clearPre();b.setAttribute("aria-pressed","true");render()};$("oh-pre").appendChild(b)});
+$("oh-n").addEventListener("change",render);
+function rx(s,c,a){return sg(s)+(c!==0?" / "+sg(c)+" &#215; "+a+"\u00b0":"")}
+function head(ic,t){return '<div class="hd"><span class="ic">'+ic+"</span><h3>"+t+"</h3></div>"}
+function more(u,t){return '<a class="more" href="'+u+'">'+t+" \u2192</a>"}
+function thick(F,y,n){var s=y*y*Math.abs(F)/(2000*(n-1));return F<0?{c:1.5,e:1.5+s,s:s}:{c:1+s,e:1,s:s}}
+function profile(F,y,n,ref){var W=300,sc=Math.min(4.2,130/y),k=2.4,cx=W/2,top=26,tm=thick(F,y,1.5),H=Math.round(top+(2.2+Math.max(tm.c,tm.e))*sc*k+26);
+  function path(nn){var t=thick(F,y,nn),pts=[],N=30,i,x,u,th;for(i=0;i<=N;i++){x=-y+2*y*i/N;u=x/y;pts.push([cx+x*sc,top+u*u*2.2*sc*k])}
+    for(i=N;i>=0;i--){x=-y+2*y*i/N;u=x/y;th=F<0?t.c+u*u*t.s:t.e+(1-u*u)*t.s;pts.push([cx+x*sc,top+u*u*2.2*sc*k+th*sc*k])}
+    return "M"+pts.map(function(p){return p[0].toFixed(1)+" "+p[1].toFixed(1)}).join("L")+"Z"}
+  var t=thick(F,y,n);
+  return '<svg viewBox="0 0 '+W+" "+H+'" role="img" aria-label="Cam kesiti"><path d="'+path(1.5)+'" fill="none" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/><path d="'+path(n)+'" fill="var(--glass)" stroke="var(--glass2)" stroke-width="1.5"/>'+
+   '<text x="'+cx+'" y="16" text-anchor="middle" font-size="11" fill="var(--mut)">merkez '+mm(t.c)+' mm</text><text x="'+(cx-y*sc)+'" y="'+(H-4)+'" font-size="11" fill="var(--mut)">kenar '+mm(t.e)+' mm</text><text x="'+(cx+y*sc)+'" y="'+(H-4)+'" text-anchor="end" font-size="11" fill="var(--mut)">kesikli: 1,50</text></svg><p class="ex" style="font-size:.8em;text-align:center">Kalınlık, görülebilsin diye 2,4 kat büyütülerek çizildi.</p>'}
+function frame(A,dbl,pd,d){var W=320,H=140,sc=Math.min(2.5,300/(2*A+dbl)),B=A*0.72,cx=W/2,cy=60,h="",i,sx,gx,px;
+  for(i=-1;i<=1;i+=2){gx=cx+i*(dbl/2+A/2)*sc;px=cx+i*(pd/2)*sc;
+    h+='<rect x="'+(gx-A*sc/2)+'" y="'+(cy-B*sc/2)+'" width="'+A*sc+'" height="'+B*sc+'" rx="'+A*sc*0.28+'" fill="var(--glass)" fill-opacity=".5" stroke="var(--fg)" stroke-width="2.2"/>'+
+       '<circle cx="'+gx+'" cy="'+cy+'" r="3" fill="var(--mut)"/><line x1="'+gx+'" y1="'+cy+'" x2="'+px+'" y2="'+cy+'" stroke="var(--b2)" stroke-width="2"/>'+
+       '<circle cx="'+px+'" cy="'+cy+'" r="5.5" fill="none" stroke="var(--b2)" stroke-width="2"/><circle cx="'+px+'" cy="'+cy+'" r="1.8" fill="var(--b2)"/>'}
+  h+='<path d="M'+(cx-dbl*sc/2)+" "+(cy-4)+"Q"+cx+" "+(cy-16)+" "+(cx+dbl*sc/2)+" "+(cy-4)+'" fill="none" stroke="var(--fg)" stroke-width="2.2"/>';
+  h+='<text x="'+cx+'" y="'+(H-4)+'" text-anchor="middle" font-size="11" fill="var(--mut)">gri nokta: geometrik merkez \u00b7 mavi halka: göz bebeği</text>';
+  return '<svg viewBox="0 0 '+W+" "+H+'" role="img" aria-label="Çerçeve ve merkezleme şeması">'+h+"</svg>"}
+function render(){
+  var s=V.s,c=V.c,a=V.a===0?180:V.a,add=V.add,n=parseFloat($("oh-n").value);
+  if(!edTouched){V.ed=V.A+2;F2[3].set(V.ed)}
+  var S=s,C=c,Ax=a;if(C>0){S=s+c;C=-c;Ax=a<=90?a+90:a-90}
+  var S2=S+C,C2=-C,A2=Ax<=90?Ax+90:Ax-90,m1=S,m2=S+C,se=S+C/2,Fmax=Math.abs(m1)>=Math.abs(m2)?m1:m2;
+  var d=(V.A+V.dbl-V.pd)/2,mbs=V.ed+2*Math.abs(d)+2,y=V.ed/2+Math.abs(d);
+  $("oh-tr").innerHTML=head("SPH","Transpoze")+'<div class="big">'+(C!==0?rx(S2,C2,A2):rx(S,0,0))+"</div>"+
+    '<p class="ex">'+(C!==0?"Eksi silindir yazımı <b>"+rx(S,C,Ax)+"</b> ile aynı camı anlatır.":"Silindir yok; reçetenin tek yazımı vardır.")+"</p>"+
+    '<div class="fx">yeni SFR = SFR + SİL \u00b7 SİL işaret değiştirir \u00b7 AKS \u00b1 90</div>'+more("/p/transpoze-hesaplama.html","Transpoze aracı");
+  $("oh-se").innerHTML=head("SE","Sferik eşdeğer")+'<div class="big">'+sg(se)+" <small>D</small></div>"+
+    '<p class="ex">Ana meridyen güçleri: <b>'+sg(m1)+"</b> ("+Ax+"\u00b0) ve <b>"+sg(m2)+"</b> ("+A2+"\u00b0).</p>"+
+    '<div class="fx">SE = SFR + SİL / 2</div>'+more("/p/sferik-esdeger-hesaplama.html","Sferik eşdeğer aracı");
+  var dv=V.vd/1000,k1=m1/(1-dv*m1),k2=m2/(1-dv*m2);
+  $("oh-vx").innerHTML=head("VD","Verteks dönüşümü")+'<div class="big">'+rx(k1,C!==0?k2-k1:0,Ax)+"</div>"+
+    '<p class="ex">'+mm(V.vd,0)+" mm'deki camın kornea düzlemindeki karşılığı. "+(Math.abs(Fmax)<4?"4,00 D altında fark ihmal edilebilir düzeydedir.":"Bu güçte fark belirgindir.")+" Kontakt lens reçetesini göz hekimi yazar.</p>"+
+    '<div class="fx">F\u2032 = F / (1 \u2212 d \u00b7 F), d metre</div>'+more("/p/verteks-hesaplama-gozluk-lens-donusturme.html","Verteks aracı");
+  $("oh-ad").innerHTML=head("ADD","Adisyon")+(add>0?'<div class="big">'+rx(s+add,c,a)+"</div>"+
+    '<p class="ex">Yakın değeri. Ara mesafe için yaklaşık: <b>'+rx(s+add/2,c,a)+"</b>.</p>":'<div class="big"><small>ADD girilmedi</small></div><p class="ex">Reçetede adisyon varsa soldan girin; yakın ve ara mesafe değerleri burada görünür.</p>')+
+    '<div class="fx">yakın SFR = uzak SFR + ADD \u00b7 SİL ve AKS aynı</div>'+more("/p/adisyon-add-hesaplama.html","Adisyon aracı");
+  $("oh-dec").innerHTML=head("PD","Desantrasyon ve minimum cam çapı")+'<div class="two"><div>'+frame(V.A,V.dbl,V.pd,d)+'</div><div style="display:flex;flex-direction:column;gap:8px">'+
+    '<div class="big">'+mm(Math.abs(d))+" <small>mm "+(d>0?"içe (buruna)":d<0?"dışa (şakağa)":"kaydırma yok")+"</small></div>"+
+    '<p class="ex">Çerçeve PD <b>'+mm(V.A+V.dbl,0)+" mm</b>, kişinin PD'si <b>"+mm(V.pd)+" mm</b>. Her camda optik merkez bu kadar kaydırılır.</p>"+
+    '<div class="big">'+mm(mbs,0)+" <small>mm minimum ham cam çapı</small></div>"+
+    '<div class="fx">desantrasyon = (A + DBL \u2212 PD) / 2 \u00b7 çap = ED + 2 &#215; desantrasyon + 2</div>'+
+    (Math.abs(d)>4?'<div class="warn">Desantrasyon 4 mm\u2019nin üzerinde: büyük ham cam çapı ve kalın kenar anlamına gelir.</div>':"")+
+    '<span>'+more("/p/pd-ve-desantrasyon-hesaplama.html","Desantrasyon aracı")+" &nbsp; "+more("/p/minimum-cam-cap-hesaplama.html","Cam çapı aracı")+"</span></div></div>";
+  var rows="",ref=thick(Fmax,y,1.5),t0=thick(Fmax,y,n),mx=Math.max(ref.c,ref.e);
+  [1.5,1.56,1.6,1.67,1.74].forEach(function(nn){var t=thick(Fmax,y,nn),v=Fmax<0?t.e:t.c,rv=Fmax<0?ref.e:ref.c;
+    rows+='<tr'+(nn===n?' class="on"':"")+"><td>"+nn.toFixed(2).replace(".",",")+"</td><td>"+mm(v)+' mm</td><td>'+(nn===1.5?"\u2013":"%"+Math.round((1-v/rv)*100)+" ince")+'</td><td style="width:38%"><div class="bar" style="width:'+Math.max(3,v/mx*100)+'%"></div></td></tr>'});
+  $("oh-th").innerHTML=head("mm","Tahmini cam kalınlığı")+'<div class="two"><div>'+profile(Fmax,y,n)+'</div><div style="display:flex;flex-direction:column;gap:8px">'+
+    '<div class="big">'+mm(Fmax<0?t0.e:t0.c)+" <small>mm "+(Fmax<0?"kenar kalınlığı":"merkez kalınlığı")+"</small></div>"+
+    '<div style="overflow-x:auto"><table><thead><tr><th>İndeks</th><th>'+(Fmax<0?"Kenar":"Merkez")+"</th><th>1,50\u2019ye göre</th><th></th></tr></thead><tbody>"+rows+"</tbody></table></div>"+
+    '<p class="ex">En güçlü meridyen <b>'+sg(Fmax)+" D</b> ve kesilmiş cam yarıçapı <b>"+mm(y)+" mm</b> üzerinden hesaplandı. Çerçeve küçüldükçe ya da desantrasyon azaldıkça cam incelir.</p>"+
+    more("/p/tahmini-cam-kalnlg-hesaplama.html","Cam kalınlığı aracı")+"</div></div>";
+  var rad=Ax*Math.PI/180,Fh=S+C*Math.pow(Math.sin(rad),2),Fv=S+C*Math.pow(Math.cos(rad),2),ph=pr/10*Math.abs(Fh),pv=pr/10*Math.abs(Fv);
+  $("oh-pr").innerHTML=head("\u0394","Prizmatik etki")+'<div class="rng"><span>Merkezden sapma</span><input type="range" id="oh-prr" min="0" max="15" step="0.5" value="'+pr+'" aria-label="Optik merkezden sapma"><b>'+mm(pr)+" mm</b></div>"+
+    '<div class="big">'+mm(ph,2)+" \u0394 <small>yatay</small> &nbsp; "+mm(pv,2)+" \u0394 <small>dikey</small></div>"+
+    '<p class="ex">Yatay meridyen gücü <b>'+sg(Fh)+" D</b>, dikey <b>"+sg(Fv)+" D</b>. "+(Fh<0?"Eksi camda taban, optik merkezden uzağa":"Artı camda taban, optik merkeze")+" doğrudur.</p>"+
+    '<div class="fx">\u0394 = sapma (cm) &#215; cam gücü (D)</div>'+more("/p/prizmatik-etki-hesaplama.html","Prizmatik etki aracı");
+  var r=$("oh-prr");r.addEventListener("input",function(){pr=parseFloat(r.value);render();var q=$("oh-prr");if(q)q.focus()});
+  var dm=(V.vd+3)/1000,M=1/(1-dm*se),pc=(M-1)*100;
+  $("oh-mag").innerHTML=head("%","Büyütme oranı")+'<div class="big">'+(pc>=0?"+":"\u2212")+"%"+mm(Math.abs(pc))+" <small>"+(pc>0.05?"büyütme":pc<-0.05?"küçültme":"değişim yok")+"</small></div>"+
+    '<p class="ex">Gözlük camı görüntüyü yaklaşık bu oranda '+(pc<0?"küçültür":"büyütür")+". Sferik eşdeğer ve "+mm(V.vd,0)+" mm verteks üzerinden, yalnızca güç etkisiyle hesaplandı.</p>"+
+    '<div class="fx">M = 1 / (1 \u2212 d \u00b7 F)</div>'+more("/p/gozluk-buyutme-oran-hesaplama.html","Büyütme oranı aracı")}
+render();
+})();
+</script>
+<script type="text/javascript">window.cgOptimizePostImages(document.currentScript.parentElement);</script>
+<div style="clear: both;"></div>
+
+</div></body></html>

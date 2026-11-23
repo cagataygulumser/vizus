@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Astigmat Testi</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&display=swap">
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#vz{padding:14px 14px calc(28px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#vz img{max-width:100%;height:auto}</style></head>
+<body><script>window.cgOptimizePostImages=window.cgOptimizePostImages||function(){};</script><div id="vz">
+<style>
+.cgt{--b:#004aad;--b2:#2f86ff;--t:#243247;--m:#5b6b80;--l:#dce6f5;max-width:860px;margin:0 auto;background:#fff;color:var(--t);font:17px/1.7 Arial,Helvetica,sans-serif;padding:6px 4px;border-radius:14px}
+.cgt *{box-sizing:border-box}
+.cgt h2{font-family:'Exo 2',Arial,sans-serif;color:var(--b);font-size:1.35em;line-height:1.3;margin:30px 0 10px}
+.cgt h3{font-family:'Exo 2',Arial,sans-serif;color:#13325f;font-size:1.12em;line-height:1.35;margin:20px 0 8px}
+.cgt p{margin:0 0 14px}
+.cgt ul{margin:0 0 14px;padding-left:22px}
+.cgt .lead{font-size:1.08em;font-weight:600;border-left:5px solid var(--b);padding:14px 18px;background:#f3f7ff;border-radius:10px;margin:0 0 18px}
+.cgt .tool{background:#fff;border:1px solid var(--l);border-radius:18px;padding:22px;margin:24px 0;box-shadow:0 8px 28px rgba(0,74,173,.08)}
+.cgt .tool-h{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:0 0 14px;font-family:'Exo 2',Arial,sans-serif;font-weight:700;font-size:1.18em;color:var(--b)}
+.cgt .badge{display:inline-block;background:linear-gradient(135deg,#004aad,#2f86ff);color:#fff;border-radius:999px;padding:3px 12px;font:700 .72em Arial,sans-serif}
+.cgt .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#004aad,#2f86ff);color:#fff!important;border:0;border-radius:12px;padding:12px 20px;font:700 16px Arial,sans-serif;cursor:pointer;text-decoration:none!important;margin:4px 6px 4px 0;transition:transform .15s,box-shadow .15s;line-height:1.2}
+.cgt .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,74,173,.25)}
+.cgt .btn.alt{background:#eef5ff;color:var(--b)!important;border:1px solid #c9dcff}
+.cgt .btn.sm{padding:9px 14px;font-size:15px}
+.cgt .btn:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none}
+.cgt .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.cgt .center{text-align:center}
+.cgt .stage{display:flex;justify-content:center;align-items:center;min-height:180px;margin:12px 0;background:#fff;border-radius:12px;overflow:hidden}
+.cgt .q{padding:14px 0;border-bottom:1px solid #edf1f7}
+.cgt .q:last-child{border-bottom:0}
+.cgt .q b{display:block;margin-bottom:8px;line-height:1.45}
+.cgt .opts{display:flex;flex-wrap:wrap;gap:6px}
+.cgt .opts label{position:relative;flex:1 1 auto;min-width:92px;text-align:center;border:1px solid #c9dcff;border-radius:10px;padding:8px 10px;cursor:pointer;font-size:.92em;background:#f8fbff;user-select:none;line-height:1.35}
+.cgt .opts input{position:absolute;opacity:0;pointer-events:none}
+.cgt .opts label.on{background:var(--b);color:#fff;border-color:var(--b)}
+.cgt .res{display:none;margin-top:18px;padding:18px;border-radius:14px;background:#eef5ff;border:1px solid #c9dcff}
+.cgt .res.show{display:block}
+.cgt .res.ok{background:#ecfaf1;border-color:#a8e2bf}
+.cgt .res.mid{background:#fff8e8;border-color:#f1d28a}
+.cgt .res.hi{background:#fff0f0;border-color:#f3b3b3}
+.cgt .res h3{margin-top:0}
+.cgt .meter{height:12px;background:#e6edf7;border-radius:99px;overflow:hidden;margin:10px 0 14px}
+.cgt .meter i{display:block;height:100%;background:linear-gradient(90deg,#22b07d,#f2b33d,#e5484d);border-radius:99px;width:0;transition:width .7s}
+.cgt .box{padding:16px 18px;margin:22px 0;border-radius:12px;background:#eef5ff;border:1px solid #c9dcff}
+.cgt .warn{background:#fff8e8;border-color:#f1d28a}
+.cgt .steps{counter-reset:s;list-style:none;padding:0;margin:0 0 14px}
+.cgt .steps li{counter-increment:s;position:relative;padding:7px 0 7px 44px}
+.cgt .steps li:before{content:counter(s);position:absolute;left:0;top:6px;width:30px;height:30px;border-radius:50%;background:var(--b);color:#fff;font-weight:700;text-align:center;line-height:30px;font-size:.9em}
+.cgt .faq details{border:1px solid var(--l);border-radius:12px;padding:12px 16px;margin:8px 0;background:#fbfdff}
+.cgt .faq summary{cursor:pointer;font-weight:700;color:#13325f}
+.cgt .faq details p{margin:10px 0 0}
+.cgt .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px;margin:12px 0}
+.cgt .card{display:block;border:1px solid var(--l);border-radius:14px;padding:13px;background:#fff;text-decoration:none!important;color:var(--t)!important;transition:transform .15s,box-shadow .15s;font-weight:400}
+.cgt .card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,74,173,.12)}
+.cgt .card .ic{font-size:1.5em;line-height:1}
+.cgt .card b{display:block;margin:6px 0 2px;color:var(--b);font-family:'Exo 2',Arial,sans-serif;line-height:1.3}
+.cgt .card small{color:var(--m);font-size:.82em;line-height:1.4;display:block}
+.cgt a{color:var(--b);font-weight:700}
+.cgt .muted{color:var(--m);font-size:.9em}
+.cgt .pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.cgt .pill{border:1px solid #c9dcff;border-radius:99px;padding:7px 15px;background:#f8fbff;font:700 .9em Arial,sans-serif;color:var(--b);cursor:pointer}
+.cgt .pill.on{background:var(--b);color:#fff;border-color:var(--b)}
+.cgt .prog{font:700 .85em Arial,sans-serif;color:var(--m);margin:0 0 6px}
+.cgt input[type=range]{width:100%;accent-color:#004aad}
+.cgt .hide{display:none!important}
+@media(max-width:600px){.cgt{font-size:16px}.cgt .tool{padding:15px}.cgt .lead,.cgt .box{padding:13px 14px}.cgt .btn{padding:11px 16px}}
+</style>
+<div class="cgt" id="cgt-astig">
+<p class="lead">Saat kadranına benzeyen bu çizgilerin bazıları size diğerlerinden daha koyu ya da daha net mi görünüyor? Bu ücretsiz astigmat testiyle her iki gözünüzü ayrı ayrı yoklayabilir, muayene zamanınızın gelip gelmediği konusunda fikir edinebilirsiniz.</p>
+<h2>Astigmat nedir?</h2>
+<p>Gözün ön yüzündeki saydam tabaka olan kornea normalde bir basketbol topu gibi her yönde eşit kavislidir. Astigmatta ise kornea (bazen de göz içindeki doğal mercek) daha çok bir ragbi topuna benzer: Bir yönde daha dik, diğer yönde daha düz kavislidir. Bu yüzden ışık retinada tek bir noktada değil, farklı noktalarda odaklanır ve görüntü bazı yönlerde bulanık, bazı yönlerde daha net algılanır.</p>
+<p>Astigmat çok yaygındır; hafif düzeyde neredeyse herkeste bulunabilir. Sık görülen belirtiler arasında hem yakında hem uzakta bulanık görme, harflerin gölgeli ya da çift görünmesi, gece farların çevresinde uzayan ışık çizgileri, uzun ekran ya da okuma sonrası baş ağrısı ve göz yorgunluğu sayılabilir.</p>
+<h2>Test nasıl yapılır?</h2>
+<ol class="steps"><li>Ekrana yaklaşık 1–1,5 metre uzaktan bakın; ortam iyi aydınlatılmış olsun.</li><li>Gözlük ya da lens kullanıyorsanız testi önce onlarla, sonra isterseniz onlarsız yapın.</li><li>Bir gözünüzü avucunuzla bastırmadan kapatın ve açık gözle kadranın ortasına bakın.</li><li>Tüm çizgilerin aynı koyulukta ve netlikte olup olmadığına karar verin; sonra diğer göz için tekrarlayın.</li></ol>
+<div class="tool"><div class="tool-h">Astigmat testi <span class="badge">2 göz · ~1 dk</span></div>
+<div class="pills"><button class="pill on" data-e="0">Sağ göz</button><button class="pill" data-e="1">Sol göz</button></div>
+<p class="muted" data-hint>Sol gözünüzü kapatın, sağ gözünüzle kadranın ortasına bakın.</p>
+<div class="stage"><svg viewBox="0 0 320 320" style="width:100%;max-width:340px"></svg></div>
+<div data-q1><p><b>Tüm çizgiler aynı koyulukta ve aynı netlikte mi görünüyor?</b></p><div class="row"><button class="btn alt" data-a="same">Evet, hepsi aynı</button><button class="btn alt" data-a="diff">Hayır, bazıları daha koyu</button></div></div>
+<div data-q2 class="hide"><p><b>En koyu ya da en net görünen çizgiler hangi saatler arasında?</b></p><div class="row" data-m></div></div>
+<div class="res"></div></div>
+<h2>Sonucunuz ne anlama gelir?</h2>
+<p>Astigmatı olmayan bir göz için kadrandaki tüm çizgiler aynı koyulukta görünür. Astigmatı olan bir gözde ise kornea kavisinin farklı olduğu yöndeki çizgiler daha koyu ve keskin, diğerleri daha soluk ya da bulanık algılanır. Bu fark, astigmatın yönü hakkında da kabaca ipucu verir.</p>
+<p>Gözlük ya da lensinizle testi yaptığınızda yine belirgin bir fark görüyorsanız, kullandığınız düzeltme artık gözünüze tam uymuyor olabilir. Astigmat zamanla değişebilir; bu yüzden düzenli göz muayenesi önemlidir. Kesin değer ancak muayenede, uygun cihazlar ve testlerle ölçülebilir.</p>
+<div class="box"><strong>Unutmayın</strong><br>Astigmat bir hastalık değil, gözün kırma özelliğiyle ilgili bir durumdur. Gözlük, kontakt lens ya da uygun kişilerde refraktif cerrahi gibi seçeneklerle düzeltilebilir. Hangi yöntemin size uygun olduğuna muayene sonrası göz hekiminizle birlikte karar verilir.</div>
+<div class="faq"><h2>Sık sorulan sorular</h2>
+<details><summary>Astigmat zamanla artar mı?</summary><p>Çocukluk ve gençlik döneminde değişebilir; yetişkinlikte çoğunlukla daha sabittir. Ancak keratokonus gibi korneanın incelip sivrildiği durumlarda astigmat hızla artabilir. Sık sık gözlük numarası değişiyorsa bunu göz hekiminize mutlaka söyleyin.</p></details>
+<details><summary>Astigmat gözlüğü takmazsam gözüm bozulur mu?</summary><p>Gözlük takmamak astigmatı kalıcı olarak artırmaz; ancak bulanık görme, yorgunluk ve baş ağrısına yol açabilir. Çocuklarda ise yüksek ve düzeltilmeyen astigmat göz tembelliğine neden olabileceği için erken muayene önemlidir.</p></details>
+<details><summary>Testte tek gözde fark gördüm, ne yapmalıyım?</summary><p>İki göz arasında fark olması sık görülür. Yine de bir göz muayenesi planlamanız, hem astigmatın ölçülmesi hem de başka bir nedenin olup olmadığının anlaşılması için iyi olur.</p></details></div>
+<div class="box warn"><strong>Önemli not</strong><br>Bu sayfadaki test bilgilendirme ve farkındalık amaçlıdır; teşhis koymaz, gözlük ya da lens numarası belirlemez ve göz muayenesinin yerini tutmaz. Ekran ayarları, ortam ışığı ve mesafe sonucu etkileyebilir. Görmenizde ani bulanıklık, ışık çakması, perde inmesi, görme alanında kayıp ya da göz ağrısı varsa vakit kaybetmeden bir göz hekimine başvurun.<br><a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/goz-saglg-merkezleri.html">İlinizdeki göz sağlığı merkezlerini görün →</a></div>
+<h2>Diğer göz testleri</h2><div class="grid"><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/renk-korlugu-testi.html"><span class="ic">🎨</span><b>Renk Körlüğü Testi</b><small>Noktaların içindeki rakamı bulun</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/astigmat-testi.html"><span class="ic">🕐</span><b>Astigmat Testi</b><small>Saat kadranındaki çizgiler</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/amsler-testi.html"><span class="ic">🔲</span><b>Amsler (Sarı Nokta) Testi</b><small>Izgaradaki çizgiler düz mü?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/gorme-keskinligi-testi.html"><span class="ic">👁️</span><b>Görme Keskinliği Testi</b><small>Ekranda E harfi testi</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/yakin-okuma-testi.html"><span class="ic">📖</span><b>Yakın Okuma Testi</b><small>Kolunuz yetmiyor mu?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kontrast-duyarliligi-testi.html"><span class="ic">🌫️</span><b>Kontrast Duyarlılığı Testi</b><small>Soluklaşan harfleri seçin</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kirmizi-yesil-testi.html"><span class="ic">🔴</span><b>Kırmızı-Yeşil Testi</b><small>Gözlüğünüz hâlâ uygun mu?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/renk-siralama-testi.html"><span class="ic">🌈</span><b>Renk Sıralama Testi</b><small>Renk tonlarını sıralayın</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kuru-goz-testi.html"><span class="ic">💧</span><b>Kuru Göz Testi</b><small>Belirti anketi</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-yorgunlugu-testi.html"><span class="ic">💻</span><b>Dijital Göz Yorgunluğu Testi</b><small>Ekran alışkanlıklarınız</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/miyopi-risk-testi.html"><span class="ic">🧒</span><b>Çocuk Miyopi Risk Testi</b><small>Ebeveynler için</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/glokom-risk-testi.html"><span class="ic">🛡️</span><b>Glokom Risk Testi</b><small>Göz tansiyonu riski</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-muayenesi-ne-zaman.html"><span class="ic">📅</span><b>Ne Zaman Muayene Olmalıyım?</b><small>Kişisel muayene aralığı</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kor-nokta-testi.html"><span class="ic">⚫</span><b>Kör Nokta Testi</b><small>Noktanın kaybolduğunu görün</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/baskin-goz-testi.html"><span class="ic">🎯</span><b>Baskın Göz Testi</b><small>Hangi gözünüz lider?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/ardil-goruntu-testi.html"><span class="ic">✨</span><b>Ardıl Görüntü Testi</b><small>Gözünüzü kandıran illüzyon</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-sagligi-bilgi-yarismasi.html"><span class="ic">🧠</span><b>Göz Sağlığı Bilgi Yarışması</b><small>10 soruda kendinizi deneyin</small></a></div><p class="center"><a target="_blank" rel="noopener" class="btn" href="https://www.cagataygulumser.com/p/goz-testleri.html">Tüm göz testleri</a></p>
+</div>
+<script>//<![CDATA[
+(function(){var R=document.getElementById("cgt-astig");if(!R)return;
+function qform(root,qs){var h='';qs.forEach(function(q,i){h+='<div class="q"><b>'+(i+1)+'. '+q.t+'</b><div class="opts">';q.o.forEach(function(o,j){h+='<label><input type="radio" name="q'+i+'" value="'+j+'">'+o[0]+'</label>'});h+='</div></div>'});root.innerHTML=h;root.addEventListener('change',function(e){var n=e.target.name;root.querySelectorAll('input[name="'+n+'"]').forEach(function(x){x.parentNode.classList.toggle('on',x.checked)})});return function(){var a=[];for(var i=0;i<qs.length;i++){var c=root.querySelector('input[name="q'+i+'"]:checked');if(!c){var el=root.querySelectorAll('.q')[i];el.scrollIntoView({behavior:'smooth',block:'center'});el.style.background='#fff8e8';setTimeout(function(){el.style.background=''},1500);return null}a.push(qs[i].o[+c.value][1])}return a}}
+function show(el,cls,html){el.className='res show '+cls;el.innerHTML=html;el.scrollIntoView({behavior:'smooth',block:'nearest'})}
+var svg=R.querySelector('svg'),RES=R.querySelector('.res'),Q1=R.querySelector('[data-q1]'),Q2=R.querySelector('[data-q2]'),M=R.querySelector('[data-m]'),H=R.querySelector('[data-hint]'),eye=0,ans=[null,null];
+var NS='http://www.w3.org/2000/svg',g='';
+for(var k=1;k<=12;k++){var a=(k*30-90)*Math.PI/180,cx=Math.cos(a),cy=Math.sin(a),nx=-cy,ny=cx;for(var j=-1;j<=1;j++){var o=j*7;g+='<line x1="'+(160+cx*32+nx*o).toFixed(1)+'" y1="'+(160+cy*32+ny*o).toFixed(1)+'" x2="'+(160+cx*128+nx*o).toFixed(1)+'" y2="'+(160+cy*128+ny*o).toFixed(1)+'" stroke="#111" stroke-width="3" stroke-linecap="round"/>'}g+='<text x="'+(160+cx*146).toFixed(1)+'" y="'+(160+cy*146+6).toFixed(1)+'" text-anchor="middle" font-family="Arial" font-weight="700" font-size="17" fill="#004aad">'+k+'</text>'}
+g+='<circle cx="160" cy="160" r="5" fill="#e5484d"/>';svg.innerHTML=g;
+var MER=[[12,6],[1,7],[2,8],[3,9],[4,10],[5,11]];M.innerHTML=MER.map(function(m,i){return '<button class="btn alt sm" data-k="'+i+'">'+m[0]+' \u2013 '+m[1]+'</button>'}).join('');
+var names=['Sa\u011f g\u00f6z','Sol g\u00f6z'];
+function setEye(e){eye=e;R.querySelectorAll('.pill').forEach(function(p){p.classList.toggle('on',+p.getAttribute('data-e')===e)});H.textContent=e===0?'Sol g\u00f6z\u00fcn\u00fcz\u00fc kapat\u0131n, sa\u011f g\u00f6z\u00fcn\u00fczle kadran\u0131n ortas\u0131na bak\u0131n.':'Sa\u011f g\u00f6z\u00fcn\u00fcz\u00fc kapat\u0131n, sol g\u00f6z\u00fcn\u00fczle kadran\u0131n ortas\u0131na bak\u0131n.';Q1.classList.remove('hide');Q2.classList.add('hide')}
+R.querySelectorAll('.pill').forEach(function(p){p.addEventListener('click',function(){setEye(+p.getAttribute('data-e'))})});
+function record(v){ans[eye]=v;if(eye===0&&ans[1]===null){setEye(1);H.textContent='\u015eimdi sa\u011f g\u00f6z\u00fcn\u00fcz\u00fc kapat\u0131n, sol g\u00f6z\u00fcn\u00fczle kadran\u0131n ortas\u0131na bak\u0131n.';return}if(ans[0]===null){setEye(0);return}result()}
+Q1.addEventListener('click',function(e){var a=e.target.getAttribute('data-a');if(!a)return;if(a==='same')record('same');else{Q1.classList.add('hide');Q2.classList.remove('hide')}});
+M.addEventListener('click',function(e){var k=e.target.getAttribute('data-k');if(k===null)return;record(MER[+k][0]+' \u2013 '+MER[+k][1]);Q2.classList.add('hide');Q1.classList.remove('hide')});
+function line(i){return '<li><b>'+names[i]+':</b> '+(ans[i]==='same'?'T\u00fcm \u00e7izgiler ayn\u0131 g\u00f6r\u00fcn\u00fcyor.':'En koyu \u00e7izgiler saat '+ans[i]+' y\u00f6n\u00fcnde.')+'</li>'}
+function result(){var bad=ans.filter(function(x){return x!=='same'}).length,cls,h;
+if(!bad){cls='ok';h='<h3>Belirgin bir fark g\u00f6rmediniz</h3><p>Her iki g\u00f6zde de t\u00fcm \u00e7izgileri ayn\u0131 koyulukta g\u00f6rd\u00fcn\u00fcz. Bu, ekranda belirgin bir astigmat i\u015fareti olmad\u0131\u011f\u0131n\u0131 d\u00fc\u015f\u00fcnd\u00fcr\u00fcr; yine de d\u00fc\u015f\u00fck d\u00fczeydeki astigmat bu testte fark edilmeyebilir.</p>'}
+else{cls=bad===2?'hi':'mid';h='<h3>'+(bad===2?'\u0130ki g\u00f6zde de':'Bir g\u00f6zde')+' \u00e7izgiler aras\u0131nda fark g\u00f6rd\u00fcn\u00fcz</h3><p>Baz\u0131 \u00e7izgilerin daha koyu g\u00f6r\u00fcnmesi astigmatla uyumlu olabilir. Bu testi g\u00f6zl\u00fckle yapt\u0131ysan\u0131z mevcut d\u00fczeltmeniz g\u00fcncelli\u011fini yitirmi\u015f olabilir. Kesin de\u011ferlendirme i\u00e7in bir g\u00f6z muayenesi planlaman\u0131z\u0131 \u00f6neririz.</p>'}
+show(RES,cls,h+'<ul>'+line(0)+line(1)+'</ul><p class="muted">Bu sonu\u00e7 te\u015fhis de\u011fildir ve g\u00f6zl\u00fck numaras\u0131 belirlemez.</p><button class="btn alt sm" data-r>Testi tekrarla</button>');RES.querySelector('[data-r]').addEventListener('click',function(){ans=[null,null];RES.className='res';setEye(0)})}
+})();
+//]]></script>
+</div></body></html>

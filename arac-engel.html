@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Görme Engel Oranı</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&display=swap">
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#vz{padding:14px 14px calc(28px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#vz img{max-width:100%;height:auto}</style></head>
+<body><script>window.cgOptimizePostImages=window.cgOptimizePostImages||function(){};</script><div id="vz">
+Görme engel oranı nasıl hesaplanır? Görme değerlerinizi seçin, yönetmelikteki formülle yaklaşık engel oranını adım adım görün.<div id="cgeng"><style>
+#cgeng{--b1:#004aad;--b2:#2f86ff;--y:#ffd400;--ink:#14233b;--mut:#5b6b82;--line:#d6e2f5;--bg:#f3f7ff;--ok:#0f7a4a;--okbg:#e9f8f0;--no:#b3261e;--nobg:#fdecea;max-width:none;margin:0 auto;color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif;text-align:left}
+#cgeng *{box-sizing:border-box}
+#cgeng h2,#cgeng h3,#cgeng .code{font-family:"Exo 2",Arial,sans-serif}
+#cgeng .hd{background:linear-gradient(120deg,var(--b1),var(--b2));border-radius:16px;padding:20px 22px;margin:0 0 14px}
+#cgeng .hd p{margin:0;font-size:1.05em;color:#fff!important}
+#cgeng .lay{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+#cgeng .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0 14px}
+#cgeng .card h2{margin:0 0 4px!important;font-size:1.25em;color:var(--b1)!important}
+#cgeng .card h3{margin:16px 0 8px!important;font-size:1.05em;color:var(--ink)!important}
+#cgeng .sub{margin:0 0 14px;color:var(--mut);font-size:.95em}
+#cgeng .g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#cgeng label.f{display:block;font-weight:700;font-size:.92em;margin:0 0 6px}
+#cgeng select,#cgeng input[type=text]{width:100%;height:46px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font:inherit;color:var(--ink);background:#fff}
+#cgeng select:focus,#cgeng input[type=text]:focus{outline:2px solid var(--b2);outline-offset:1px}
+#cgeng .seg{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0}
+#cgeng .seg label{flex:1 1 180px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;font-size:.95em;display:flex;gap:8px;align-items:center}
+#cgeng .res{border-radius:12px;padding:14px 16px;margin:12px 0 0;border:1px solid var(--line)}
+#cgeng .res b{display:block;font-family:"Exo 2",Arial,sans-serif;font-size:1.05em}
+#cgeng .res small{display:block;color:var(--mut);margin:2px 0 8px}
+#cgeng .res .tag{display:inline-block;font-weight:700;font-size:.85em;border-radius:20px;padding:3px 10px}
+#cgeng .res p{margin:8px 0 0;font-size:.95em}
+#cgeng .res.ok{background:var(--okbg);border-color:#bfe6d1}
+#cgeng .res.ok .tag{background:var(--ok);color:#fff}
+#cgeng .res.no{background:var(--nobg);border-color:#f3c5c0}
+#cgeng .res.no .tag{background:var(--no);color:#fff}
+#cgeng .note{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0 0;font-size:.95em}
+#cgeng .note ul,#cgeng .card ul{margin:6px 0 0;padding-left:20px}
+#cgeng .note li,#cgeng .card li{margin:3px 0}
+#cgeng .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+#cgeng .chips button{border:1px solid var(--line);background:#fff;color:var(--b1);font:700 15px/1 "Exo 2",Arial,sans-serif;border-radius:10px;padding:10px 14px;cursor:pointer}
+#cgeng .chips button.on{background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff;border-color:transparent}
+#cgeng .cres{border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0 0;background:var(--bg)}
+#cgeng .cres .code{font-size:1.6em;font-weight:800;color:var(--b1);line-height:1}
+#cgeng .cres .nm{font-weight:700;margin:6px 0 4px}
+#cgeng .cres p{margin:4px 0 0;font-size:.95em}
+#cgeng table{width:100%;border-collapse:collapse;margin:8px 0 0;font-size:.95em}
+#cgeng th,#cgeng td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}
+#cgeng th{color:var(--mut);font-size:.85em;text-transform:uppercase;letter-spacing:.04em}
+#cgeng details{border-bottom:1px solid var(--line);padding:10px 0}
+#cgeng summary{cursor:pointer;font-weight:700}
+#cgeng details p{margin:8px 0 0;font-size:.95em}
+#cgeng .src{font-size:.88em;color:var(--mut);margin:14px 0 0}
+#cgeng .warn{background:#fff8e8;border:1px solid #f1d28a;border-radius:12px;padding:12px 14px;font-size:.93em;margin:0}
+@media(min-width:900px){#cgeng .lay{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){#cgeng .g2{grid-template-columns:1fr}}
+
+#cgeng .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+#cgeng input[type=number],#cgeng input[type=date]{width:100%;height:46px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font:inherit;color:var(--ink);background:#fff}
+#cgeng .res{background:var(--bg)}
+#cgeng .res .tag{background:var(--b1);color:#fff}
+#cgeng .res.wa{background:#fff8e8;border-color:#f1d28a}
+#cgeng .res.wa .tag{background:#8a5a00;color:#fff}
+#cgeng .btn{border:1px solid var(--line);background:#fff;color:var(--b1);font:700 15px/1 "Exo 2",Arial,sans-serif;border-radius:10px;padding:11px 14px;cursor:pointer}
+#cgeng .btn.pri{background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff;border-color:transparent}
+#cgeng .big{font-family:"Exo 2",Arial,sans-serif;font-size:2.4em;font-weight:800;color:var(--b1);line-height:1.05}
+#cgeng label.f{margin-top:10px}
+@media(max-width:640px){#cgeng .g3{grid-template-columns:1fr}}
+</style><div class="hd"><p>Görme kaybında engel oranı yüzde kaç çıkar? Gözlükle ulaştığınız en iyi görme değerlerini seçin; yönetmelikteki formülle yaklaşık oranı adım adım görün.</p></div>
+<div class="lay"><div>
+<div class="card"><h2>Görme değerleriniz</h2><p class="sub">Hesap, gözlük ya da kontakt lensle elde edilen en iyi düzeltilmiş görme üzerinden yapılır.</p>
+<div class="g2"><div><label class="f" for="e-r">Sağ göz</label><select id="e-r"></select></div><div><label class="f" for="e-l">Sol göz</label><select id="e-l"></select></div></div>
+<label class="f" for="e-b">İki göz birlikte</label><select id="e-b"></select>
+<label class="f" for="e-d">Çift görme (diplopi)</label><select id="e-d"><option value="0">Yok</option><option value="10">Yalnız yana bakışta, baş pozisyonu yok</option><option value="20">Düz bakışta var, baş pozisyonu gelişmiş</option><option value="30">Bir göz kapatılmadan önlenemiyor</option></select>
+<div class="note">Bu hesap görme alanını normal kabul eder. Görme alanı kaybı, göz kapağı düşüklüğü, sürekli sulanma ve kamaşma gibi ek durumlar oranı değiştirir.</div></div>
+</div><div>
+<div class="card"><h2>Yaklaşık engel oranı</h2><div class="big" id="e-o"></div><div id="e-c" class="res"></div>
+<h3>Hesap adımları</h3><table><tbody id="e-s"></tbody></table></div>
+<div class="card"><h2>Sık sorulanlar</h2>
+<details><summary>Tek gözü görmeyenin engel oranı kaç çıkar?</summary><p>Diğer gözün görmesi ve görme alanı tam ise kılavuzdaki tek gözlülük formülüyle oran %32 bulunur.</p></details>
+<details><summary>Yüksek göz numarası tek başına engel oranı verir mi?</summary><p>Hesap göz numarasına göre değil, gözlük ya da lensle ulaşılan görme keskinliğine göre yapılır. Numarası yüksek olup gözlükle tam gören kişide görme keskinliğinden oran çıkmaz.</p></details>
+<details><summary>Hangi oran hangi hak için aranıyor?</summary><p>Engelli kimlik kartı için en az %40 engel oranı aranır. Diğer hakların eşikleri hakkın türüne göre değişir; başvurmadan önce ilgili kurumun güncel şartlarına bakın.</p></details>
+<details><summary>Rapor nereden alınır?</summary><p>Engellilik sağlık kurulu raporu, yetkilendirilmiş hastanelerdeki sağlık kurullarınca düzenlenir. Kesin oranı kurulun ölçüm ve muayene bulguları belirler.</p></details></div>
+</div></div>
+<p class="warn"><b>Önemli:</b> Bu araç yönetmelikteki formülün sadeleştirilmiş bir uygulamasıdır ve yalnızca fikir verir; sağlık kurulu raporu yerine geçmez. Kesin oran yetkili sağlık kurulunca belirlenir.</p>
+<p class="src"><b>Kaynak:</b> Erişkinler İçin Engellilik Değerlendirmesi Hakkında Yönetmelik (Resmî Gazete 20.02.2019/30692), Ek-2 Engel Alanları Kılavuzu, görme sistemi bölümü. Mevzuat değişebilir; güncel metni kontrol ediniz.</p>
+<script>
+(function(){var root=document.getElementById('cgeng');if(!root)return;function q(s){return root.querySelector(s)}
+var T=[[100,'1,0 (10/10)'],[95,'0,8 (8/10)'],[85,'0,5 (5/10)'],[80,'0,4 (4/10)'],[73,'0,3 (3/10)'],[65,'0,2 (2/10)'],[50,'0,1 (6 metreden parmak sayma)'],[35,'0,05 (3 metreden parmak sayma)'],[20,'0,025 (1,5 metreden parmak sayma)'],[0,'1 metreden parmak sayma ve altı / görmüyor']];
+['#e-r','#e-l','#e-b'].forEach(function(s){if(s==='#e-b'){var a=document.createElement('option');a.value='a';a.innerHTML='İyi gören gözle aynı (ölçülmediyse)';q(s).appendChild(a)}T.forEach(function(t){var o=document.createElement('option');o.value=t[0];o.innerHTML=t[1];q(s).appendChild(o)})});
+function n(x){return (Math.round(x*10)/10).toString().replace('.',',')}
+function calc(){var r=parseFloat(q('#e-r').value),l=parseFloat(q('#e-l').value),bv=q('#e-b').value,b=bv==='a'?Math.max(r,l):parseFloat(bv),d=parseFloat(q('#e-d').value),S=[],igp;
+if(r===0&&l===0){igp=0;S.push(['İki gözde körlük','Görme sistemi yetersizlik oranı 100 kabul edilir'])}
+else if(r===0||l===0){var g=Math.max(r,l);igp=g*0.8*85/100;S.push(['Tek gözlülük formülü','('+g+' × 0,8) × (100 − 15) / 100 = '+n(igp)])}
+else{igp=(3*b+r+l)/5;S.push(['İşlevsel keskinlik puanı','(3 × '+b+' + '+r+' + '+l+') / 5 = '+n(igp)])}
+if(d>0&&igp>0){igp=igp*(100-d)/100;S.push(['Çift görme azaltması','%'+d+' azaltılır → '+n(igp)])}
+var gs=100-igp,or=gs<=50?gs:(gs-50)*0.8+50;S.push(['Yetersizlik oranı','100 − '+n(igp)+' = '+n(gs)]);if(gs>50)S.push(['Dönüşüm','('+n(gs)+' − 50) × 0,8 + 50 = '+n(or)]);
+or=Math.ceil(Math.round(or*100)/100);q('#e-o').innerHTML='%'+or;
+var c=igp>=91?'Normal görme':igp>=71?'Normale yakın görme':igp>=51?'Orta derecede görme kaybı':igp>=31?'Ağır görme kaybı':igp>=11?'Çok ağır görme kaybı':'Tüme yakın görme kaybı';
+q('#e-c').className='res '+(or>=40?'wa':'');q('#e-c').innerHTML='<b>'+c+'</b><p>İşlevsel görme puanı: '+n(igp)+'. '+(or>=40?'Oran %40 ve üzerinde.':'Oran %40’ın altında.')+'</p>';
+q('#e-s').innerHTML=S.map(function(x){return '<tr><td><b>'+x[0]+'</b></td><td>'+x[1]+'</td></tr>'}).join('')}
+root.addEventListener('change',calc);calc()})();
+</script></div>
+</div></body></html>

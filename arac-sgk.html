@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>SGK Katkı Payı Hesaplayıcı</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&display=swap">
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#vz{padding:14px 14px calc(28px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#vz img{max-width:100%;height:auto}</style></head>
+<body><script>window.cgOptimizePostImages=window.cgOptimizePostImages||function(){};</script><div id="vz">
+<div id="cgsgk">
+<style>
+#cgsgk{--b1:#004aad;--b2:#2f86ff;--y:#ffd400;--ink:#14233b;--mut:#5b6b82;--line:#d6e2f5;--bg:#f3f7ff;max-width:none;margin:0 auto;color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif;text-align:left}
+#cgsgk *{box-sizing:border-box}
+#cgsgk h3,#cgsgk .num{font-family:"Exo 2",Arial,sans-serif}
+#cgsgk .hd{background:linear-gradient(120deg,var(--b1),var(--b2));border-radius:16px;padding:20px 22px;margin:0 0 14px}
+#cgsgk .hd p{margin:0;font-size:1.05em;color:#fff!important}
+#cgsgk .lay{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+#cgsgk .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0 14px}
+#cgsgk .card h3{margin:0 0 12px;font-size:1.12em;color:var(--b1)!important}
+#cgsgk .g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#cgsgk .g4{display:grid;grid-template-columns:64px repeat(2,1fr);gap:8px 10px;align-items:center}
+#cgsgk .g4 .h{font-size:.78em;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.03em}
+#cgsgk .g4 .e{font-weight:700;font-size:.92em}
+#cgsgk label.f{display:block;font-size:.86em;font-weight:700;color:var(--mut);margin:0 0 4px}
+#cgsgk input[type=number],#cgsgk input[type=date],#cgsgk select{width:100%;font:inherit;font-size:1em;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);height:auto;margin:0}
+#cgsgk input:focus,#cgsgk select:focus{outline:2px solid var(--b2);border-color:var(--b2)}
+#cgsgk .chk{display:flex;gap:8px;align-items:center;font-size:.95em;margin-top:12px;cursor:pointer}
+#cgsgk .chk input{width:18px;height:18px;margin:0}
+#cgsgk .sub{font-size:.92em;font-weight:700;color:var(--ink);margin:16px 0 8px}
+#cgsgk .note{font-size:.86em;color:var(--mut);margin:8px 0 0}
+#cgsgk .box{border-radius:14px;padding:16px 18px;background:linear-gradient(120deg,var(--b1),var(--b2));color:#fff}
+#cgsgk .box small{display:block;font-size:.8em;font-weight:700;opacity:.9;text-transform:uppercase;letter-spacing:.04em}
+#cgsgk .box .num{font-size:2.3em;font-weight:800;line-height:1.15}
+#cgsgk .box .num i{font-style:normal;font-size:.45em;font-weight:700;margin-left:4px}
+#cgsgk .box .s{font-size:.93em;margin-top:2px}
+#cgsgk .pay{border-radius:14px;padding:14px 18px;background:#fff8e8;border:1px solid #f1d28a;margin-top:12px;display:none}
+#cgsgk .pay b{font-size:1.25em;font-family:"Exo 2",Arial,sans-serif}
+#cgsgk table.det{width:100%;border-collapse:collapse;font-size:.92em;margin:14px 0 0}
+#cgsgk table.det td{padding:7px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+#cgsgk table.det td:last-child{text-align:right;font-weight:700;white-space:nowrap}
+#cgsgk table.det tr.t td{border-top:2px solid var(--b1);border-bottom:0;font-weight:700;color:var(--b1)}
+#cgsgk table.det td span{display:block;font-size:.86em;color:var(--mut);font-weight:400}
+#cgsgk .warn{background:#fff8e8;border:1px solid #f1d28a;border-radius:10px;padding:12px 14px;font-size:.92em;margin:12px 0 0}
+#cgsgk .info{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.93em;margin:12px 0 0}
+#cgsgk ul{margin:0;padding:0 0 0 18px}
+#cgsgk ul li{margin:0 0 6px;font-size:.95em}
+#cgsgk .src{font-size:.86em;color:var(--mut);margin:10px 0 0}
+#cgsgk .src a{color:var(--b1);font-weight:700}
+#cgsgk .ok{color:#12753f;font-weight:700}
+#cgsgk .no{color:#b3261e;font-weight:700}
+#cgsgk [hidden]{display:none!important}
+@media(min-width:900px){#cgsgk .lay{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}#cgsgk .lay>div>.card:last-child{margin-bottom:0}#cgsgk .stick{position:sticky;top:90px}}
+@media(max-width:640px){#cgsgk .g2{grid-template-columns:1fr}#cgsgk .card{padding:14px}#cgsgk .box .num{font-size:2em}}
+</style>
+
+<div class="hd"><p>Reçetenizdeki numaraları girin; SGK'nın gözlük camı ve çerçevesi için ödediği tutarı ve cebinizden çıkacak farkı yaklaşık olarak görün.</p></div>
+
+<div class="lay">
+<div>
+<div class="card">
+<h3>Reçete ve gözlük bilgileri</h3>
+<div class="g2">
+<div><label class="f" for="sgStat">Sigortalılık durumu</label><select id="sgStat"><option value="20">Çalışan veya bakmakla yükümlü olduğu kişi (%20)</option><option value="10">Emekli veya bakmakla yükümlü olduğu kişi (%10)</option><option value="0">Katılım payından muaf</option></select></div>
+<div><label class="f" for="sgType">Reçetedeki gözlük</label><select id="sgType"><option value="one">Tek gözlük (uzak ya da yakın), tek odaklı</option><option value="two">Uzak ve yakın için iki ayrı gözlük</option><option value="multi">Çok odaklı cam yazılmış (bifokal / progresif)</option><option value="decl">Uzak ve yakın yazılmış, tek progresif gözlük alınacak</option></select></div>
+<div><label class="f" for="sgMat">Reçetedeki cam cinsi</label><select id="sgMat"><option value="2">Organik</option><option value="0">Beyaz (mineral)</option><option value="1">Kolormatik</option></select></div>
+<div><label class="f" for="sgPrice">Gözlüğün mağaza fiyatı (isteğe bağlı, TL)</label><input type="number" id="sgPrice" min="0" step="50" inputmode="decimal" placeholder="örn. 6500"></div>
+</div>
+
+<div class="sub" id="sgT1">Numaralar</div>
+<div class="g4" id="sgRx1">
+<span></span><span class="h">Sferik (SPH)</span><span class="h">Silindirik (CYL)</span>
+<span class="e">Sağ</span><input type="number" step="0.25" min="-30" max="30" value="-1.50" data-k="rs" inputmode="decimal" aria-label="Sağ sferik"><input type="number" step="0.25" min="-12" max="12" value="-0.50" data-k="rc" inputmode="decimal" aria-label="Sağ silindirik">
+<span class="e">Sol</span><input type="number" step="0.25" min="-30" max="30" value="-1.25" data-k="ls" inputmode="decimal" aria-label="Sol sferik"><input type="number" step="0.25" min="-12" max="12" value="-0.75" data-k="lc" inputmode="decimal" aria-label="Sol silindirik">
+</div>
+<div id="sgNear" hidden>
+<div class="sub">Yakın numaralar</div>
+<div class="g4" id="sgRx2">
+<span></span><span class="h">Sferik (SPH)</span><span class="h">Silindirik (CYL)</span>
+<span class="e">Sağ</span><input type="number" step="0.25" min="-30" max="30" value="0.50" data-k="rs" inputmode="decimal" aria-label="Yakın sağ sferik"><input type="number" step="0.25" min="-12" max="12" value="-0.50" data-k="rc" inputmode="decimal" aria-label="Yakın sağ silindirik">
+<span class="e">Sol</span><input type="number" step="0.25" min="-30" max="30" value="0.75" data-k="ls" inputmode="decimal" aria-label="Yakın sol sferik"><input type="number" step="0.25" min="-12" max="12" value="-0.75" data-k="lc" inputmode="decimal" aria-label="Yakın sol silindirik">
+</div>
+</div>
+<p class="note">Aks (derece) ve göz bebeği mesafesi SGK tutarını etkilemez, o yüzden sorulmuyor.</p>
+<label class="chk"><input type="checkbox" id="sgLocal"> Çerçeve yerli malı belgeli (çerçeve başına 10 TL ilave)</label>
+<details style="margin-top:12px"><summary style="cursor:pointer;font-weight:700;color:var(--b1);font-size:.93em">Gelişmiş</summary>
+<div class="g2" style="margin-top:10px"><div><label class="f" for="sgKdv">KDV oranı (%)</label><input type="number" id="sgKdv" min="0" max="30" step="1" value="10" inputmode="decimal"></div></div>
+<p class="note">SUT listesindeki fiyatlar KDV hariçtir; KDV ayrıca eklenir.</p>
+</details>
+</div>
+
+<div class="card">
+<h3>Yeni gözlük hakkım doğdu mu?</h3>
+<div class="g2">
+<div><label class="f" for="sgAge">Yaş grubu</label><select id="sgAge"><option value="2">14 yaş üstü (2 yılda bir)</option><option value="1">14 yaş ve altı (yılda bir)</option></select></div>
+<div><label class="f" for="sgLast">SGK ile son gözlük alım tarihi</label><input type="date" id="sgLast"></div>
+</div>
+<div class="info" id="sgElig">Tarih girerseniz yenileme hakkınızın ne zaman doğduğunu gösterir.</div>
+</div>
+</div>
+
+<div>
+<div class="stick">
+<div class="card">
+<h3>Yaklaşık sonuç</h3>
+<div class="box"><small>SGK'nın net katkısı</small><div class="num"><span id="sgNet">0,00</span><i>TL</i></div><div class="s" id="sgNetS"></div></div>
+<div class="pay" id="sgPay"></div>
+<table class="det"><tbody id="sgDet"></tbody></table>
+<div class="warn"><b>Bu yaklaşık bir hesaptır.</b> Kesin tutar, reçeteniz MEDULA sistemine işlendiğinde anlaşmalı optisyeninizin ekranında görünür. Fiyat farkı ve katılım payı için optisyeninize danışın.</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h3>SGK gözlük ödemesi nasıl işler?</h3>
+<ul>
+<li>Reçeteyi göz hastalıkları uzmanı yazar; gözlük, SGK ile sözleşmeli bir optisyenlik müessesesinden alınır.</li>
+<li>Reçete tarihinden itibaren <b>10 iş günü</b> içinde optisyene başvurmak gerekir.</li>
+<li>Gözlük camı ve çerçevesi <b>2 yılda bir</b>, 14 yaş ve altındaki çocuklarda <b>yılda bir</b> yenilenir.</li>
+<li>Numarada 0,50 diyoptri değişiklik olursa süre dolmadan yenilenebilir. 14 yaş ve altında silindirik değerde 0,25 diyoptri ya da aksta 10 derecenin üzerindeki değişiklik de yeterlidir.</li>
+<li>SGK, reçetede yazan cam tipinin liste fiyatını öder; daha üst bir cam ya da çerçeve seçerseniz aradaki farkı siz ödersiniz.</li>
+<li>Katılım payı çalışanlarda %20, emeklilerde %10'dur. Çalışanlar bu payı optisyene öder, emeklilerde aylıktan kesilir.</li>
+<li>Prizmatik cam, teleskopik gözlük ve kontakt lens yalnızca belirli durumlarda ve sağlık kurulu raporuyla karşılanır; bu hesaplayıcıya dahil değildir.</li>
+</ul>
+<div class="info"><b>Hesap nasıl yapılıyor?</b> Tutarlar, Sağlık Uygulama Tebliği eki EK-3/D "Görmeye Yardımcı Tıbbi Malzemeler Listesi"ndeki çift cam fiyatlarından alınır. Her göz kendi numara grubuna göre yarım çift olarak hesaplanır, çerçeve bedeli eklenir, KDV ilave edilir ve katılım payı düşülür. Sınırdaki numaralarda ve artı silindirle yazılmış reçetelerde MEDULA farklı bir grup seçebilir.</div>
+<p class="src">Kaynak: 16 Mart 2023 tarihli ve 32134 (Mükerrer) sayılı Resmî Gazete, SUT EK-3/D listesi; <a href="https://www.sgk.gov.tr/Content/Post/29aa9928-48df-47af-9fc6-03c74da9cc0a/Optik-Gormeye-Yardimci-Malzeme-Nedir-Ne-Sekilde-Temin-Edilir-2026-01-09-03-59-14" rel="nofollow noopener noreferrer" target="_blank">SGK – Optik (görmeye yardımcı malzeme)</a>. Tutarların son kontrol tarihi: 11 Kasım 2026.</p>
+</div>
+
+<script>
+(function(){
+var root=document.getElementById('cgsgk');if(!root||root.getAttribute('data-init'))return;root.setAttribute('data-init','1');
+function $(s){return root.querySelector(s)}
+/* EK-3/D cift cam fiyatlari (TL, KDV haric). Sutunlar: tek beyaz, tek kolormatik, tek organik, cok beyaz, cok kolormatik, cok organik */
+var T={
+A:[[33,40,33,125,162,141],[36,50,47,135,190,159],[47,83,50,140,195,165],[50,93,67,145,200,170],[67,140,82,150,205,175],[77,168,98,155,210,180],[83,170,117,160,215,185],[93,172,134,165,220,190],[136,174,151,170,225,195]],
+B:[[46,50,46,140,172,164],[50,53,48,145,194,170],[60,90,50,150,200,175],[87,151,117,155,205,180],[93,160,134,160,210,185],[104,170,169,165,215,190],[140,180,188,170,220,195],[184,190,201,175,225,200],[201,200,224,180,230,205]],
+C:[[67,92,80,165,194,180],[83,117,95,170,218,185],[90,120,112,175,240,190],[100,125,145,180,245,195],[117,130,167,185,250,200],[140,140,181,190,255,205],[167,150,210,195,260,210],[184,160,230,200,265,215],[201,170,246,205,270,220]],
+D:[[123,145,138,230,245,252],[138,150,145,234,250,260],[178,155,150,285,340,300],[180,160,214,295,350,310],[182,163,230,305,360,320],[184,165,240,310,370,330]],
+E:[[190,170,245,315,375,340],[200,175,250,328,395,350]]};
+var L9=['0-2','2-4','4-6','6-8','8-10','10-13','13-16','16-20','21 ve fazla'],S9=[2,4,6,8,10,13,16,20],S6=[2,4,6,8,10];
+var FRAME=100,LOCAL=10;
+function idx(v,arr){for(var i=0;i<arr.length;i++)if(v<=arr[i])return i;return arr.length}
+function pick(s,c){s=Math.abs(s);c=Math.abs(c);var g,i,lab;
+ if(c===0){g='A';i=idx(s,S9);lab='SPH (A) '+L9[i]}
+ else if(c<=2){g='B';i=idx(s,S9);lab='SPH/CYL (B) '+(i<8?S9[i]+'/2':'21 ve fazla')}
+ else if(c<=4){g='C';i=idx(s,S9);lab='SPH/CYL (C) '+(i<8?S9[i]+'/4':'21 ve fazla')}
+ else if(c<=6){g='D';i=idx(s,S6);lab='SPH/CYL (D) '+(i<5?S6[i]+'/6':'11 ve fazla')}
+ else{g='E';i=s<=2?0:1;lab='SPH/CYL (E) '+(i?'3 ve fazla':'2/12')}
+ return{row:T[g][i],lab:lab}}
+function val(el){var v=parseFloat(String(el.value).replace(',','.'));return isFinite(v)?v:0}
+function rx(box){var o={};Array.prototype.forEach.call(box.querySelectorAll('input'),function(i){o[i.getAttribute('data-k')]=val(i)});return o}
+function tl(v){return v.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function pair(r,col){var a=pick(r.rs,r.rc),b=pick(r.ls,r.lc);return{amt:(a.row[col]+b.row[col])/2,lab:a.lab===b.lab?a.lab:'Sağ: '+a.lab+' | Sol: '+b.lab}}
+function calc(){
+ var type=$('#sgType').value,mat=+$('#sgMat').value,rate=+$('#sgStat').value,kdv=Math.max(0,val($('#sgKdv'))),local=$('#sgLocal').checked;
+ var near=type==='two'||type==='decl';$('#sgNear').hidden=!near;$('#sgT1').textContent=near?'Uzak numaralar':(type==='multi'?'Uzak numaralar':'Numaralar');
+ var rows=[],sub=0,frames=type==='two'?2:1;
+ function add(name,note,amt){rows.push([name,note,amt]);sub+=amt}
+ var matName=['beyaz','kolormatik','organik'][mat];
+ if(type==='multi'){var m=pair(rx($('#sgRx1')),3+mat);add('Çok odaklı '+matName+' cam (çift)',m.lab,m.amt)}
+ else{var u=pair(rx($('#sgRx1')),mat);add((near?'Uzak, tek':'Tek')+' odaklı '+matName+' cam (çift)',u.lab,u.amt);
+  if(near){var n=pair(rx($('#sgRx2')),mat);add('Yakın, tek odaklı '+matName+' cam (çift)',n.lab,n.amt)}}
+ var fr=(FRAME+(local?LOCAL:0))*frames;add('Çerçeve'+(frames>1?' (2 adet)':''),local?'yerli malı ilavesi dahil':'',fr);
+ var kd=sub*kdv/100,tot=sub+kd,kat=tot*rate/100,net=tot-kat;
+ var h=rows.map(function(r){return '<tr><td>'+r[0]+(r[1]?'<span>'+r[1]+'</span>':'')+'</td><td>'+tl(r[2])+' TL</td></tr>'}).join('');
+ h+='<tr><td>Ara toplam (KDV hariç)</td><td>'+tl(sub)+' TL</td></tr><tr><td>KDV (%'+kdv+')</td><td>'+tl(kd)+' TL</td></tr><tr class="t"><td>SGK ödeme tutarı (KDV dahil)</td><td>'+tl(tot)+' TL</td></tr>';
+ if(rate)h+='<tr><td>Katılım payı (%'+rate+')<span>'+(rate===10?'emekli aylığından kesilir':'optisyene ödenir')+'</span></td><td>- '+tl(kat)+' TL</td></tr>';
+ $('#sgDet').innerHTML=h;$('#sgNet').textContent=tl(net);
+ $('#sgNetS').textContent=rate?'Ödeme tutarı '+tl(tot)+' TL, katılım payı '+tl(kat)+' TL':'Katılım payı alınmıyor';
+ var price=val($('#sgPrice')),p=$('#sgPay');
+ if(price>0){var left=Math.max(0,price-net);p.style.display='block';
+  p.innerHTML='Mağaza fiyatı '+tl(price)+' TL olan gözlük için size kalan tutar yaklaşık <b>'+tl(left)+' TL</b>'+(rate===10?' <span style="font-size:.9em">(bunun '+tl(kat)+' TL\'lik katılım payı aylığınızdan kesilir)</span>':'')+'.'}
+ else p.style.display='none';
+ if(type==='decl')$('#sgNetS').textContent+=' (uzak ve yakın cam + tek çerçeve)';
+}
+function elig(){var v=$('#sgLast').value,e=$('#sgElig');if(!v){e.textContent='Tarih girerseniz yenileme hakkınızın ne zaman doğduğunu gösterir.';return}
+ var y=+$('#sgAge').value,d=new Date(v+'T00:00:00');if(isNaN(d)){return}var n=new Date(d);n.setFullYear(n.getFullYear()+y);
+ var today=new Date();today.setHours(0,0,0,0);var ds=n.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
+ if(n<=today)e.innerHTML='<span class="ok">Yenileme süreniz dolmuş görünüyor.</span> '+ds+' tarihinden itibaren yeni reçeteyle SGK ödemesinden yararlanabilirsiniz.';
+ else{var days=Math.ceil((n-today)/86400000);e.innerHTML='<span class="no">Süre henüz dolmadı.</span> Yenileme hakkınız '+ds+' tarihinde doğuyor ('+days+' gün kaldı). Numaranız 0,50 diyoptri değiştiyse süre dolmadan da yenilenebilir.'}}
+root.addEventListener('input',function(){calc();elig()});root.addEventListener('change',function(){calc();elig()});
+calc();root.__calc=calc;
+})();
+</script>
+</div>
+</div></body></html>

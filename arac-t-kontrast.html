@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Kontrast Duyarlılığı Testi</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&display=swap">
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#vz{padding:14px 14px calc(28px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#vz img{max-width:100%;height:auto}</style></head>
+<body><script>window.cgOptimizePostImages=window.cgOptimizePostImages||function(){};</script><div id="vz">
+<style>
+.cgt{--b:#004aad;--b2:#2f86ff;--t:#243247;--m:#5b6b80;--l:#dce6f5;max-width:860px;margin:0 auto;background:#fff;color:var(--t);font:17px/1.7 Arial,Helvetica,sans-serif;padding:6px 4px;border-radius:14px}
+.cgt *{box-sizing:border-box}
+.cgt h2{font-family:'Exo 2',Arial,sans-serif;color:var(--b);font-size:1.35em;line-height:1.3;margin:30px 0 10px}
+.cgt h3{font-family:'Exo 2',Arial,sans-serif;color:#13325f;font-size:1.12em;line-height:1.35;margin:20px 0 8px}
+.cgt p{margin:0 0 14px}
+.cgt ul{margin:0 0 14px;padding-left:22px}
+.cgt .lead{font-size:1.08em;font-weight:600;border-left:5px solid var(--b);padding:14px 18px;background:#f3f7ff;border-radius:10px;margin:0 0 18px}
+.cgt .tool{background:#fff;border:1px solid var(--l);border-radius:18px;padding:22px;margin:24px 0;box-shadow:0 8px 28px rgba(0,74,173,.08)}
+.cgt .tool-h{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:0 0 14px;font-family:'Exo 2',Arial,sans-serif;font-weight:700;font-size:1.18em;color:var(--b)}
+.cgt .badge{display:inline-block;background:linear-gradient(135deg,#004aad,#2f86ff);color:#fff;border-radius:999px;padding:3px 12px;font:700 .72em Arial,sans-serif}
+.cgt .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#004aad,#2f86ff);color:#fff!important;border:0;border-radius:12px;padding:12px 20px;font:700 16px Arial,sans-serif;cursor:pointer;text-decoration:none!important;margin:4px 6px 4px 0;transition:transform .15s,box-shadow .15s;line-height:1.2}
+.cgt .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,74,173,.25)}
+.cgt .btn.alt{background:#eef5ff;color:var(--b)!important;border:1px solid #c9dcff}
+.cgt .btn.sm{padding:9px 14px;font-size:15px}
+.cgt .btn:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none}
+.cgt .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.cgt .center{text-align:center}
+.cgt .stage{display:flex;justify-content:center;align-items:center;min-height:180px;margin:12px 0;background:#fff;border-radius:12px;overflow:hidden}
+.cgt .q{padding:14px 0;border-bottom:1px solid #edf1f7}
+.cgt .q:last-child{border-bottom:0}
+.cgt .q b{display:block;margin-bottom:8px;line-height:1.45}
+.cgt .opts{display:flex;flex-wrap:wrap;gap:6px}
+.cgt .opts label{position:relative;flex:1 1 auto;min-width:92px;text-align:center;border:1px solid #c9dcff;border-radius:10px;padding:8px 10px;cursor:pointer;font-size:.92em;background:#f8fbff;user-select:none;line-height:1.35}
+.cgt .opts input{position:absolute;opacity:0;pointer-events:none}
+.cgt .opts label.on{background:var(--b);color:#fff;border-color:var(--b)}
+.cgt .res{display:none;margin-top:18px;padding:18px;border-radius:14px;background:#eef5ff;border:1px solid #c9dcff}
+.cgt .res.show{display:block}
+.cgt .res.ok{background:#ecfaf1;border-color:#a8e2bf}
+.cgt .res.mid{background:#fff8e8;border-color:#f1d28a}
+.cgt .res.hi{background:#fff0f0;border-color:#f3b3b3}
+.cgt .res h3{margin-top:0}
+.cgt .meter{height:12px;background:#e6edf7;border-radius:99px;overflow:hidden;margin:10px 0 14px}
+.cgt .meter i{display:block;height:100%;background:linear-gradient(90deg,#22b07d,#f2b33d,#e5484d);border-radius:99px;width:0;transition:width .7s}
+.cgt .box{padding:16px 18px;margin:22px 0;border-radius:12px;background:#eef5ff;border:1px solid #c9dcff}
+.cgt .warn{background:#fff8e8;border-color:#f1d28a}
+.cgt .steps{counter-reset:s;list-style:none;padding:0;margin:0 0 14px}
+.cgt .steps li{counter-increment:s;position:relative;padding:7px 0 7px 44px}
+.cgt .steps li:before{content:counter(s);position:absolute;left:0;top:6px;width:30px;height:30px;border-radius:50%;background:var(--b);color:#fff;font-weight:700;text-align:center;line-height:30px;font-size:.9em}
+.cgt .faq details{border:1px solid var(--l);border-radius:12px;padding:12px 16px;margin:8px 0;background:#fbfdff}
+.cgt .faq summary{cursor:pointer;font-weight:700;color:#13325f}
+.cgt .faq details p{margin:10px 0 0}
+.cgt .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px;margin:12px 0}
+.cgt .card{display:block;border:1px solid var(--l);border-radius:14px;padding:13px;background:#fff;text-decoration:none!important;color:var(--t)!important;transition:transform .15s,box-shadow .15s;font-weight:400}
+.cgt .card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,74,173,.12)}
+.cgt .card .ic{font-size:1.5em;line-height:1}
+.cgt .card b{display:block;margin:6px 0 2px;color:var(--b);font-family:'Exo 2',Arial,sans-serif;line-height:1.3}
+.cgt .card small{color:var(--m);font-size:.82em;line-height:1.4;display:block}
+.cgt a{color:var(--b);font-weight:700}
+.cgt .muted{color:var(--m);font-size:.9em}
+.cgt .pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.cgt .pill{border:1px solid #c9dcff;border-radius:99px;padding:7px 15px;background:#f8fbff;font:700 .9em Arial,sans-serif;color:var(--b);cursor:pointer}
+.cgt .pill.on{background:var(--b);color:#fff;border-color:var(--b)}
+.cgt .prog{font:700 .85em Arial,sans-serif;color:var(--m);margin:0 0 6px}
+.cgt input[type=range]{width:100%;accent-color:#004aad}
+.cgt .hide{display:none!important}
+@media(max-width:600px){.cgt{font-size:16px}.cgt .tool{padding:15px}.cgt .lead,.cgt .box{padding:13px 14px}.cgt .btn{padding:11px 16px}}
+</style>
+<div class="cgt" id="cgt-kontrast">
+<p class="lead">Harfleri net görmek başka, soluk ve gri tonlu harfleri seçebilmek başka bir beceridir. Bu kontrast duyarlılığı testiyle, giderek soluklaşan harfleri hangi noktaya kadar ayırt edebildiğinizi görün.</p>
+<h2>Kontrast duyarlılığı nedir?</h2>
+<p>Klasik göz tablosu, beyaz zemin üzerindeki siyah harflerle ölçüm yapar; yani en yüksek kontrastla. Oysa günlük hayatın büyük kısmı böyle değildir: Sisli bir havada yolu seçmek, akşamüstü merdiven basamaklarını görmek, gri bir zeminde gri bir yazıyı okumak ya da yüz ifadelerini loş ışıkta fark etmek düşük kontrastlı görevlerdir. Kontrast duyarlılığı, gözün birbirine yakın gri tonları ayırt etme becerisidir.</p>
+<p>İlginç olan şu: Bazı kişilerin göz tablosundaki sonucu 10/10 olduğu halde kontrast duyarlılığı azalmış olabilir. Başlangıç dönemindeki katarakt, glokom, diyabetik retinopati, sarı nokta hastalıkları, kuru göz ve bazı nörolojik durumlar kontrast algısını keskinlikten önce etkileyebilir. "Görüyorum ama bulanık ve donuk görüyorum", "gece araba kullanmak zorlaştı" gibi şikâyetlerin arkasında çoğu zaman bu vardır.</p>
+<h2>Test nasıl yapılır?</h2>
+<ol class="steps"><li>Ekran parlaklığını orta-yüksek seviyeye getirin; gece modu, karanlık mod ve mavi ışık filtresini kapatın.</li><li>Ekrana yaklaşık 1 metre uzaktan bakın; uzak gözlüğünüz varsa takın. Testi iki gözle birlikte yapabilirsiniz.</li><li>Ortada beliren harfi aşağıdaki seçeneklerden bulun. Harfler giderek soluklaşır; emin değilseniz tahmin edin.</li></ol>
+<div class="tool"><div class="tool-h">Kontrast duyarlılığı testi <span class="badge">8 seviye · ~1 dk</span></div>
+<div data-s class="center"><button class="btn" data-go>Teste başla</button></div>
+<div data-run class="hide center"><p class="prog"></p><div class="stage" style="min-height:200px;background:#fff"><span data-l style="font:700 120px/1 Arial,Helvetica,sans-serif;letter-spacing:0"></span></div><p class="muted">Ortadaki harf hangisi?</p><div class="row" style="justify-content:center" data-o></div></div>
+<div class="res"></div></div>
+<h2>Sonucunuz ne anlama gelir?</h2>
+<p>Test, harfi doğru seçebildiğiniz en düşük kontrast düzeyini bulur. Klinikte kullanılan kontrast tablolarına benzer şekilde sonuç yüzde ve log birimiyle gösterilir. Yüzde ne kadar küçükse kontrast duyarlılığınız o kadar iyidir. Ekranlar sınırlı sayıda gri tonu gösterebildiği ve parlaklık ayarları çok farklı olduğu için bu sonuç yalnızca kabaca fikir verir.</p>
+<p>Düşük çıkan bir sonuç tek başına bir hastalık anlamına gelmez. Ancak özellikle gece görüşünde zorlanma, karşıdan gelen farlarda kamaşma, renklerin solgun görünmesi gibi şikâyetlerle birlikteyse katarakt başta olmak üzere göz sağlığının değerlendirilmesi için iyi bir nedendir.</p>
+<div class="box"><strong>Neden önemli?</strong><br>Kontrast duyarlılığı; sürüş güvenliği, düşme riski ve okuma konforu ile yakından ilişkilidir. Özellikle ileri yaşta merdiven ve kaldırım kenarlarını seçmekte zorlanmak düşmelere yol açabilir. Evde iyi aydınlatma ve basamak kenarlarına kontrastlı bant gibi basit önlemler fark yaratabilir.</div>
+<div class="faq"><h2>Sık sorulan sorular</h2>
+<details><summary>10/10 görüyorum, kontrast duyarlılığım düşük olabilir mi?</summary><p>Evet. Görme keskinliği yüksek kontrastta ölçülür; düşük kontrastlı görme ise farklı bir beceridir. Erken katarakt gibi durumlarda keskinlik normalken kontrast algısı azalmış olabilir.</p></details>
+<details><summary>Sarı camlı gözlükler kontrastı artırır mı?</summary><p>Bazı renkli camlar belirli ortamlarda kontrast hissini artırabilir; ancak gerçek kontrast duyarlılığını iyileştirmez ve gece sürüşünde ışık miktarını azaltabilir. Sürüş için renkli cam kullanmadan önce bir göz hekimine danışmak gerekir.</p></details>
+<details><summary>Kontrast duyarlılığı neden yaşla azalır?</summary><p>Yaşla birlikte göz merceği daha az saydam hale gelir, göz bebeği küçülür ve retinaya ulaşan ışık azalır. Bu değişiklikler kontrast algısını yavaş yavaş düşürür. Belirgin azalma ise çoğu zaman bir göz sorununa işaret eder.</p></details></div>
+<div class="box warn"><strong>Önemli not</strong><br>Bu sayfadaki test bilgilendirme ve farkındalık amaçlıdır; teşhis koymaz, gözlük ya da lens numarası belirlemez ve göz muayenesinin yerini tutmaz. Ekran ayarları, ortam ışığı ve mesafe sonucu etkileyebilir. Görmenizde ani bulanıklık, ışık çakması, perde inmesi, görme alanında kayıp ya da göz ağrısı varsa vakit kaybetmeden bir göz hekimine başvurun.<br><a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/goz-saglg-merkezleri.html">İlinizdeki göz sağlığı merkezlerini görün →</a></div>
+<h2>Diğer göz testleri</h2><div class="grid"><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/renk-korlugu-testi.html"><span class="ic">🎨</span><b>Renk Körlüğü Testi</b><small>Noktaların içindeki rakamı bulun</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/astigmat-testi.html"><span class="ic">🕐</span><b>Astigmat Testi</b><small>Saat kadranındaki çizgiler</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/amsler-testi.html"><span class="ic">🔲</span><b>Amsler (Sarı Nokta) Testi</b><small>Izgaradaki çizgiler düz mü?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/gorme-keskinligi-testi.html"><span class="ic">👁️</span><b>Görme Keskinliği Testi</b><small>Ekranda E harfi testi</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/yakin-okuma-testi.html"><span class="ic">📖</span><b>Yakın Okuma Testi</b><small>Kolunuz yetmiyor mu?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kontrast-duyarliligi-testi.html"><span class="ic">🌫️</span><b>Kontrast Duyarlılığı Testi</b><small>Soluklaşan harfleri seçin</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kirmizi-yesil-testi.html"><span class="ic">🔴</span><b>Kırmızı-Yeşil Testi</b><small>Gözlüğünüz hâlâ uygun mu?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/renk-siralama-testi.html"><span class="ic">🌈</span><b>Renk Sıralama Testi</b><small>Renk tonlarını sıralayın</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kuru-goz-testi.html"><span class="ic">💧</span><b>Kuru Göz Testi</b><small>Belirti anketi</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-yorgunlugu-testi.html"><span class="ic">💻</span><b>Dijital Göz Yorgunluğu Testi</b><small>Ekran alışkanlıklarınız</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/miyopi-risk-testi.html"><span class="ic">🧒</span><b>Çocuk Miyopi Risk Testi</b><small>Ebeveynler için</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/glokom-risk-testi.html"><span class="ic">🛡️</span><b>Glokom Risk Testi</b><small>Göz tansiyonu riski</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-muayenesi-ne-zaman.html"><span class="ic">📅</span><b>Ne Zaman Muayene Olmalıyım?</b><small>Kişisel muayene aralığı</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kor-nokta-testi.html"><span class="ic">⚫</span><b>Kör Nokta Testi</b><small>Noktanın kaybolduğunu görün</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/baskin-goz-testi.html"><span class="ic">🎯</span><b>Baskın Göz Testi</b><small>Hangi gözünüz lider?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/ardil-goruntu-testi.html"><span class="ic">✨</span><b>Ardıl Görüntü Testi</b><small>Gözünüzü kandıran illüzyon</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-sagligi-bilgi-yarismasi.html"><span class="ic">🧠</span><b>Göz Sağlığı Bilgi Yarışması</b><small>10 soruda kendinizi deneyin</small></a></div><p class="center"><a target="_blank" rel="noopener" class="btn" href="https://www.cagataygulumser.com/p/goz-testleri.html">Tüm göz testleri</a></p>
+</div>
+<script>//<![CDATA[
+(function(){var R=document.getElementById("cgt-kontrast");if(!R)return;
+function qform(root,qs){var h='';qs.forEach(function(q,i){h+='<div class="q"><b>'+(i+1)+'. '+q.t+'</b><div class="opts">';q.o.forEach(function(o,j){h+='<label><input type="radio" name="q'+i+'" value="'+j+'">'+o[0]+'</label>'});h+='</div></div>'});root.innerHTML=h;root.addEventListener('change',function(e){var n=e.target.name;root.querySelectorAll('input[name="'+n+'"]').forEach(function(x){x.parentNode.classList.toggle('on',x.checked)})});return function(){var a=[];for(var i=0;i<qs.length;i++){var c=root.querySelector('input[name="q'+i+'"]:checked');if(!c){var el=root.querySelectorAll('.q')[i];el.scrollIntoView({behavior:'smooth',block:'center'});el.style.background='#fff8e8';setTimeout(function(){el.style.background=''},1500);return null}a.push(qs[i].o[+c.value][1])}return a}}
+function show(el,cls,html){el.className='res show '+cls;el.innerHTML=html;el.scrollIntoView({behavior:'smooth',block:'nearest'})}
+var S=R.querySelector('[data-s]'),U=R.querySelector('[data-run]'),LE=R.querySelector('[data-l]'),O=R.querySelector('[data-o]'),P=U.querySelector('.prog'),RES=R.querySelector('.res');
+var LET=['C','D','H','K','N','O','R','S','V','Z'],CT=[1,0.5,0.25,0.125,0.063,0.032,0.016,0.008],li,ok,tr,cur,last;
+function gray(c){var L=1-c,v=L<=0.0031308?12.92*L:1.055*Math.pow(L,1/2.4)-0.055,g=Math.round(v*255);if(c>0&&g>=255)g=254;return 'rgb('+g+','+g+','+g+')'}
+function sh(a){for(var k=a.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1)),t=a[k];a[k]=a[j];a[j]=t}return a}
+function show1(){var n;do{n=LET[Math.floor(Math.random()*LET.length)]}while(n===cur);cur=n;LE.textContent=n;LE.style.color=gray(CT[li]);P.textContent='Seviye '+(li+1)+' / '+CT.length+' \u00b7 kontrast %'+(CT[li]*100).toFixed(CT[li]<0.1?1:0).replace('.',',');var ch=[n],pool=sh(LET.filter(function(x){return x!==n}));while(ch.length<4)ch.push(pool.pop());O.innerHTML=sh(ch).map(function(x){return '<button class="btn alt" style="min-width:64px;font-size:22px" data-v="'+x+'">'+x+'</button>'}).join('')+'<button class="btn alt sm" data-v="-">G\u00f6remiyorum</button>'}
+function start(){li=0;ok=0;tr=0;last=-1;cur='';S.classList.add('hide');U.classList.remove('hide');RES.className='res';show1()}
+O.addEventListener('click',function(e){var v=e.target.getAttribute('data-v');if(v===null)return;tr++;if(v===cur)ok++;if(ok>=2){last=li;li++;ok=0;tr=0;if(li>=CT.length)return end()}else if(tr-ok>=2)return end();show1()});
+function end(){U.classList.add('hide');S.classList.remove('hide');S.querySelector('button').textContent='Testi tekrarla';var cls,h;
+if(last<0){cls='hi';h='<h3>En y\u00fcksek kontrastl\u0131 harfte bile zorland\u0131n\u0131z</h3><p>Ekran ayarlar\u0131n\u0131 ve mesafeyi kontrol edip tekrar deneyin. Sonu\u00e7 de\u011fi\u015fmiyorsa bir g\u00f6z muayenesi planlay\u0131n.</p>'}
+else{var c=CT[last],lg=(-Math.log10(c)).toFixed(2).replace('.',','),pc='%'+(c*100).toFixed(c<0.1?1:0).replace('.',',');
+if(last>=5){cls='ok';h='<h3>Kontrast duyarl\u0131l\u0131\u011f\u0131n\u0131z bu testte iyi g\u00f6r\u00fcn\u00fcyor</h3><p>'+pc+' kontrastl\u0131 harfleri se\u00e7ebildiniz (yakla\u015f\u0131k '+lg+' log birimi). D\u00fc\u015f\u00fck kontrastl\u0131 ortamlarda g\u00f6rme beceriniz iyi d\u00fczeyde g\u00f6r\u00fcn\u00fcyor.</p>'}
+else if(last>=3){cls='mid';h='<h3>Kontrast duyarl\u0131l\u0131\u011f\u0131n\u0131z s\u0131n\u0131rda</h3><p>En d\u00fc\u015f\u00fck '+pc+' kontrastl\u0131 harfleri se\u00e7ebildiniz (yakla\u015f\u0131k '+lg+' log birimi). Ekran ayarlar\u0131 sonucu etkilemi\u015f olabilir; gece g\u00f6r\u00fc\u015f\u00fcnde ya da sisli havada zorlan\u0131yorsan\u0131z g\u00f6z muayenesinde bunu belirtin.</p>'}
+else{cls='hi';h='<h3>Kontrast duyarl\u0131l\u0131\u011f\u0131n\u0131z d\u00fc\u015f\u00fck g\u00f6r\u00fcn\u00fcyor</h3><p>Ancak '+pc+' kontrastl\u0131 harfleri se\u00e7ebildiniz (yakla\u015f\u0131k '+lg+' log birimi). Bu sonu\u00e7 katarakt gibi saydaml\u0131k sorunlar\u0131 ya da retina ve g\u00f6z siniriyle ilgili durumlarda g\u00f6r\u00fclebilir. Bir g\u00f6z hekimine ba\u015fvurman\u0131z\u0131 \u00f6neririz.</p>'}}
+show(RES,cls,h+'<p class="muted">Ekran testleri yakla\u015f\u0131k sonu\u00e7 verir ve te\u015fhis koymaz.</p>')}
+R.querySelector('[data-go]').addEventListener('click',start);
+})();
+//]]></script>
+</div></body></html>

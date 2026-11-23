@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Lens Kutusu Okuyucu</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&display=swap">
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#vz{padding:14px 14px calc(28px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#vz img{max-width:100%;height:auto}</style></head>
+<body><script>window.cgOptimizePostImages=window.cgOptimizePostImages||function(){};</script><div id="vz">
+Lens kutusundaki BC, DIA, PWR, CYL, AX ne demek? Kısaltmayı seçin ya da kutudaki değerleri yazın; kontakt lens bilgilerini sade dille okuyun.<div id="cgkut"><style>
+#cgkut{--b1:#004aad;--b2:#2f86ff;--y:#ffd400;--ink:#14233b;--mut:#5b6b82;--line:#d6e2f5;--bg:#f3f7ff;--ok:#0f7a4a;--okbg:#e9f8f0;--no:#b3261e;--nobg:#fdecea;max-width:none;margin:0 auto;color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif;text-align:left}
+#cgkut *{box-sizing:border-box}
+#cgkut h2,#cgkut h3,#cgkut .code{font-family:"Exo 2",Arial,sans-serif}
+#cgkut .hd{background:linear-gradient(120deg,var(--b1),var(--b2));border-radius:16px;padding:20px 22px;margin:0 0 14px}
+#cgkut .hd p{margin:0;font-size:1.05em;color:#fff!important}
+#cgkut .lay{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+#cgkut .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0 14px}
+#cgkut .card h2{margin:0 0 4px!important;font-size:1.25em;color:var(--b1)!important}
+#cgkut .card h3{margin:16px 0 8px!important;font-size:1.05em;color:var(--ink)!important}
+#cgkut .sub{margin:0 0 14px;color:var(--mut);font-size:.95em}
+#cgkut .g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#cgkut label.f{display:block;font-weight:700;font-size:.92em;margin:0 0 6px}
+#cgkut select,#cgkut input[type=text]{width:100%;height:46px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font:inherit;color:var(--ink);background:#fff}
+#cgkut select:focus,#cgkut input[type=text]:focus{outline:2px solid var(--b2);outline-offset:1px}
+#cgkut .seg{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0}
+#cgkut .seg label{flex:1 1 180px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;font-size:.95em;display:flex;gap:8px;align-items:center}
+#cgkut .res{border-radius:12px;padding:14px 16px;margin:12px 0 0;border:1px solid var(--line)}
+#cgkut .res b{display:block;font-family:"Exo 2",Arial,sans-serif;font-size:1.05em}
+#cgkut .res small{display:block;color:var(--mut);margin:2px 0 8px}
+#cgkut .res .tag{display:inline-block;font-weight:700;font-size:.85em;border-radius:20px;padding:3px 10px}
+#cgkut .res p{margin:8px 0 0;font-size:.95em}
+#cgkut .res.ok{background:var(--okbg);border-color:#bfe6d1}
+#cgkut .res.ok .tag{background:var(--ok);color:#fff}
+#cgkut .res.no{background:var(--nobg);border-color:#f3c5c0}
+#cgkut .res.no .tag{background:var(--no);color:#fff}
+#cgkut .note{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0 0;font-size:.95em}
+#cgkut .note ul,#cgkut .card ul{margin:6px 0 0;padding-left:20px}
+#cgkut .note li,#cgkut .card li{margin:3px 0}
+#cgkut .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+#cgkut .chips button{border:1px solid var(--line);background:#fff;color:var(--b1);font:700 15px/1 "Exo 2",Arial,sans-serif;border-radius:10px;padding:10px 14px;cursor:pointer}
+#cgkut .chips button.on{background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff;border-color:transparent}
+#cgkut .cres{border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0 0;background:var(--bg)}
+#cgkut .cres .code{font-size:1.6em;font-weight:800;color:var(--b1);line-height:1}
+#cgkut .cres .nm{font-weight:700;margin:6px 0 4px}
+#cgkut .cres p{margin:4px 0 0;font-size:.95em}
+#cgkut table{width:100%;border-collapse:collapse;margin:8px 0 0;font-size:.95em}
+#cgkut th,#cgkut td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}
+#cgkut th{color:var(--mut);font-size:.85em;text-transform:uppercase;letter-spacing:.04em}
+#cgkut details{border-bottom:1px solid var(--line);padding:10px 0}
+#cgkut summary{cursor:pointer;font-weight:700}
+#cgkut details p{margin:8px 0 0;font-size:.95em}
+#cgkut .src{font-size:.88em;color:var(--mut);margin:14px 0 0}
+#cgkut .warn{background:#fff8e8;border:1px solid #f1d28a;border-radius:12px;padding:12px 14px;font-size:.93em;margin:0}
+@media(min-width:900px){#cgkut .lay{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){#cgkut .g2{grid-template-columns:1fr}}
+
+#cgkut .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+#cgkut input[type=number],#cgkut input[type=date]{width:100%;height:46px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font:inherit;color:var(--ink);background:#fff}
+#cgkut .res{background:var(--bg)}
+#cgkut .res .tag{background:var(--b1);color:#fff}
+#cgkut .res.wa{background:#fff8e8;border-color:#f1d28a}
+#cgkut .res.wa .tag{background:#8a5a00;color:#fff}
+#cgkut .btn{border:1px solid var(--line);background:#fff;color:var(--b1);font:700 15px/1 "Exo 2",Arial,sans-serif;border-radius:10px;padding:11px 14px;cursor:pointer}
+#cgkut .btn.pri{background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff;border-color:transparent}
+#cgkut .big{font-family:"Exo 2",Arial,sans-serif;font-size:2.4em;font-weight:800;color:var(--b1);line-height:1.05}
+#cgkut label.f{margin-top:10px}
+@media(max-width:640px){#cgkut .g3{grid-template-columns:1fr}}
+</style><div class="hd"><p>Kontakt lens kutusundaki BC, DIA, PWR, CYL, AX ne demek? Kısaltmayı seçin ya da kutudaki değerleri yazın; hepsini sade bir dille okuyun.</p></div>
+<div class="lay"><div>
+<div class="card"><h2>Kısaltmayı seçin</h2><div class="chips" id="k-ch"></div><div id="k-r" class="res"></div></div>
+<div class="card"><h2>Sık sorulanlar</h2>
+<details><summary>Lens numarası gözlük numarasıyla aynı mıdır?</summary><p>Her zaman değil. Lens gözün üzerinde, gözlük camı ise gözün biraz önünde durur; bu mesafe yüzünden yaklaşık 4 diyoptrinin üzerindeki numaralarda iki değer farklılaşır. Farkı <a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/verteks-hesaplama-gozluk-lens-donusturme.html">verteks hesaplama aracında</a> görebilirsiniz.</p></details>
+<details><summary>Gözlük reçetesiyle lens alınabilir mi?</summary><p>Kontakt lens için numaranın yanında temel eğrilik ve çap gibi lense özgü değerler de gerekir. Bu değerler göz hekimi muayenesinde belirlenir.</p></details>
+<details><summary>BC değeri farklı bir lens takarsam ne olur?</summary><p>Temel eğrilik lensin göze nasıl oturduğunu belirler. Uygun olmayan eğrilikte lens fazla oynayabilir ya da gözü sıkabilir; marka ya da model değiştirirken hekiminize danışın.</p></details></div>
+</div><div>
+<div class="card"><h2>Kutudaki değerleri yazın</h2><p class="sub">Boş bıraktığınız alanlar hesaba katılmaz.</p>
+<div class="g2"><div><label class="f" for="k-p">PWR / SPH / D</label><input type="number" id="k-p" step="0.25" placeholder="Örn. -2,50"></div><div><label class="f" for="k-b">BC</label><input type="number" id="k-b" step="0.1" placeholder="Örn. 8,6"></div><div><label class="f" for="k-d">DIA</label><input type="number" id="k-d" step="0.1" placeholder="Örn. 14,2"></div><div><label class="f" for="k-c">CYL</label><input type="number" id="k-c" step="0.25" placeholder="Örn. -0,75"></div><div><label class="f" for="k-a">AX / AXIS</label><input type="number" id="k-a" step="1" placeholder="Örn. 180"></div><div><label class="f" for="k-ad">ADD</label><input type="text" id="k-ad" placeholder="Örn. +1,50 ya da LOW"></div></div>
+<div id="k-o"></div></div>
+</div></div>
+<p class="warn"><b>Not:</b> Bu sayfa kutu üzerindeki bilgileri açıklamak içindir; lens seçimi ya da numara önerisi değildir. Kontakt lens bir tıbbi cihazdır ve göz hekimi muayenesiyle kullanılır.</p>
+<script>
+(function(){var root=document.getElementById('cgkut');if(!root)return;function q(s){return root.querySelector(s)}
+var K=[['PWR / SPH / D','Lens numarası (güç)','Lensin diyoptri cinsinden gücüdür. Eksi değerler miyopu (uzağı bulanık görme), artı değerler hipermetropu düzeltir.'],['BC','Temel eğrilik (Base Curve)','Lensin arka yüzünün eğrilik yarıçapıdır, milimetre ile yazılır (çoğunlukla 8,3 ile 9,0 arası). Lensin korneaya nasıl oturacağını belirler.'],['DIA','Çap (Diameter)','Lensin bir kenarından diğerine genişliğidir, milimetre ile yazılır (yumuşak lenslerde çoğunlukla 13,8 ile 14,5 arası).'],['CYL','Silindir (astigmat)','Astigmatı düzelten ek güçtür. Kutuda CYL varsa lens torik, yani astigmatlı lenstir.'],['AX / AXIS','Aks (eksen)','Astigmat düzeltmesinin yönünü 0 ile 180 derece arasında gösterir. Yalnızca CYL ile birlikte anlam taşır.'],['ADD','Yakın ilavesi','Multifokal lenslerde yakın görme için eklenen güçtür. Sayı olarak ya da LOW, MED, HIGH gibi kademelerle yazılır.'],['D / N','Dominant / Non-dominant','Bazı multifokal lenslerde lensin baskın göze mi yoksa diğer göze mi göre tasarlandığını belirtir.'],['EXP','Son kullanma tarihi','Açılmamış blisterin steril kaldığı son tarihtir (kum saati simgesiyle de gösterilir). Lensin açıldıktan sonraki kullanım süresi bundan ayrıdır.'],['LOT','Üretim parti numarası','Ürünün hangi üretim partisine ait olduğunu gösterir; bir sorun yaşanırsa ürünün izlenmesini sağlar.'],['Dk/t','Oksijen geçirgenliği','Lensin korneaya ne kadar oksijen geçirdiğini gösterir; değer yükseldikçe geçirgenlik artar.'],['H2O %','Su içeriği','Lens malzemesinin yüzde kaçının su olduğunu gösterir.']];
+var ch=q('#k-ch');K.forEach(function(k,i){var b=document.createElement('button');b.type='button';b.innerHTML=k[0];b.setAttribute('data-i',i);ch.appendChild(b)});
+function show(i){[].forEach.call(ch.children,function(b,j){b.className=j===i?'on':''});q('#k-r').innerHTML='<b>'+K[i][0]+': '+K[i][1]+'</b><p>'+K[i][2]+'</p>'}
+ch.addEventListener('click',function(e){var b=e.target.closest?e.target.closest('button'):null;if(b)show(parseInt(b.getAttribute('data-i'),10))});show(0);
+function v(s){var x=parseFloat(String(q(s).value).replace(',','.'));return isNaN(x)?null:x}
+function f(n){return (n>0?'+':'')+n.toFixed(2).replace('.',',')}
+function calc(){var p=v('#k-p'),b=v('#k-b'),d=v('#k-d'),c=v('#k-c'),a=v('#k-a'),ad=q('#k-ad').value.trim(),h='';
+if(p!==null)h+='<div class="res"><b>Numara: '+f(p)+'</b><p>'+(p<0?'Eksi değer: miyopu düzelten lens.':p>0?'Artı değer: hipermetropu düzelten lens.':'Sıfır (plano): numarasız lens.')+(Math.abs(p)>4?' Bu büyüklükte lens numarası gözlük numarasından farklı olabilir.':'')+'</p></div>';
+if(b!==null||d!==null)h+='<div class="res"><b>'+(b!==null?'Temel eğrilik '+String(b).replace('.',',')+' mm':'')+(b!==null&&d!==null?', ':'')+(d!==null?'çap '+String(d).replace('.',',')+' mm':'')+'</b><p>Lensin göze oturuşunu belirleyen iki ölçü. Marka ya da model değiştiğinde aynı değerler aynı oturuşu garanti etmez.</p></div>';
+if(c!==null&&c!==0)h+='<div class="res"><b>Astigmat: '+f(c)+(a!==null?', aks '+Math.round(a)+' derece':'')+'</b><p>Torik (astigmatlı) lens. '+(a===null?'Torik lenslerde aks değeri de bulunur.':'Aks, düzeltmenin yönüdür; lensin gözde dönmeden durması gerekir.')+'</p></div>';
+if(ad)h+='<div class="res"><b>Yakın ilavesi: '+ad.split('<').join('')+'</b><p>Multifokal lens: uzak ve yakın görmeyi birlikte düzeltecek şekilde tasarlanmıştır.</p></div>';
+q('#k-o').innerHTML=h||'<div class="note">Değerleri yazdıkça açıklamaları burada görürsünüz.</div>'}
+root.addEventListener('input',calc);calc()})();
+</script></div>
+</div></body></html>

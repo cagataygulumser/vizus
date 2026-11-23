@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Yakın Okuma Testi</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&display=swap">
+<style>html,body{margin:0;background:#fff;color:#14233b;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}#vz{padding:14px 14px calc(28px + env(safe-area-inset-bottom));max-width:1280px;margin:auto}#vz img{max-width:100%;height:auto}</style></head>
+<body><script>window.cgOptimizePostImages=window.cgOptimizePostImages||function(){};</script><div id="vz">
+<style>
+.cgt{--b:#004aad;--b2:#2f86ff;--t:#243247;--m:#5b6b80;--l:#dce6f5;max-width:860px;margin:0 auto;background:#fff;color:var(--t);font:17px/1.7 Arial,Helvetica,sans-serif;padding:6px 4px;border-radius:14px}
+.cgt *{box-sizing:border-box}
+.cgt h2{font-family:'Exo 2',Arial,sans-serif;color:var(--b);font-size:1.35em;line-height:1.3;margin:30px 0 10px}
+.cgt h3{font-family:'Exo 2',Arial,sans-serif;color:#13325f;font-size:1.12em;line-height:1.35;margin:20px 0 8px}
+.cgt p{margin:0 0 14px}
+.cgt ul{margin:0 0 14px;padding-left:22px}
+.cgt .lead{font-size:1.08em;font-weight:600;border-left:5px solid var(--b);padding:14px 18px;background:#f3f7ff;border-radius:10px;margin:0 0 18px}
+.cgt .tool{background:#fff;border:1px solid var(--l);border-radius:18px;padding:22px;margin:24px 0;box-shadow:0 8px 28px rgba(0,74,173,.08)}
+.cgt .tool-h{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:0 0 14px;font-family:'Exo 2',Arial,sans-serif;font-weight:700;font-size:1.18em;color:var(--b)}
+.cgt .badge{display:inline-block;background:linear-gradient(135deg,#004aad,#2f86ff);color:#fff;border-radius:999px;padding:3px 12px;font:700 .72em Arial,sans-serif}
+.cgt .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#004aad,#2f86ff);color:#fff!important;border:0;border-radius:12px;padding:12px 20px;font:700 16px Arial,sans-serif;cursor:pointer;text-decoration:none!important;margin:4px 6px 4px 0;transition:transform .15s,box-shadow .15s;line-height:1.2}
+.cgt .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,74,173,.25)}
+.cgt .btn.alt{background:#eef5ff;color:var(--b)!important;border:1px solid #c9dcff}
+.cgt .btn.sm{padding:9px 14px;font-size:15px}
+.cgt .btn:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none}
+.cgt .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.cgt .center{text-align:center}
+.cgt .stage{display:flex;justify-content:center;align-items:center;min-height:180px;margin:12px 0;background:#fff;border-radius:12px;overflow:hidden}
+.cgt .q{padding:14px 0;border-bottom:1px solid #edf1f7}
+.cgt .q:last-child{border-bottom:0}
+.cgt .q b{display:block;margin-bottom:8px;line-height:1.45}
+.cgt .opts{display:flex;flex-wrap:wrap;gap:6px}
+.cgt .opts label{position:relative;flex:1 1 auto;min-width:92px;text-align:center;border:1px solid #c9dcff;border-radius:10px;padding:8px 10px;cursor:pointer;font-size:.92em;background:#f8fbff;user-select:none;line-height:1.35}
+.cgt .opts input{position:absolute;opacity:0;pointer-events:none}
+.cgt .opts label.on{background:var(--b);color:#fff;border-color:var(--b)}
+.cgt .res{display:none;margin-top:18px;padding:18px;border-radius:14px;background:#eef5ff;border:1px solid #c9dcff}
+.cgt .res.show{display:block}
+.cgt .res.ok{background:#ecfaf1;border-color:#a8e2bf}
+.cgt .res.mid{background:#fff8e8;border-color:#f1d28a}
+.cgt .res.hi{background:#fff0f0;border-color:#f3b3b3}
+.cgt .res h3{margin-top:0}
+.cgt .meter{height:12px;background:#e6edf7;border-radius:99px;overflow:hidden;margin:10px 0 14px}
+.cgt .meter i{display:block;height:100%;background:linear-gradient(90deg,#22b07d,#f2b33d,#e5484d);border-radius:99px;width:0;transition:width .7s}
+.cgt .box{padding:16px 18px;margin:22px 0;border-radius:12px;background:#eef5ff;border:1px solid #c9dcff}
+.cgt .warn{background:#fff8e8;border-color:#f1d28a}
+.cgt .steps{counter-reset:s;list-style:none;padding:0;margin:0 0 14px}
+.cgt .steps li{counter-increment:s;position:relative;padding:7px 0 7px 44px}
+.cgt .steps li:before{content:counter(s);position:absolute;left:0;top:6px;width:30px;height:30px;border-radius:50%;background:var(--b);color:#fff;font-weight:700;text-align:center;line-height:30px;font-size:.9em}
+.cgt .faq details{border:1px solid var(--l);border-radius:12px;padding:12px 16px;margin:8px 0;background:#fbfdff}
+.cgt .faq summary{cursor:pointer;font-weight:700;color:#13325f}
+.cgt .faq details p{margin:10px 0 0}
+.cgt .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px;margin:12px 0}
+.cgt .card{display:block;border:1px solid var(--l);border-radius:14px;padding:13px;background:#fff;text-decoration:none!important;color:var(--t)!important;transition:transform .15s,box-shadow .15s;font-weight:400}
+.cgt .card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,74,173,.12)}
+.cgt .card .ic{font-size:1.5em;line-height:1}
+.cgt .card b{display:block;margin:6px 0 2px;color:var(--b);font-family:'Exo 2',Arial,sans-serif;line-height:1.3}
+.cgt .card small{color:var(--m);font-size:.82em;line-height:1.4;display:block}
+.cgt a{color:var(--b);font-weight:700}
+.cgt .muted{color:var(--m);font-size:.9em}
+.cgt .pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.cgt .pill{border:1px solid #c9dcff;border-radius:99px;padding:7px 15px;background:#f8fbff;font:700 .9em Arial,sans-serif;color:var(--b);cursor:pointer}
+.cgt .pill.on{background:var(--b);color:#fff;border-color:var(--b)}
+.cgt .prog{font:700 .85em Arial,sans-serif;color:var(--m);margin:0 0 6px}
+.cgt input[type=range]{width:100%;accent-color:#004aad}
+.cgt .hide{display:none!important}
+@media(max-width:600px){.cgt{font-size:16px}.cgt .tool{padding:15px}.cgt .lead,.cgt .box{padding:13px 14px}.cgt .btn{padding:11px 16px}}
+</style>
+<div class="cgt" id="cgt-yakin">
+<p class="lead">Telefonu eskiden yüzünüze daha yakın tutuyordunuz da şimdi giderek uzaklaştırıyor musunuz? Merak etmeyin, kollarınız kısalmadı :) Bu yakın okuma testiyle okuma mesafesinde ne kadar küçük yazıyı rahatça okuyabildiğinizi görün.</p>
+<h2>Yakını görme neden zorlaşır?</h2>
+<p>Gözümüzün içinde, tıpkı bir kameranın objektifi gibi odak ayarı yapan esnek bir mercek bulunur. Yakına baktığımızda bu mercek kalınlaşarak odağı ayarlar. Yaş ilerledikçe mercek esnekliğini yavaş yavaş kaybeder ve yakına odaklanmak zorlaşır. Bu doğal sürecin adı <strong>presbiyopi</strong>dir; halk arasında "yaşa bağlı yakın görme sorunu" ya da "okuma gözlüğü dönemi" olarak bilinir.</p>
+<p>Presbiyopi genellikle 40'lı yaşların başında fark edilmeye başlar. Küçük yazıları okumak için telefonu uzaklaştırmak, loş ortamda okumakta zorlanmak, uzun süre yakın çalışma sonrası göz yorgunluğu ve baş ağrısı tipik ilk işaretlerdir. Hipermetropisi olan kişilerde bu belirtiler daha erken ortaya çıkabilir. Yakın görme sorunu her zaman yaşla ilgili değildir; bu yüzden hangi yaşta olursanız olun zorlanıyorsanız muayene önemlidir.</p>
+<h2>Test nasıl yapılır?</h2>
+<ol class="steps"><li>Ekranınızı bir kez ölçeklendirin (görme keskinliği testinde yaptıysanız ayar hatırlanır).</li><li>Okuma gözlüğünüz varsa takın; iyi aydınlatılmış bir ortamda olun.</li><li>Ekranı ya da telefonu gözünüzden yaklaşık 40 cm uzakta tutun; bu, normal okuma mesafesidir.</li><li>Rahatça, zorlanmadan okuyabildiğiniz en küçük satıra dokunun.</li></ol>
+<div class="tool"><div class="tool-h">Yakın okuma testi <span class="badge">40 cm · ~1 dk</span></div>
+<details style="margin:0 0 14px"><summary style="cursor:pointer;font-weight:700;color:#004aad">Ekran ölçeğini ayarla</summary><div data-calbox><p><b>Önce ekranınızı ölçeklendirin.</b> Kimlik kartı, banka kartı ya da ehliyet gibi standart boyutlu bir kartı dikey tutup kısa kenarını ekrana dayayın. Kaydırıcıyla mavi kutunun genişliğini kartın kısa kenarına eşitleyin. Ayar bu cihazda hatırlanır.</p><div style="display:flex;justify-content:center;margin:10px 0"><div data-card style="border:2px dashed #004aad;border-radius:10px;background:#eef5ff;display:flex;align-items:center;justify-content:center;color:#004aad;font-weight:700;font-size:.85em;text-align:center">Kartın kısa kenarı</div></div><input type="range" min="2.5" max="7.5" step="0.01" data-cal aria-label="Ekran ölçeği"></div></details>
+<p><b>Yaş aralığınız</b> <span class="muted">(yorum için)</span></p><div class="pills" data-age><button class="pill" data-a="0">40 yaş altı</button><button class="pill on" data-a="1">40–50</button><button class="pill" data-a="2">50 yaş üstü</button></div>
+<p><b>Rahatça okuyabildiğiniz en küçük satıra dokunun:</b></p>
+<div data-lines></div>
+<div class="res"></div></div>
+<h2>Sonucunuz ne anlama gelir?</h2>
+<p>Satırların yanında yazan "N" değerleri, yakın görme tablolarında kullanılan yazı boyutu ölçüsüdür. Gazete metinleri genellikle N8–N10, ilaç prospektüsleri ve sözleşmelerin küçük yazıları ise N6 civarındadır. 40 cm'den N5–N6 boyutunu rahatça okuyabiliyorsanız yakın görmeniz iyi demektir. N8 ve üzerinde zorlanıyorsanız günlük okumada sorun yaşamanız olasıdır.</p>
+<p>Bu test bir okuma gözlüğü numarası vermez ve vermemelidir; çünkü yakın görme zorluğunun nedeni presbiyopi kadar hipermetropi, astigmat ya da başka göz sorunları da olabilir. Hazır okuma gözlükleri iki gözün de aynı numarada olduğunu varsayar ve astigmatı düzeltmez. Size uygun çözüm; tek odaklı okuma gözlüğü, progresif cam ya da lens gibi seçeneklerden muayene sonucuna göre belirlenir.</p>
+<div class="box"><strong>Neden önemli?</strong><br>Yakını zorlanarak görmeye çalışmak gözü kalıcı olarak bozmaz ama yorgunluk, baş ağrısı ve okuma isteksizliği yaratır. 40 yaşından sonra yakın görme değişirken göz tansiyonu gibi sessiz sorunların da görülme sıklığı artar. Okuma gözlüğü ihtiyacını, kapsamlı bir göz muayenesi için iyi bir fırsat olarak görün.</div>
+<div class="faq"><h2>Sık sorulan sorular</h2>
+<details><summary>Okuma gözlüğü takarsam gözüm alışır ve tembelleşir mi?</summary><p>Hayır. Presbiyopi gözlük takıp takmamanızdan bağımsız olarak ilerleyen doğal bir süreçtir. Gözlük yalnızca bu dönemi konforlu geçirmenizi sağlar; göz merceğinin yaşlanmasını hızlandırmaz.</p></details>
+<details><summary>Miyoplar presbiyopiyi daha geç mi fark eder?</summary><p>Hafif miyopisi olan kişiler uzak gözlüğünü çıkarınca yakını görebildiği için presbiyopiyi daha geç fark edebilir. Ancak süreç onlarda da yaşanır; sadece belirtileri farklı şekilde ortaya çıkar.</p></details>
+<details><summary>Hazır okuma gözlüğü kullanabilir miyim?</summary><p>Hazır gözlükler iki gözün aynı numarada olduğunu ve astigmat olmadığını varsayar. Gözleriniz arasında fark ya da astigmat varsa baş ağrısı ve yorgunluk yaşayabilirsiniz. En doğrusu muayene sonrası size uygun numarayla hazırlanmış gözlüktür.</p></details></div>
+<div class="box warn"><strong>Önemli not</strong><br>Bu sayfadaki test bilgilendirme ve farkındalık amaçlıdır; teşhis koymaz, gözlük ya da lens numarası belirlemez ve göz muayenesinin yerini tutmaz. Ekran ayarları, ortam ışığı ve mesafe sonucu etkileyebilir. Görmenizde ani bulanıklık, ışık çakması, perde inmesi, görme alanında kayıp ya da göz ağrısı varsa vakit kaybetmeden bir göz hekimine başvurun.<br><a target="_blank" rel="noopener" href="https://www.cagataygulumser.com/p/goz-saglg-merkezleri.html">İlinizdeki göz sağlığı merkezlerini görün →</a></div>
+<h2>Diğer göz testleri</h2><div class="grid"><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/renk-korlugu-testi.html"><span class="ic">🎨</span><b>Renk Körlüğü Testi</b><small>Noktaların içindeki rakamı bulun</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/astigmat-testi.html"><span class="ic">🕐</span><b>Astigmat Testi</b><small>Saat kadranındaki çizgiler</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/amsler-testi.html"><span class="ic">🔲</span><b>Amsler (Sarı Nokta) Testi</b><small>Izgaradaki çizgiler düz mü?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/gorme-keskinligi-testi.html"><span class="ic">👁️</span><b>Görme Keskinliği Testi</b><small>Ekranda E harfi testi</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/yakin-okuma-testi.html"><span class="ic">📖</span><b>Yakın Okuma Testi</b><small>Kolunuz yetmiyor mu?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kontrast-duyarliligi-testi.html"><span class="ic">🌫️</span><b>Kontrast Duyarlılığı Testi</b><small>Soluklaşan harfleri seçin</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kirmizi-yesil-testi.html"><span class="ic">🔴</span><b>Kırmızı-Yeşil Testi</b><small>Gözlüğünüz hâlâ uygun mu?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/renk-siralama-testi.html"><span class="ic">🌈</span><b>Renk Sıralama Testi</b><small>Renk tonlarını sıralayın</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kuru-goz-testi.html"><span class="ic">💧</span><b>Kuru Göz Testi</b><small>Belirti anketi</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-yorgunlugu-testi.html"><span class="ic">💻</span><b>Dijital Göz Yorgunluğu Testi</b><small>Ekran alışkanlıklarınız</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/miyopi-risk-testi.html"><span class="ic">🧒</span><b>Çocuk Miyopi Risk Testi</b><small>Ebeveynler için</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/glokom-risk-testi.html"><span class="ic">🛡️</span><b>Glokom Risk Testi</b><small>Göz tansiyonu riski</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-muayenesi-ne-zaman.html"><span class="ic">📅</span><b>Ne Zaman Muayene Olmalıyım?</b><small>Kişisel muayene aralığı</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/kor-nokta-testi.html"><span class="ic">⚫</span><b>Kör Nokta Testi</b><small>Noktanın kaybolduğunu görün</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/baskin-goz-testi.html"><span class="ic">🎯</span><b>Baskın Göz Testi</b><small>Hangi gözünüz lider?</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/ardil-goruntu-testi.html"><span class="ic">✨</span><b>Ardıl Görüntü Testi</b><small>Gözünüzü kandıran illüzyon</small></a><a target="_blank" rel="noopener" class="card" href="https://www.cagataygulumser.com/p/goz-sagligi-bilgi-yarismasi.html"><span class="ic">🧠</span><b>Göz Sağlığı Bilgi Yarışması</b><small>10 soruda kendinizi deneyin</small></a></div><p class="center"><a target="_blank" rel="noopener" class="btn" href="https://www.cagataygulumser.com/p/goz-testleri.html">Tüm göz testleri</a></p>
+</div>
+<script>//<![CDATA[
+(function(){var R=document.getElementById("cgt-yakin");if(!R)return;
+function qform(root,qs){var h='';qs.forEach(function(q,i){h+='<div class="q"><b>'+(i+1)+'. '+q.t+'</b><div class="opts">';q.o.forEach(function(o,j){h+='<label><input type="radio" name="q'+i+'" value="'+j+'">'+o[0]+'</label>'});h+='</div></div>'});root.innerHTML=h;root.addEventListener('change',function(e){var n=e.target.name;root.querySelectorAll('input[name="'+n+'"]').forEach(function(x){x.parentNode.classList.toggle('on',x.checked)})});return function(){var a=[];for(var i=0;i<qs.length;i++){var c=root.querySelector('input[name="q'+i+'"]:checked');if(!c){var el=root.querySelectorAll('.q')[i];el.scrollIntoView({behavior:'smooth',block:'center'});el.style.background='#fff8e8';setTimeout(function(){el.style.background=''},1500);return null}a.push(qs[i].o[+c.value][1])}return a}}
+function show(el,cls,html){el.className='res show '+cls;el.innerHTML=html;el.scrollIntoView({behavior:'smooth',block:'nearest'})}
+var px=3.78;try{var sv=parseFloat(localStorage.getItem('cgt_pxmm'));if(sv>2)px=sv}catch(e){}var CR=R.querySelector('[data-cal]'),CD=R.querySelector('[data-card]');CR.value=px;function updCal(){px=+CR.value;CD.style.width=(53.98*px)+'px';CD.style.height=(30*px)+'px';try{localStorage.setItem('cgt_pxmm',px)}catch(e){}}CR.addEventListener('input',updCal);updCal();var L=R.querySelector('[data-lines]'),RES=R.querySelector('.res'),age=1;
+var TX=['G\u00f6z sa\u011fl\u0131\u011f\u0131','G\u00f6zlerimizi korumak','G\u00fcnde iki saat a\u00e7\u0131k havada vakit ge\u00e7irin','Ekrana uzun s\u00fcre bakarken ara s\u0131ra uza\u011fa bakmay\u0131 unutmay\u0131n','D\u00fczenli g\u00f6z muayenesi bir\u00e7ok sorunun erken fark edilmesini sa\u011flar','G\u00f6z tansiyonu \u00e7o\u011fu zaman belirti vermeden ilerleyebilir; bu y\u00fczden \u00f6l\u00e7\u00fcm yapt\u0131rmak \u00f6nemlidir','K\u0131rk ya\u015f\u0131ndan sonra yak\u0131n\u0131 g\u00f6rmekte zorlanmak \u00e7o\u011fu zaman g\u00f6z merce\u011finin esnekli\u011fini yitirmesiyle ilgilidir','Bu sat\u0131r\u0131 rahat\u00e7a okuyabiliyorsan\u0131z yak\u0131n g\u00f6rmeniz okuma mesafesinde olduk\u00e7a iyi demektir; ila\u00e7 prospekt\u00fcsleri de yakla\u015f\u0131k bu boyuttad\u0131r'];
+var NS=[24,18,14,12,10,8,6,5];
+function draw(){L.innerHTML=NS.map(function(n,i){return '<button data-i="'+i+'" style="display:flex;gap:10px;align-items:baseline;width:100%;text-align:left;background:#fff;border:1px solid #edf1f7;border-radius:10px;padding:8px 12px;margin:0 0 6px;cursor:pointer;color:#111;font-family:Arial,sans-serif"><span style="flex:0 0 38px;font:700 12px Arial;color:#004aad">N'+n+'</span><span style="font-size:'+(n*0.3528*px).toFixed(2)+'px;line-height:1.3">'+TX[i]+'</span></button>'}).join('')}
+draw();CR.addEventListener('input',draw);
+R.querySelectorAll('[data-age] .pill').forEach(function(p){p.addEventListener('click',function(){R.querySelectorAll('[data-age] .pill').forEach(function(q){q.classList.remove('on')});p.classList.add('on');age=+p.getAttribute('data-a')})});
+L.addEventListener('click',function(e){var b=e.target.closest('[data-i]');if(!b)return;L.querySelectorAll('[data-i]').forEach(function(x){x.style.borderColor='#edf1f7';x.style.background='#fff'});b.style.borderColor='#004aad';b.style.background='#eef5ff';var n=NS[+b.getAttribute('data-i')],cls,h;
+if(n<=6){cls='ok';h='<h3>Yak\u0131n g\u00f6rmeniz okuma mesafesinde iyi g\u00f6r\u00fcn\u00fcyor</h3><p>40 cm\'den N'+n+' boyutundaki yaz\u0131y\u0131 rahat\u00e7a okuyabildiniz. Gazete ve kitap yaz\u0131lar\u0131n\u0131 zorlanmadan okuyabilmeniz beklenir.</p>'}
+else if(n<=10){cls='mid';h='<h3>K\u00fc\u00e7\u00fck yaz\u0131larda zorlan\u0131yor olabilirsiniz</h3><p>Rahat\u00e7a okuyabildi\u011finiz en k\u00fc\u00e7\u00fck boyut N'+n+'. Prospekt\u00fcs ve fatura gibi k\u00fc\u00e7\u00fck yaz\u0131larda zorlanman\u0131z olas\u0131d\u0131r.'+(age>0?' 40 ya\u015f sonras\u0131 bu durum \u00e7o\u011fu zaman presbiyopiyle ili\u015fkilidir.':' Bu ya\u015fta yak\u0131n g\u00f6rme zorlu\u011fu hipermetropi ya da astigmatla ilgili olabilir.')+' Bir g\u00f6z muayenesi planlaman\u0131z\u0131 \u00f6neririz.</p>'}
+else{cls='hi';h='<h3>Yak\u0131n g\u00f6rmede belirgin zorlanma</h3><p>Rahat\u00e7a okuyabildi\u011finiz en k\u00fc\u00e7\u00fck boyut N'+n+'. Bu, g\u00fcnl\u00fck okumay\u0131 zorla\u015ft\u0131racak d\u00fczeyde bir yak\u0131n g\u00f6rme sorunu olabilece\u011fini d\u00fc\u015f\u00fcnd\u00fcr\u00fcr. Ekran \u00f6l\u00e7e\u011fini ve mesafeyi kontrol edip tekrar deneyin; sonu\u00e7 de\u011fi\u015fmiyorsa bir g\u00f6z hekimine ba\u015fvurun.</p>'}
+show(RES,cls,h+'<p class="muted">Bu test okuma g\u00f6zl\u00fc\u011f\u00fc numaras\u0131 belirlemez; yaln\u0131zca fikir verir.</p>')});
+})();
+//]]></script>
+</div></body></html>

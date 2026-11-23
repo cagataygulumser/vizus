@@ -2,7 +2,8 @@
 window.KATALOG = (function () {
   var S = 'https://www.cagataygulumser.com/p/';
   function y(id, ad, kim, grup, kisa, dosya, kok, pro) { return { id: id, ad: ad, kim: kim, grup: grup, kisa: kisa, tur: 'yerel', dosya: dosya, kok: kok, pro: !!pro }; }
-  function s(id, ad, kim, grup, kisa, slug, pro) { return { id: id, ad: ad, kim: kim, grup: grup, kisa: kisa, tur: 'site', url: S + slug + '.html', pro: !!pro }; }
+  var ICERDE = ["simulator", "pdolcer", "mavi", "surucu", "polarize", "yuzsekli", "formuller", "cerceve", "receteoku", "lenskutu", "guneskat", "sgk", "sozluk", "atlas", "ehliyet", "meslek", "engel", "t-renk", "t-astigmat", "t-amsler", "t-keskinlik", "t-yakin", "t-kontrast", "t-duokrom", "t-siralama", "t-kuru", "t-yorgunluk", "t-miyopi", "t-glokom", "t-muayene", "t-kornokta", "t-baskin", "t-ardil", "t-yarisma"];
+  function s(id, ad, kim, grup, kisa, slug, pro) { var ic = ICERDE.indexOf(id) > -1; return { id: id, ad: ad, kim: kim, grup: grup, kisa: kisa, tur: ic ? 'yerel' : 'site', sayfa: ic ? 'arac-' + id + '.html' : '', url: S + slug + '.html', pro: !!pro }; }
   var K = 'araclar/klinik/', A = 'araclar/';
   /* Araç kodu tek kaynaktan gelir: sitedeki araçlarla aynı depo (blog-font). */
   var KOK = 'https://cdn.jsdelivr.net/gh/cagataygulumser/blog-font@main/';
